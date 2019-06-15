@@ -13,9 +13,9 @@
     "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "allowJs": true,
     "experimentalDecorators": true,
-    "strict": true
+    "strict": true,
+    "declaration": true
   },
   "exclude": [
     "node_modules",
@@ -24,6 +24,7 @@
     "acceptance-tests",
     "webpack",
     "jest",
+    "dist",
     "src/setupTests.ts",
     "tslint:latest",
     "tslint-config-prettier"
