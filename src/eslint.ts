@@ -34,6 +34,11 @@ export default {
     "react/prop-types": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-one-expression-per-line": 0,
+    "object-curly-newline": 0,
+    "implicit-arrow-linebreak": 0,
+    "operator-linebreak": 0,
+    "generator-star-spacing": 0,
+    "function-paren-newline": 0,
     "import/no-unresolved": [2, { ignore: ["^@/", "^umi/"] }],
     "import/no-extraneous-dependencies": [
       2,
