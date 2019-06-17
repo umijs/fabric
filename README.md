@@ -9,7 +9,7 @@ A collection of configuration files containing prettier, eslint, stylelint
 in `.eslintrc.js`
 
 ```tsx
-import eslint from "@umijs/fabric";
+import { eslint } from "@umijs/fabric";
 
 module.exports = eslint;
 ```
