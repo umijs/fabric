@@ -1,7 +1,5 @@
-import eslint from "./eslint";
-import stylelint from "./stylelint";
-import prettier from "./prettier";
+const eslint = require("./eslint");
+const stylelint = require("./stylelint");
+const prettier = require("./prettier");
 
-export { stylelint, prettier };
-
-export default eslint;
+module.exports = { stylelint, prettier, eslint, default: eslint };
