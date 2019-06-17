@@ -4,12 +4,10 @@ export default {
   extends: [
     "airbnb",
     "prettier",
-    "plugin:compat/recommended",
     "airbnb-typescript",
     "plugin:@typescript-eslint/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:jest/recommended",
-    "plugin:promise/recommended",
     "prettier/react",
     "prettier/@typescript-eslint"
   ],
@@ -17,7 +15,6 @@ export default {
     "@typescript-eslint",
     "eslint-comments",
     "jest",
-    "promise",
     "unicorn",
     "react-hooks"
   ],
