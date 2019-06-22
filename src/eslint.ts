@@ -31,9 +31,6 @@ module.exports = {
     "react/prop-types": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-one-expression-per-line": 0,
-    "object-curly-newline": 0,
-    "implicit-arrow-linebreak": 0,
-    "operator-linebreak": 0,
     "generator-star-spacing": 0,
     "function-paren-newline": 0,
     "import/no-unresolved": [2, { ignore: ["^@/", "^umi/"] }],
@@ -75,7 +72,13 @@ module.exports = {
     "@typescript-eslint/explicit-member-accessibility": 0,
     "import/no-cycle": 0,
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+
+    // Conflict with prettier
+    "arrow-body-style": ["error", "as-needed"],
+    "object-curly-newline": 0,
+    "implicit-arrow-linebreak": 0,
+    "operator-linebreak": 0
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files
