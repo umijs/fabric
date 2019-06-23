@@ -49,7 +49,7 @@ module.exports = {
     // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
     "no-prototype-builtins": "off",
     "import/prefer-default-export": "off",
-    "import/no-default-export": [true, "camel-case"],
+    "import/no-default-export": [0, "camel-case"],
     // Too restrictive: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
     "react/destructuring-assignment": "off",
     "react/jsx-filename-extension": "off",
