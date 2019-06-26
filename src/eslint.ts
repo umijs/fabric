@@ -38,7 +38,7 @@ module.exports = {
       2,
       {
         optionalDependencies: true,
-        devDependencies: ["**/tests/**.js", "/mock/**/**.js", "**/**.test.js", '**/_mock.{ts,js}']
+        devDependencies: ["**/tests/**.js", "**/__test__/**.js", "/mock/**/**.js", "**/**.test.js", '**/_mock.{ts,js}']
       }
     ],
     "jsx-a11y/no-noninteractive-element-interactions": 0,
