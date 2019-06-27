@@ -31,12 +31,13 @@ module.exports = {
     "react/prop-types": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-one-expression-per-line": 0,
+    "react/sort-comp": 1,
+
     "generator-star-spacing": 0,
     "function-paren-newline": 0,
-    "import/no-unresolved": [2, { ignore: ["^@/", "^umi/"] }],
-    "import/order": 'warn',
+    "import/no-unresolved": [1, { ignore: ["^@/", "^umi/"] }],
     "import/no-extraneous-dependencies": [
-      2,
+      1,
       {
         optionalDependencies: true,
         devDependencies: [
@@ -60,9 +61,12 @@ module.exports = {
     // Too restrictive: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
     "react/destructuring-assignment": "off",
     "react/jsx-filename-extension": "off",
+    "max-len": "warn",
+    "eslint-comments/disable-enable-pair": "warn",
+    "sort-imports": "warn",
     // Use function hoisting to improve code readability
     "no-use-before-define": [
-      "error",
+      "warn",
       { functions: false, classes: true, variables: true }
     ],
     // Makes no sense to allow type inferrence for expression parameters, but require typing the response
@@ -70,28 +74,28 @@ module.exports = {
       "off",
       { allowTypedFunctionExpressions: true }
     ],
+    "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/no-use-before-define": [
-      "error",
+      "warn",
       { functions: false, classes: true, variables: true, typedefs: true }
     ],
     // Common abbreviations are known and readable
     "unicorn/prevent-abbreviations": "off",
     "@typescript-eslint/explicit-member-accessibility": 0,
     "import/no-cycle": 0,
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-
+    "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
+    "react/no-array-index-key": "warn",
     // issue https://github.com/facebook/react/issues/15204
     "react-hooks/exhaustive-deps": "off", // Checks effect dependencies
 
     // Conflict with prettier
-    "arrow-body-style": ["error", "as-needed"],
+    "arrow-body-style": ["warn", "as-needed"],
     "object-curly-newline": 0,
     "implicit-arrow-linebreak": 0,
     "operator-linebreak": 0
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files
-    "import/resolver": { node: { extensions: [".js", ".ts", ".tsx"] } },
-    polyfills: ["fetch", "Promise", "URL", "object-assign"]
+    "import/resolver": { node: { extensions: [".js", ".ts", ".tsx"] } }
   }
 };
