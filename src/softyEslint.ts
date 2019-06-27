@@ -92,7 +92,8 @@ module.exports = {
     "arrow-body-style": ["warn", "as-needed"],
     "object-curly-newline": 0,
     "implicit-arrow-linebreak": 0,
-    "operator-linebreak": 0
+    "operator-linebreak": 0,
+    "no-mixed-operators": "warn"
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files
