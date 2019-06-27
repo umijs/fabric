@@ -34,6 +34,7 @@ module.exports = {
     "generator-star-spacing": 0,
     "function-paren-newline": 0,
     "import/no-unresolved": [2, { ignore: ["^@/", "^umi/"] }],
+    "import/order": 'warn',
     "import/no-extraneous-dependencies": [
       2,
       {
