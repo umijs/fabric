@@ -34,7 +34,7 @@ module.exports = {
     "generator-star-spacing": 0,
     "function-paren-newline": 0,
     "import/no-unresolved": [2, { ignore: ["^@/", "^umi/"] }],
-    "import/order": 'warn',
+    "import/order": "warn",
     "import/no-extraneous-dependencies": [
       2,
       {
@@ -74,9 +74,11 @@ module.exports = {
       "error",
       { functions: false, classes: true, variables: true, typedefs: true }
     ],
+
     // Common abbreviations are known and readable
     "unicorn/prevent-abbreviations": "off",
     "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/interface-name-prefix": 0,
     "import/no-cycle": 0,
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
 

@@ -63,7 +63,7 @@ module.exports = {
     "react/jsx-filename-extension": "off",
     "max-len": "warn",
     "eslint-comments/disable-enable-pair": "warn",
-    "sort-imports": "warn",
+    "sort-imports": 0,
     // Use function hoisting to improve code readability
     "no-use-before-define": [
       "warn",
@@ -82,6 +82,7 @@ module.exports = {
     // Common abbreviations are known and readable
     "unicorn/prevent-abbreviations": "off",
     "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/interface-name-prefix": 0,
     "import/no-cycle": 0,
     "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
     "react/no-array-index-key": "warn",
