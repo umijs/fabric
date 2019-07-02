@@ -87,9 +87,12 @@ module.exports = {
 
     // Conflict with prettier
     "arrow-body-style": ["error", "as-needed"],
+    "arrow-parens": 1,
     "object-curly-newline": 0,
     "implicit-arrow-linebreak": 0,
-    "operator-linebreak": 0
+    "operator-linebreak": 0,
+    "eslint-comments/no-unlimited-disable": 1,
+    "no-param-reassign": 1
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files
