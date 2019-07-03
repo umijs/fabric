@@ -31,7 +31,7 @@ module.exports = {
     "react/prop-types": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-one-expression-per-line": 0,
-    "react/sort-comp": 1,
+    "react/sort-comp": 0,
 
     "generator-star-spacing": 0,
     "function-paren-newline": 0,
@@ -97,7 +97,6 @@ module.exports = {
     "no-mixed-operators": "warn"
   },
   settings: {
-    // support import modules from TypeScript files in JavaScript files
-    "import/resolver": { node: { extensions: [".js", ".ts", ".tsx"] } }
+    "import/resolver": { node: { extensions: [".js", ".jsx", ".ts", ".tsx"] } }
   }
 };
