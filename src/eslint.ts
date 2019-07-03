@@ -96,7 +96,7 @@ module.exports = {
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files
-    "import/resolver": { node: { extensions: [".js", ".ts", ".tsx"] } },
+    "import/resolver": { node: { extensions: [".js", ".jsx", ".ts", ".tsx"] } },
     polyfills: ["fetch", "Promise", "URL", "object-assign"]
   }
 };
