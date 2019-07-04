@@ -95,7 +95,7 @@ module.exports = {
     "implicit-arrow-linebreak": 0,
     "operator-linebreak": 0,
     "no-mixed-operators": "warn",
-    "comma-dangle": ["error", { functions: "ignore" }]
+    "comma-dangle": ["warn", { functions: "ignore" }]
   },
   settings: {
     "import/resolver": { node: { extensions: [".js", ".jsx", ".ts", ".tsx"] } }
