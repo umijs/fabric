@@ -6,18 +6,11 @@ module.exports = {
     "prettier",
     "airbnb-typescript",
     "plugin:@typescript-eslint/recommended",
-    "plugin:eslint-comments/recommended",
     "plugin:jest/recommended",
     "prettier/react",
     "prettier/@typescript-eslint"
   ],
-  plugins: [
-    "@typescript-eslint",
-    "eslint-comments",
-    "jest",
-    "unicorn",
-    "react-hooks"
-  ],
+  plugins: ["@typescript-eslint", "jest", "unicorn", "react-hooks"],
   env: {
     browser: true,
     node: true,
@@ -62,7 +55,6 @@ module.exports = {
     "react/destructuring-assignment": "off",
     "react/jsx-filename-extension": "off",
     "max-len": "warn",
-    "eslint-comments/disable-enable-pair": "warn",
     "sort-imports": 0,
     // Use function hoisting to improve code readability
     "no-use-before-define": [
