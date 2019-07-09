@@ -67,6 +67,7 @@ module.exports = {
       { allowTypedFunctionExpressions: true }
     ],
     "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/no-use-before-define": [
       "warn",
       { functions: false, classes: true, variables: true, typedefs: true }

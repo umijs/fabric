@@ -74,6 +74,7 @@ module.exports = {
       "error",
       { functions: false, classes: true, variables: true, typedefs: true }
     ],
+    "@typescript-eslint/no-var-requires": 0,
 
     // Common abbreviations are known and readable
     "unicorn/prevent-abbreviations": "off",
