@@ -46,7 +46,7 @@ module.exports = {
           "**/**.test.{ts,js,jsx,tsx}",
           "**/_mock.{ts,js,jsx,tsx}",
           "**/example/**.{ts,js,jsx,tsx}",
-          "**/examples/**.{ts,js,jsx,tsx}",
+          "**/examples/**.{ts,js,jsx,tsx}"
         ]
       }
     ],
@@ -95,7 +95,8 @@ module.exports = {
     "implicit-arrow-linebreak": 0,
     "operator-linebreak": 0,
     "eslint-comments/no-unlimited-disable": 1,
-    "no-param-reassign": 1
+    "no-param-reassign": 1,
+    "space-before-function-paren": 0
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files
