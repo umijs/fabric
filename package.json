@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/umijs/umi-fabric.git"
+    "url": "git+https://github.com/umijs/fabric"
   },
   "keywords": [
     "eslint",
