@@ -3,8 +3,8 @@
 module.exports = {
   extends: [
     'airbnb',
-    'prettier',
     'airbnb-typescript',
+    'prettier',
     'prettier/react',
     'prettier/@typescript-eslint',
   ].map(key => require.resolve(`eslint-config-${key}`)),
