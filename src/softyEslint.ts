@@ -89,6 +89,6 @@ module.exports = {
     'comma-dangle': 0,
   },
   settings: {
-    'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] } },
+    'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'] } },
   },
 };
