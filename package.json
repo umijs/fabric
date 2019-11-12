@@ -31,7 +31,7 @@
   "homepage": "https://github.com/umijs/umi-fabric#readme",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^1.4.2",
-    "@typescript-eslint/parser": "canary",
+    "@typescript-eslint/parser": "^2.7.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
