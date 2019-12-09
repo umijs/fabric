@@ -1,3 +1,5 @@
+/** @format */
+
 'use strict';
 
 module.exports = {
@@ -86,6 +88,7 @@ module.exports = {
     'eslint-comments/no-unlimited-disable': 1,
     'no-param-reassign': 1,
     'space-before-function-paren': 0,
+    'import/extensions': 0,
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files

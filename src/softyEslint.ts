@@ -1,3 +1,5 @@
+/** @format */
+
 'use strict';
 
 module.exports = {
@@ -85,6 +87,7 @@ module.exports = {
     'operator-linebreak': 0,
     'no-mixed-operators': 'warn',
     'comma-dangle': 0,
+    'import/extensions': 0,
   },
   settings: {
     'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] } },
