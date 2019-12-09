@@ -14,6 +14,7 @@
     "noUnusedLocals": true,
     "experimentalDecorators": true,
     "strict": true,
+    "skipLibCheck": false,
     "declaration": true
   },
   "exclude": [
