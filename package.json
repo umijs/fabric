@@ -1,6 +1,6 @@
 {
   "name": "@umijs/fabric",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0-beta.4",
   "description": "A collection of configuration files containing prettier, eslint, stylelint",
   "main": "dist/index.js",
   "scripts": {

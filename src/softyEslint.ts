@@ -1,3 +1,5 @@
+/** @format */
+
 'use strict';
 
 import * as path from 'path';
@@ -96,6 +98,7 @@ module.exports = {
     'operator-linebreak': 0,
     'no-mixed-operators': 'warn',
     'comma-dangle': 0,
+    'import/extensions': 0,
   },
   settings: {
     'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] } },

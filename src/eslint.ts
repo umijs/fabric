@@ -1,3 +1,5 @@
+/** @format */
+
 import * as path from 'path';
 
 const eslintFolder = path.join(path.dirname(require.resolve('eslint')), '..');
@@ -95,6 +97,7 @@ module.exports = {
     'eslint-comments/no-unlimited-disable': 1,
     'no-param-reassign': 1,
     'space-before-function-paren': 0,
+    'import/extensions': 0,
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files
