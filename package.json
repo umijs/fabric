@@ -26,9 +26,9 @@
   "author": "qixian.cs@outlook.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/umijs/umi-fabric/issues"
+    "url": "https://github.com/umijs/fabric/issues"
   },
-  "homepage": "https://github.com/umijs/umi-fabric#readme",
+  "homepage": "https://github.com/umijs/fabric#readme",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^1.4.2",
     "@typescript-eslint/parser": "^2.7.0",
