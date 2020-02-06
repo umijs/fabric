@@ -7,7 +7,7 @@
     "test": "npm run build && cd example && npm run lint",
     "build": "tsc",
     "lint": "npm run build && cd example && npm run lint",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch"
   },
   "files": [
     "dist"
@@ -60,6 +60,7 @@
     "stylelint-order": "^4.0.0"
   },
   "devDependencies": {
+    "np": "^5.2.1",
     "typescript": "^3.5.2"
   }
 }
