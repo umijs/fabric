@@ -27,6 +27,7 @@
     "dist",
     "src/setupTests.ts",
     "tslint:latest",
-    "tslint-config-prettier"
+    "tslint-config-prettier",
+    "example"
   ]
 }

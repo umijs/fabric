@@ -38,6 +38,9 @@ module.exports = {
     'function-paren-newline': 0,
     'import/no-unresolved': [2, { ignore: ['^@/', '^umi/'] }],
     'import/order': 'warn',
+    'react/jsx-props-no-spreading': 0,
+    'react/state-in-constructor': 0,
+    'react/static-property-placement': 0,
     'import/no-extraneous-dependencies': [
       2,
       {

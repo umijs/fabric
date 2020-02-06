@@ -20,7 +20,9 @@ module.exports = {
     'airbnb-typescript',
     'prettier/react',
     'prettier/@typescript-eslint',
-  ].map(key => require.resolve(`eslint-config-${key}`)).concat('plugin:prettier/recommended'),
+  ]
+    .map(key => require.resolve(`eslint-config-${key}`))
+    .concat('plugin:prettier/recommended'),
   plugins: ['@typescript-eslint', 'eslint-comments', 'jest', 'unicorn', 'react-hooks'],
   env: {
     browser: true,
@@ -36,7 +38,9 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'react/jsx-one-expression-per-line': 0,
     'react/sort-comp': 0,
-
+    'react/jsx-props-no-spreading': 0,
+    'react/state-in-constructor': 0,
+    'react/static-property-placement': 0,
     'generator-star-spacing': 0,
     'function-paren-newline': 0,
     'import/no-unresolved': [1, { ignore: ['^@/', '^umi/'] }],
