@@ -1,20 +1,21 @@
 module.exports = {
   singleQuote: true,
-  trailingComma: "all",
+  trailingComma: 'all',
   printWidth: 100,
-  proseWrap: "never",
+  proseWrap: 'never',
+  endOfLine: 'lf',
   overrides: [
     {
-      files: ".prettierrc",
+      files: '.prettierrc',
       options: {
-        parser: "json"
-      }
+        parser: 'json',
+      },
     },
     {
-      files: "document.ejs",
+      files: 'document.ejs',
       options: {
-        parser: "html"
-      }
-    }
-  ]
+        parser: 'html',
+      },
+    },
+  ],
 };
