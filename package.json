@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run build && cd example && npm run lint",
-    "build": "tsc",
+    "build": "tsc --build tsconfig.json",
     "lint": "npm run build && cd example && npm run lint",
     "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch"
   },
