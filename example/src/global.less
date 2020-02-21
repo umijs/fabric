@@ -1,5 +1,7 @@
 @import '~antd/es/style/themes/default.less';
 
+@TestHeight: 48px;
+
 html,
 body,
 #root {
@@ -11,7 +13,7 @@ body,
 }
 
 .ant-layout {
-  min-height: 100vh;
+  min-height: calc(100vh - @TestHeight);
 }
 
 canvas {
