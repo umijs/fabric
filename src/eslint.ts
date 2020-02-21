@@ -103,9 +103,9 @@ module.exports = {
     'space-before-function-paren': 0,
     'import/extensions': 0,
   },
-  settings: {
+ settings : {
     // support import modules from TypeScript files in JavaScript files
-    'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] } },
+    'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'] } },
     polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
   },
 };
