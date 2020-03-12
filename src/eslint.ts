@@ -36,7 +36,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 0,
     'generator-star-spacing': 0,
     'function-paren-newline': 0,
-    'import/no-unresolved': [2, { ignore: ['^@/', '^umi/'] }],
+    'import/no-unresolved': [2, { ignore: ['^@/', '^@@/', '^umi/'] }],
     'import/order': 'warn',
     'react/jsx-props-no-spreading': 0,
     'react/state-in-constructor': 0,
