@@ -51,7 +51,7 @@
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-unicorn": "^16.0.0",
-    "stylelint": "^10.0.1",
+    "stylelint": "^13.2.1",
     "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-rational-order": "^0.1.2",
