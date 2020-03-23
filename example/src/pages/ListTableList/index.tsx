@@ -60,7 +60,7 @@ const handleRemove = async (selectedRows: TableListItem[]) => {
   if (!selectedRows) return true;
   try {
     await removeRule({
-      key: selectedRows.map(row => row.key),
+      key: selectedRows.map((row) => row.key),
     });
     hide();
     message.success('删除成功，即将刷新');
@@ -150,7 +150,7 @@ const TableList: React.FC<{}> = () => {
             <Dropdown
               overlay={
                 <Menu
-                  onClick={async e => {
+                  onClick={async (e) => {
                     if (e.key === 'remove') {
                       await handleRemove(selectedRows);
                       action.reload();
@@ -177,12 +177,12 @@ const TableList: React.FC<{}> = () => {
             </span>
           </div>
         )}
-        request={params => queryRule(params)}
+        request={(params) => queryRule(params)}
         columns={columns}
         rowSelection={{}}
       />
       <CreateForm
-        onSubmit={async value => {
+        onSubmit={async (value) => {
           const success = await handleAdd(value);
           if (success) {
             handleModalVisible(false);
@@ -196,7 +196,7 @@ const TableList: React.FC<{}> = () => {
       />
       {stepFormValues && Object.keys(stepFormValues).length ? (
         <UpdateForm
-          onSubmit={async value => {
+          onSubmit={async (value) => {
             const success = await handleUpdate(value);
             if (success) {
               handleModalVisible(false);

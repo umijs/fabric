@@ -62,7 +62,7 @@ class FormAdvancedForm extends Component<FormAdvancedFormProps> {
       form: { getFieldsError },
     } = this.props;
     const errors = getFieldsError();
-    const errorCount = Object.keys(errors).filter(key => errors[key]).length;
+    const errorCount = Object.keys(errors).filter((key) => errors[key]).length;
     if (!errors || errorCount === 0) {
       return null;
     }
@@ -72,7 +72,7 @@ class FormAdvancedForm extends Component<FormAdvancedFormProps> {
         labelNode.scrollIntoView(true);
       }
     };
-    const errorList = Object.keys(errors).map(key => {
+    const errorList = Object.keys(errors).map((key) => {
       if (!errors[key]) {
         return null;
       }
@@ -258,7 +258,7 @@ class FormAdvancedForm extends Component<FormAdvancedFormProps> {
                       <TimePicker
                         placeholder="提醒时间"
                         style={{ width: '100%' }}
-                        getPopupContainer={trigger => {
+                        getPopupContainer={(trigger) => {
                           if (trigger && trigger.parentNode) {
                             return trigger.parentNode as HTMLElement;
                           }

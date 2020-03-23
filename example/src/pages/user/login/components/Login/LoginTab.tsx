@@ -17,7 +17,7 @@ interface LoginTabProps extends TabPaneProps {
   tabUtil: LoginContextProps['tabUtil'];
 }
 
-const LoginTab: React.FC<LoginTabProps> = props => {
+const LoginTab: React.FC<LoginTabProps> = (props) => {
   useEffect(() => {
     const uniqueId = generateId('login-tab-');
     const { tabUtil } = props;
@@ -32,9 +32,9 @@ const LoginTab: React.FC<LoginTabProps> = props => {
 
 const WrapContext: React.FC<TabPaneProps> & {
   typeName: string;
-} = props => (
+} = (props) => (
   <LoginContext.Consumer>
-    {value => <LoginTab tabUtil={value.tabUtil} {...props} />}
+    {(value) => <LoginTab tabUtil={value.tabUtil} {...props} />}
   </LoginContext.Consumer>
 );
 
