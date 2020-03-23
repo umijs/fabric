@@ -15,7 +15,7 @@ export interface UserLayoutProps extends ConnectProps {
   };
 }
 
-const UserLayout: React.FC<UserLayoutProps> = props => {
+const UserLayout: React.FC<UserLayoutProps> = (props) => {
   const {
     route = {
       routes: [],
