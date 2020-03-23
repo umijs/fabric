@@ -21,9 +21,7 @@ module.exports = {
     'airbnb-typescript',
     'prettier/react',
     'prettier/@typescript-eslint',
-  ]
-    .map(key => require.resolve(`eslint-config-${key}`))
-    .concat('plugin:prettier/recommended'),
+  ].map(key => require.resolve(`eslint-config-${key}`)),
   plugins: ['@typescript-eslint', 'eslint-comments', 'jest', 'unicorn', 'react-hooks'],
   env: {
     browser: true,
