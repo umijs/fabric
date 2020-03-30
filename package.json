@@ -56,10 +56,10 @@
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.1.0",
-    "stylelint-order": "^4.0.0"
+    "stylelint-order": "^4.0.0",
+    "typescript": "^3.8.3"
   },
   "devDependencies": {
-    "np": "^5.2.1",
-    "typescript": "^3.5.2"
+    "np": "^5.2.1"
   }
 }
