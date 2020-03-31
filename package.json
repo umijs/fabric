@@ -2,20 +2,6 @@
   "name": "@umijs/fabric",
   "version": "2.0.6",
   "description": "A collection of configuration files containing prettier, eslint, stylelint",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "npm run build && cd example && npm run lint",
-    "build": "tsc --build tsconfig.json",
-    "lint": "npm run build && cd example && npm run lint",
-    "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch"
-  },
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/umijs/fabric"
-  },
   "keywords": [
     "eslint",
     "prettier",
@@ -24,12 +10,26 @@
     "design",
     "pro"
   ],
-  "author": "qixian.cs@outlook.com",
-  "license": "ISC",
+  "homepage": "https://github.com/umijs/fabric#readme",
   "bugs": {
     "url": "https://github.com/umijs/fabric/issues"
   },
-  "homepage": "https://github.com/umijs/fabric#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umijs/fabric"
+  },
+  "license": "ISC",
+  "author": "qixian.cs@outlook.com",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --build tsconfig.json",
+    "lint": "npm run build && cd example && npm run lint",
+    "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch",
+    "test": "npm run build && cd example && npm run lint"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
@@ -56,10 +56,10 @@
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.1.0",
-    "stylelint-order": "^4.0.0"
+    "stylelint-order": "^4.0.0",
+    "typescript": "^3.8.3"
   },
   "devDependencies": {
-    "np": "^5.2.1",
-    "typescript": "^3.5.2"
+    "np": "^5.2.1"
   }
 }
