@@ -7,7 +7,7 @@ const eslintFolder = path.join(path.dirname(require.resolve('eslint')), '..');
 const moduleResolverPath = path.join(eslintFolder, 'lib/shared/relative-module-resolver');
 const ModuleResolver = require(moduleResolverPath);
 
-ModuleResolver.resolve = function(moduleName: string) {
+ModuleResolver.resolve = function (moduleName: string) {
   return require.resolve(moduleName);
 };
 
@@ -18,7 +18,7 @@ module.exports = {
     'prettier',
     'prettier/react',
     'prettier/@typescript-eslint',
-  ].map(key => require.resolve(`eslint-config-${key}`)),
+  ].map((key) => require.resolve(`eslint-config-${key}`)),
   plugins: ['@typescript-eslint', 'eslint-comments', 'jest', 'unicorn', 'react-hooks'],
   env: {
     browser: true,
