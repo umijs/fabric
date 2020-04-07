@@ -6,8 +6,8 @@ module.exports = {
     'stylelint-config-css-modules',
     'stylelint-config-rational-order',
     'stylelint-config-prettier',
-  ].map(key => require.resolve(key)),
-  plugins: ['stylelint-order', 'stylelint-declaration-block-no-ignored-properties'].map(key =>
+  ].map((key) => require.resolve(key)),
+  plugins: ['stylelint-order', 'stylelint-declaration-block-no-ignored-properties'].map((key) =>
     require.resolve(key)
   ),
   rules: {
@@ -16,5 +16,6 @@ module.exports = {
     'function-calc-no-invalid': null,
     'font-family-no-missing-generic-family-keyword': null, // iconfont
     'plugin/declaration-block-no-ignored-properties': true,
+    'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
   },
 };
