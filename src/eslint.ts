@@ -96,9 +96,8 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 0,
     'import/no-cycle': 0,
     'react/no-array-index-key': 'warn',
-    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     // issue https://github.com/facebook/react/issues/15204
-    'react-hooks/exhaustive-deps': 'off', // Checks effect dependencies
+    'react/require-default-props': 0,
     // Conflict with prettier
     'arrow-body-style': 0,
     'arrow-parens': 0,
