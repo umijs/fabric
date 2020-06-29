@@ -12,14 +12,8 @@ ModuleResolver.resolve = function(moduleName: string) {
 };
 
 module.exports = {
-  extends: [
-    'airbnb',
-    'airbnb-typescript',
-    'prettier',
-    'prettier/react',
-    'prettier/@typescript-eslint',
-  ].map((key) => require.resolve(`eslint-config-${key}`)),
-  plugins: ['@typescript-eslint', 'eslint-comments', 'jest', 'unicorn', 'react-hooks'],
+  extends: ['airbnb-typescript', 'prettier', 'prettier/react', 'prettier/@typescript-eslint'],
+  plugins: ['eslint-comments', 'jest', 'unicorn', 'react-hooks'],
   env: {
     browser: true,
     node: true,
@@ -98,6 +92,7 @@ module.exports = {
     'react/no-array-index-key': 'warn',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react/require-default-props': 0,
+    'react/jsx-fragments': 0,
     // Conflict with prettier
     'arrow-body-style': 0,
     'arrow-parens': 0,
