@@ -109,4 +109,7 @@ module.exports = {
     'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'] } },
     polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
   },
+  parserOptions: {
+    project: './tsconfig.json',
+  },
 };
