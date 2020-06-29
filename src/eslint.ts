@@ -12,7 +12,13 @@ ModuleResolver.resolve = function(moduleName: string) {
 };
 
 module.exports = {
-  extends: ['airbnb-typescript', 'prettier', 'prettier/react', 'prettier/@typescript-eslint'],
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+    'prettier',
+    'prettier/react',
+    'prettier/@typescript-eslint',
+  ],
   plugins: ['eslint-comments', 'jest', 'unicorn', 'react-hooks'],
   env: {
     browser: true,

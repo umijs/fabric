@@ -13,8 +13,8 @@ if (pwa) {
   });
 
   // Pop up a prompt on the page asking the user if they want to use the latest version
-  window.addEventListener('sw.updated', (event: Event) => {
-    const e = event as CustomEvent;
+  window.addEventListener('sw.updated', (event) => {
+    const e = event;
     const reloadSW = async () => {
       // Check if there is sw whose state is waiting in ServiceWorkerRegistration
       // https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration
