@@ -7,7 +7,7 @@ const eslintFolder = path.join(path.dirname(require.resolve('eslint')), '..');
 const moduleResolverPath = path.join(eslintFolder, 'lib/shared/relative-module-resolver');
 const ModuleResolver = require(moduleResolverPath);
 
-ModuleResolver.resolve = function (moduleName: string) {
+ModuleResolver.resolve = function(moduleName: string) {
   return require.resolve(moduleName);
 };
 
@@ -36,14 +36,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 0,
     'generator-star-spacing': 0,
     'function-paren-newline': 0,
-    'import/no-unresolved': [
-      2,
-      {
-        ignore: ['^@/', '^@@/', '^@alipay/bigfish/'],
-        caseSensitive: true,
-        commonjs: true,
-      },
-    ],
+    'import/no-unresolved': 0,
     'import/order': 'warn',
     'react/jsx-props-no-spreading': 0,
     'react/state-in-constructor': 0,

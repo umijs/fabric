@@ -10,7 +10,7 @@ const eslintFolder = path.join(path.dirname(require.resolve('eslint')), '..');
 const moduleResolverPath = path.join(eslintFolder, 'lib/shared/relative-module-resolver');
 const ModuleResolver = require(moduleResolverPath);
 
-ModuleResolver.resolve = function (moduleName: string) {
+ModuleResolver.resolve = function(moduleName: string) {
   return require.resolve(moduleName);
 };
 
@@ -34,14 +34,7 @@ module.exports = {
   rules: {
     ...eslint.rules,
     'no-param-reassign': 1,
-    'import/no-unresolved': [
-      1,
-      {
-        ignore: ['^@/', '^@@/', '^@alipay/bigfish/'],
-        caseSensitive: true,
-        commonjs: true,
-      },
-    ],
+    'import/no-unresolved': 0,
     'import/no-extraneous-dependencies': [
       1,
       {
