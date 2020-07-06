@@ -31,5 +31,5 @@
     "tslint-config-prettier",
     "example/**"
   ],
-  "include": ["src/*.json"]
+  "include": ["src/*.json", "src/*.ts"]
 }
