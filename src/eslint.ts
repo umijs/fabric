@@ -1,15 +1,32 @@
 /** @format */
 
 import * as path from 'path';
+import * as fs from 'fs';
 
-const eslintFolder = path.join(path.dirname(require.resolve('eslint')), '..');
-
-const moduleResolverPath = path.join(eslintFolder, 'lib/shared/relative-module-resolver');
-const ModuleResolver = require(moduleResolverPath);
-
-ModuleResolver.resolve = function(moduleName: string) {
-  return require.resolve(moduleName);
+let parserOptions: {
+  tsconfigRootDir?: string;
+  project?: string;
+  createDefaultProgram?: boolean;
+} = {
+  project: './tsconfig.json',
 };
+
+if (!fs.existsSync(path.join(process.env.PWD || '.', './tsconfig.json'))) {
+  parserOptions = {
+    tsconfigRootDir: __dirname,
+    project: './tsconfig.json',
+    /**
+     * parserOptions.createDefaultProgram
+     * Default .false
+     * This option allows you to request that when the setting is specified,
+     * files will be allowed when not included in the projects defined by the provided files.
+     * Using this option will incur significant performance costs.
+     * This option is primarily included for backwards-compatibility.
+     * See the project section above for more information.projecttsconfig.json
+     */
+    createDefaultProgram: true,
+  };
+}
 
 module.exports = {
   extends: [
@@ -115,7 +132,5 @@ module.exports = {
     'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'] } },
     polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
   },
-  parserOptions: {
-    project: './tsconfig.json',
-  },
+  parserOptions,
 };

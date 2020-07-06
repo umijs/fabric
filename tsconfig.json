@@ -6,6 +6,7 @@
     "lib": ["esnext", "dom"],
     "baseUrl": ".",
     "jsx": "react",
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
@@ -29,5 +30,6 @@
     "tslint:latest",
     "tslint-config-prettier",
     "example/**"
-  ]
+  ],
+  "include": ["src/*.json", "src/*.ts"]
 }
