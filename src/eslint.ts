@@ -46,6 +46,7 @@ module.exports = {
     jasmine: true,
   },
   rules: {
+    'no-use-before-define': 'off',
     'react/jsx-wrap-multilines': 0,
     'react/prop-types': 0,
     'react/forbid-prop-types': 0,
@@ -93,8 +94,6 @@ module.exports = {
     'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': 'off',
     'sort-imports': 0,
-    // Use function hoisting to improve code readability
-    'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
     // Makes no sense to allow type inferrence for expression parameters, but require typing the response
     '@typescript-eslint/no-use-before-define': [
       'error',
