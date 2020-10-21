@@ -110,6 +110,7 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 0,
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/no-non-null-assertion': 0,
+    '@typescript-eslint/naming-convention': 0, //python
     'import/no-cycle': 0,
     'react/no-array-index-key': 'warn',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
