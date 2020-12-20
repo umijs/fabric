@@ -30,7 +30,8 @@
     "lint": "npm run build && cd example && npm run lint",
     "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch",
     "test": "npm run build && cd example && npm run lint",
-    "prettier": "prettier -c --write \"**/*\""
+    "prettier": "prettier -c --write \"**/*\"",
+    "lib": "cross-env TIMING=1 eslint lib"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.10.0",
@@ -61,6 +62,7 @@
     "typescript": "^4.0.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "np": "^6.2.5",
     "prettier": "^2.2.1"
   }
