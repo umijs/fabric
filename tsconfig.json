@@ -1,41 +1,35 @@
 {
   "compilerOptions": {
-    "outDir": "build/dist",
-    "module": "esnext",
-    "target": "esnext",
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es5",
     "lib": ["esnext", "dom"],
-    "sourceMap": true,
     "baseUrl": ".",
-    "jsx": "preserve",
+    "jsx": "react",
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "allowJs": true,
-    "skipLibCheck": true,
     "experimentalDecorators": true,
     "strict": true,
-    "paths": {
-      "@/*": ["./src/*"],
-      "@@/*": ["./src/.umi/*"]
-    }
+    "skipLibCheck": true,
+    "declaration": true
   },
-  "include": [
-    "mock/**/*",
-    "src/**/*",
-    "tests/**/*",
-    "test/**/*",
-    "**/.eslintrc.js",
-    "__test__/**/*",
-    "typings/**/*",
-    "config/**/*",
-    ".eslintrc.js",
-    ".stylelintrc.js",
-    ".prettierrc.js",
-    "jest.config.js",
-    "mock/*"
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "dist",
+    "src/setupTests.ts",
+    "tslint:latest",
+    "tslint-config-prettier",
+    "example/**"
   ],
-  "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"]
+  "include": ["src/*.json", "src/*.ts"]
 }
