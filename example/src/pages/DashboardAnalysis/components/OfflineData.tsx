@@ -1,7 +1,7 @@
 import { Card, Col, Row, Tabs } from 'antd';
 import { FormattedMessage, formatMessage } from 'umi';
 import React from 'react';
-import { OfflineChartData, OfflineDataType } from '../data.d';
+import type { OfflineChartData, OfflineDataType } from '../data.d';
 
 import { TimelineChart, Pie } from './Charts';
 import NumberInfo from './NumberInfo';

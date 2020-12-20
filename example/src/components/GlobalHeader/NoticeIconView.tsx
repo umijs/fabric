@@ -3,20 +3,20 @@ import { Tag, message } from 'antd';
 import { connect } from 'dva';
 import groupBy from 'lodash/groupBy';
 import moment from 'moment';
-import { CurrentUser } from '@/models/user';
-import { NoticeItem } from '@/models/global';
-import { ConnectProps, ConnectState } from '@/models/connect';
+import type { CurrentUser } from '@/models/user';
+import type { NoticeItem } from '@/models/global';
+import type { ConnectProps, ConnectState } from '@/models/connect';
 
 import NoticeIcon from '../NoticeIcon';
 import styles from './index.less';
 
-export interface GlobalHeaderRightProps extends ConnectProps {
+export type GlobalHeaderRightProps = {
   notices?: NoticeItem[];
   currentUser?: CurrentUser;
   fetchingNotices?: boolean;
   onNoticeVisibleChange?: (visible: boolean) => void;
   onNoticeClear?: (tabName?: string) => void;
-}
+} & ConnectProps;
 
 class GlobalHeaderRight extends Component<GlobalHeaderRightProps> {
   componentDidMount() {
@@ -53,9 +53,7 @@ class GlobalHeaderRight extends Component<GlobalHeaderRightProps> {
     }
   };
 
-  getNoticeData = (): {
-    [key: string]: NoticeItem[];
-  } => {
+  getNoticeData = (): Record<string, NoticeItem[]> => {
     const { notices = [] } = this.props;
 
     if (notices.length === 0) {
@@ -97,10 +95,8 @@ class GlobalHeaderRight extends Component<GlobalHeaderRightProps> {
     return groupBy(newNotices, 'type');
   };
 
-  getUnreadData = (noticeData: { [key: string]: NoticeItem[] }) => {
-    const unreadMsg: {
-      [key: string]: number;
-    } = {};
+  getUnreadData = (noticeData: Record<string, NoticeItem[]>) => {
+    const unreadMsg: Record<string, number> = {};
     Object.keys(noticeData).forEach((key) => {
       const value = noticeData[key];
 

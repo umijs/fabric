@@ -1,9 +1,9 @@
 export default {
   '@typescript-eslint/adjacent-overload-signatures': 'error',
   '@typescript-eslint/array-type': 'error',
-  '@typescript-eslint/await-thenable': 'error',
-  '@typescript-eslint/ban-ts-comment': 'error',
-  '@typescript-eslint/ban-tslint-comment': 'error',
+  '@typescript-eslint/await-thenable': 0,
+  '@typescript-eslint/ban-ts-comment': 0,
+  '@typescript-eslint/ban-tslint-comment': 0,
   'brace-style': 'off',
   '@typescript-eslint/brace-style': 'error',
   '@typescript-eslint/class-literal-property-style': 'error',

@@ -4,8 +4,8 @@ import { CloseCircleOutlined } from '@ant-design/icons';
 import { Button, Card, Col, DatePicker, Input, Popover, Row, Select, TimePicker } from 'antd';
 import React, { Component } from 'react';
 
-import { Dispatch } from 'redux';
-import { FormComponentProps } from '@ant-design/compatible/es/form';
+import type { Dispatch } from 'redux';
+import type { FormComponentProps } from '@ant-design/compatible/es/form';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import { connect } from 'dva';
 import TableForm from './components/TableForm';
@@ -51,10 +51,10 @@ const tableData = [
   },
 ];
 
-interface FormAdvancedFormProps extends FormComponentProps {
+type FormAdvancedFormProps = {
   dispatch: Dispatch<any>;
   submitting: boolean;
-}
+} & FormComponentProps;
 
 class FormAdvancedForm extends Component<FormAdvancedFormProps> {
   getErrorInfo = () => {
@@ -78,7 +78,13 @@ class FormAdvancedForm extends Component<FormAdvancedFormProps> {
       }
       const errorMessage = errors[key] || [];
       return (
-        <li key={key} className={styles.errorListItem} onClick={() => scrollToField(key)}>
+        <li
+          key={key}
+          className={styles.errorListItem}
+          onClick={() => {
+            scrollToField(key);
+          }}
+        >
           <CloseCircleOutlined className={styles.errorIcon} />
           <div className={styles.errorMessage}>{errorMessage[0]}</div>
           <div className={styles.errorField}>{fieldLabels[key]}</div>
@@ -300,6 +306,6 @@ class FormAdvancedForm extends Component<FormAdvancedFormProps> {
   }
 }
 
-export default connect(({ loading }: { loading: { effects: { [key: string]: boolean } } }) => ({
+export default connect(({ loading }: { loading: { effects: Record<string, boolean> } }) => ({
   submitting: loading.effects['formAdvancedForm/submitAdvancedForm'],
 }))(Form.create<FormAdvancedFormProps>()(FormAdvancedForm));

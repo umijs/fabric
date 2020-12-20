@@ -4,15 +4,15 @@ import isEqual from 'lodash/isEqual';
 import { isComponentClass } from './Secured';
 // eslint-disable-next-line import/no-cycle
 
-interface PromiseRenderProps<T, K> {
+type PromiseRenderProps<T, K> = {
   ok: T;
   error: K;
   promise: Promise<boolean>;
-}
+};
 
-interface PromiseRenderState {
+type PromiseRenderState = {
   component: React.ComponentClass | React.FunctionComponent;
-}
+};
 
 export default class PromiseRender<T, K> extends React.Component<
   PromiseRenderProps<T, K>,

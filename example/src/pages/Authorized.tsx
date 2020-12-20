@@ -3,11 +3,11 @@ import { Redirect } from 'umi';
 import { connect } from 'dva';
 import Authorized from '@/utils/Authorized';
 import { getRouteAuthority } from '@/utils/utils';
-import { ConnectProps, ConnectState, UserModelState } from '@/models/connect';
+import type { ConnectProps, ConnectState, UserModelState } from '@/models/connect';
 
-interface AuthComponentProps extends ConnectProps {
+type AuthComponentProps = {
   user: UserModelState;
-}
+} & ConnectProps;
 
 const AuthComponent: React.FC<AuthComponentProps> = ({
   children,

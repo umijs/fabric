@@ -3,12 +3,12 @@ import { RouteContext } from '@ant-design/pro-layout';
 import classNames from 'classnames';
 import styles from './index.less';
 
-export interface FooterToolbarProps {
+export type FooterToolbarProps = {
   extra?: React.ReactNode;
   style?: React.CSSProperties;
   className?: string;
   isMobile?: boolean;
-}
+};
 
 export default class FooterToolbar extends Component<FooterToolbarProps> {
   getWidth = ({
@@ -20,7 +20,7 @@ export default class FooterToolbar extends Component<FooterToolbarProps> {
     isMobile?: boolean;
     siderWidth?: number;
   }) => {
-    const sider = document.querySelector('.ant-layout-sider') as HTMLDivElement;
+    const sider = document.querySelector('.ant-layout-sider')!;
     if (!sider) {
       return undefined;
     }

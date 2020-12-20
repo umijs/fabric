@@ -1,4 +1,4 @@
-export interface TableListItem {
+export type TableListItem = {
   key: number;
   disabled?: boolean;
   href: string;
@@ -12,20 +12,20 @@ export interface TableListItem {
   updatedAt: Date;
   createdAt: Date;
   progress: number;
-}
+};
 
-export interface TableListPagination {
+export type TableListPagination = {
   total: number;
   pageSize: number;
   current: number;
-}
+};
 
-export interface TableListData {
+export type TableListData = {
   list: TableListItem[];
   pagination: Partial<TableListPagination>;
-}
+};
 
-export interface TableListParams {
+export type TableListParams = {
   sorter?: string;
   status?: string;
   name?: string;
@@ -33,4 +33,4 @@ export interface TableListParams {
   key?: number;
   pageSize?: number;
   currentPage?: number;
-}
+};

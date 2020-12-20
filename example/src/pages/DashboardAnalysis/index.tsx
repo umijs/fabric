@@ -2,13 +2,13 @@ import { EllipsisOutlined } from '@ant-design/icons';
 import { Col, Dropdown, Menu, Row } from 'antd';
 import React, { Component, Suspense } from 'react';
 
-import { Dispatch } from 'redux';
+import type { Dispatch } from 'redux';
 import { GridContent } from '@ant-design/pro-layout';
-import { RadioChangeEvent } from 'antd/es/radio';
+import type { RadioChangeEvent } from 'antd/es/radio';
 import { connect } from 'dva';
 import PageLoading from './components/PageLoading';
 import { getTimeDistance } from './utils/utils';
-import { AnalysisData } from './data.d';
+import type { AnalysisData } from './data.d';
 import styles from './style.less';
 
 const IntroduceRow = React.lazy(() => import('./components/IntroduceRow'));
@@ -17,17 +17,17 @@ const TopSearch = React.lazy(() => import('./components/TopSearch'));
 const ProportionSales = React.lazy(() => import('./components/ProportionSales'));
 const OfflineData = React.lazy(() => import('./components/OfflineData'));
 
-interface DashboardAnalysisProps {
+type DashboardAnalysisProps = {
   dashboardAnalysis: AnalysisData;
   dispatch: Dispatch<any>;
   loading: boolean;
-}
+};
 
-interface DashboardAnalysisState {
+type DashboardAnalysisState = {
   salesType: 'all' | 'online' | 'stores';
   currentTabKey: string;
   rangePickerValue: any;
-}
+};
 
 class DashboardAnalysis extends Component<DashboardAnalysisProps, DashboardAnalysisState> {
   state: DashboardAnalysisState = {
@@ -209,7 +209,7 @@ export default connect(
   }: {
     dashboardAnalysis: any;
     loading: {
-      effects: { [key: string]: boolean };
+      effects: Record<string, boolean>;
     };
   }) => ({
     dashboardAnalysis,

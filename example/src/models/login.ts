@@ -1,5 +1,5 @@
-import { Reducer } from 'redux';
-import { Effect } from 'dva';
+import type { Reducer } from 'redux';
+import type { Effect } from 'dva';
 import { stringify } from 'querystring';
 import { router } from 'umi';
 
@@ -7,13 +7,13 @@ import { fakeAccountLogin } from '@/services/login';
 import { setAuthority } from '@/utils/authority';
 import { getPageQuery } from '@/utils/utils';
 
-export interface StateType {
+export type StateType = {
   status?: 'ok' | 'error';
   type?: string;
   currentAuthority?: 'user' | 'guest' | 'admin';
-}
+};
 
-export interface LoginModelType {
+export type LoginModelType = {
   namespace: string;
   state: StateType;
   effects: {
@@ -23,7 +23,7 @@ export interface LoginModelType {
   reducers: {
     changeLoginStatus: Reducer<StateType>;
   };
-}
+};
 
 const Model: LoginModelType = {
   namespace: 'login',

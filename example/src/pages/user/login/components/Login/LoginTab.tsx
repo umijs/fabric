@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { TabPaneProps } from 'antd/es/tabs';
+import type { TabPaneProps } from 'antd/es/tabs';
 import { Tabs } from 'antd';
-import LoginContext, { LoginContextProps } from './LoginContext';
+import type { LoginContextProps } from './LoginContext';
+import LoginContext from './LoginContext';
 
 const { TabPane } = Tabs;
 
@@ -13,9 +14,9 @@ const generateId = (() => {
   };
 })();
 
-interface LoginTabProps extends TabPaneProps {
+type LoginTabProps = {
   tabUtil: LoginContextProps['tabUtil'];
-}
+} & TabPaneProps;
 
 const LoginTab: React.FC<LoginTabProps> = (props) => {
   useEffect(() => {

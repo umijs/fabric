@@ -3,7 +3,7 @@ import { FormattedMessage, formatMessage } from 'umi';
 
 import React from 'react';
 import numeral from 'numeral';
-import { VisitDataType } from '../data.d';
+import type { VisitDataType } from '../data.d';
 import { Bar } from './Charts';
 import styles from '../style.less';
 
@@ -39,25 +39,45 @@ const SalesCard = ({
         tabBarExtraContent={
           <div className={styles.salesExtraWrap}>
             <div className={styles.salesExtra}>
-              <a className={isActive('today')} onClick={() => selectDate('today')}>
+              <a
+                className={isActive('today')}
+                onClick={() => {
+                  selectDate('today');
+                }}
+              >
                 <FormattedMessage
                   id="dashboardanalysis.analysis.all-day"
                   defaultMessage="All Day"
                 />
               </a>
-              <a className={isActive('week')} onClick={() => selectDate('week')}>
+              <a
+                className={isActive('week')}
+                onClick={() => {
+                  selectDate('week');
+                }}
+              >
                 <FormattedMessage
                   id="dashboardanalysis.analysis.all-week"
                   defaultMessage="All Week"
                 />
               </a>
-              <a className={isActive('month')} onClick={() => selectDate('month')}>
+              <a
+                className={isActive('month')}
+                onClick={() => {
+                  selectDate('month');
+                }}
+              >
                 <FormattedMessage
                   id="dashboardanalysis.analysis.all-month"
                   defaultMessage="All Month"
                 />
               </a>
-              <a className={isActive('year')} onClick={() => selectDate('year')}>
+              <a
+                className={isActive('year')}
+                onClick={() => {
+                  selectDate('year');
+                }}
+              >
                 <FormattedMessage
                   id="dashboardanalysis.analysis.all-year"
                   defaultMessage="All Year"

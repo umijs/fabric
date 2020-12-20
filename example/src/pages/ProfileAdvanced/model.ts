@@ -1,7 +1,7 @@
-import { AnyAction, Reducer } from 'redux';
+import type { AnyAction, Reducer } from 'redux';
 
-import { EffectsCommandMap } from 'dva';
-import { AdvancedProfileData } from './data.d';
+import type { EffectsCommandMap } from 'dva';
+import type { AdvancedProfileData } from './data.d';
 import { queryAdvancedProfile } from './service';
 
 export type Effect = (
@@ -9,7 +9,7 @@ export type Effect = (
   effects: EffectsCommandMap & { select: <T>(func: (state: AdvancedProfileData) => T) => T },
 ) => void;
 
-export interface ModelType {
+export type ModelType = {
   namespace: string;
   state: AdvancedProfileData;
   effects: {
@@ -18,7 +18,7 @@ export interface ModelType {
   reducers: {
     show: Reducer<AdvancedProfileData>;
   };
-}
+};
 
 const Model: ModelType = {
   namespace: 'profileAdvanced',
