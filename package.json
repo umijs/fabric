@@ -62,7 +62,10 @@
     "typescript": "^4.0.2"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "cross-env": "^7.0.3",
+=======
+>>>>>>> master
     "np": "^6.2.5",
     "prettier": "^2.2.1"
   }
