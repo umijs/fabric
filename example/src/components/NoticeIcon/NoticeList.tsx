@@ -68,7 +68,7 @@ const NoticeList: React.SFC<NoticeIconTabProps> = ({
               className={itemCls}
               key={item.key || i}
               onClick={() => {
-               onClick?.(item);
+                onClick?.(item);
               }}
             >
               <List.Item.Meta
