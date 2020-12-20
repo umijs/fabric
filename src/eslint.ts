@@ -48,6 +48,7 @@ module.exports = {
     'import/no-named-as-default-member': 0,
     'import/no-duplicates': 0,
     'import/no-self-import': 0,
+    'import/no-useless-path-segments': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
