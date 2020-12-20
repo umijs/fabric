@@ -10,7 +10,7 @@ export type Effect = (
 
 export type ModelType = {
   namespace: string;
-  state: {};
+  state: Record<string, never>;
   effects: {
     submitAdvancedForm: Effect;
   };
