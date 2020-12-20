@@ -1,9 +1,8 @@
-/** @format */
-
 import * as path from 'path';
 import * as fs from 'fs';
+import tsEslintConfig from './tsEslintConfig';
 
-let parserOptions: {
+const parserOptions: {
   tsconfigRootDir?: string;
   project?: string;
   createDefaultProgram?: boolean;
@@ -11,32 +10,17 @@ let parserOptions: {
   project: './tsconfig.json',
 };
 
-if (!fs.existsSync(path.join(process.env.PWD || '.', './tsconfig.json'))) {
-  parserOptions = {
-    tsconfigRootDir: __dirname,
-    project: './tsconfig.json',
-    /**
-     * parserOptions.createDefaultProgram
-     * Default .false
-     * This option allows you to request that when the setting is specified,
-     * files will be allowed when not included in the projects defined by the provided files.
-     * Using this option will incur significant performance costs.
-     * This option is primarily included for backwards-compatibility.
-     * See the project section above for more information.projecttsconfig.json
-     */
-    createDefaultProgram: true,
-  };
-}
+const isTsProject = fs.existsSync(path.join(process.env.PWD || '.', './tsconfig.json'));
 
+if (isTsProject) {
+  console.log('这是一个 TypeScript 项目，如果不是请删除 tsconfig.json');
+}
 module.exports = {
-  extends: [
-    'airbnb',
-    'airbnb-typescript',
-    'prettier',
-    'prettier/react',
-    'prettier/@typescript-eslint',
-  ],
-  plugins: ['eslint-comments', 'jest', 'unicorn', 'react-hooks'],
+  extends: ['eslint-config-airbnb-base', 'prettier', 'prettier/react'].concat(
+    isTsProject ? ['prettier/@typescript-eslint', 'plugin:@typescript-eslint/recommended'] : []
+  ),
+  parser: isTsProject ? '@typescript-eslint/parser' : undefined,
+  plugins: ['eslint-comments', 'react', 'jest', 'unicorn', 'react-hooks'],
   env: {
     browser: true,
     node: true,
@@ -46,11 +30,10 @@ module.exports = {
     jasmine: true,
   },
   rules: {
-    'no-use-before-define': 'off',
     'react/jsx-wrap-multilines': 0,
     'react/prop-types': 0,
     'react/forbid-prop-types': 0,
-    'react/sort-comp': 1,
+    'react/sort-comp': 0,
     'react/jsx-one-expression-per-line': 0,
     'generator-star-spacing': 0,
     'function-paren-newline': 0,
@@ -65,6 +48,7 @@ module.exports = {
     'import/order': 'warn',
     'react/jsx-props-no-spreading': 0,
     'react/state-in-constructor': 0,
+    'no-confusing-arrow': 1,
     'react/static-property-placement': 0,
     'import/no-extraneous-dependencies': [
       2,
@@ -93,24 +77,8 @@ module.exports = {
     // Too restrictive: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md
     'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': 'off',
-    'sort-imports': 0,
-    // Makes no sense to allow type inferrence for expression parameters, but require typing the response
-    '@typescript-eslint/no-use-before-define': [
-      'error',
-      { functions: false, classes: true, variables: true, typedefs: true },
-    ],
-    '@typescript-eslint/explicit-function-return-type': [
-      'off',
-      { allowTypedFunctionExpressions: true },
-    ],
-    '@typescript-eslint/camelcase': 0,
-    '@typescript-eslint/no-var-requires': 0,
-    // Common abbreviations are known and readable
     'unicorn/prevent-abbreviations': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 0,
-    '@typescript-eslint/interface-name-prefix': 0,
-    '@typescript-eslint/no-non-null-assertion': 0,
-    '@typescript-eslint/naming-convention': 0, //python
+    'sort-imports': 0,
     'import/no-cycle': 0,
     'react/no-array-index-key': 'warn',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -127,10 +95,20 @@ module.exports = {
     'no-param-reassign': 2,
     'space-before-function-paren': 0,
     'import/extensions': 0,
+    ...(isTsProject ? tsEslintConfig : {}),
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files
-    'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'] } },
+    'import/resolver': {
+      node: {
+        extensions: isTsProject ? ['.js', '.jsx', '.ts', '.tsx', '.d.ts'] : ['.js', '.jsx'],
+      },
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
+    },
+    'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
+    'import/external-module-folders': ['node_modules', 'node_modules/@types'],
     polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
   },
   parserOptions,
