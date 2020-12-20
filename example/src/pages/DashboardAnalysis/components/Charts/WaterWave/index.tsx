@@ -141,7 +141,7 @@ class WaterWave extends Component<WaterWaveProps> {
       ctx.restore();
     }
 
-    function render() {
+    const render = () => {
       if (!ctx) {
         return;
       }
@@ -202,7 +202,7 @@ class WaterWave extends Component<WaterWaveProps> {
         drawSin();
       }
       this.timer = requestAnimationFrame(render);
-    }
+    };
     render();
   }
 
