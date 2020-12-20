@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 import { Form, Button, DatePicker, Input, Modal, Radio, Select, Steps } from 'antd';
 
-import { TableListItem } from '../data.d';
+import type { TableListItem } from '../data.d';
 
-export interface FormValueType extends Partial<TableListItem> {
+export type FormValueType = {
   target?: string;
   template?: string;
   type?: string;
   time?: string;
   frequency?: string;
-}
+} & Partial<TableListItem>;
 
-export interface UpdateFormProps {
+export type UpdateFormProps = {
   onCancel: (flag?: boolean, formVals?: FormValueType) => void;
   onSubmit: (values: FormValueType) => void;
   updateModalVisible: boolean;
   values: Partial<TableListItem>;
-}
+};
 const FormItem = Form.Item;
 const { Step } = Steps;
 const { TextArea } = Input;
 const { Option } = Select;
 const RadioGroup = Radio.Group;
 
-export interface UpdateFormState {
+export type UpdateFormState = {
   formVals: FormValueType;
   currentStep: number;
-}
+};
 
 const formLayout = {
   labelCol: { span: 7 },
@@ -56,9 +56,13 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
     values,
   } = props;
 
-  const forward = () => setCurrentStep(currentStep + 1);
+  const forward = () => {
+    setCurrentStep(currentStep + 1);
+  };
 
-  const backward = () => setCurrentStep(currentStep - 1);
+  const backward = () => {
+    setCurrentStep(currentStep - 1);
+  };
 
   const handleNext = async () => {
     const fieldsValue = await form.validateFields();
@@ -148,7 +152,13 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
           <Button style={{ float: 'left' }} onClick={backward}>
             上一步
           </Button>
-          <Button onClick={() => handleUpdateModalVisible(false, values)}>取消</Button>
+          <Button
+            onClick={() => {
+              handleUpdateModalVisible(false, values);
+            }}
+          >
+            取消
+          </Button>
           <Button type="primary" onClick={() => handleNext()}>
             下一步
           </Button>
@@ -161,7 +171,13 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
           <Button style={{ float: 'left' }} onClick={backward}>
             上一步
           </Button>
-          <Button onClick={() => handleUpdateModalVisible(false, values)}>取消</Button>
+          <Button
+            onClick={() => {
+              handleUpdateModalVisible(false, values);
+            }}
+          >
+            取消
+          </Button>
           <Button type="primary" onClick={() => handleNext()}>
             完成
           </Button>
@@ -170,7 +186,13 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
     }
     return (
       <>
-        <Button onClick={() => handleUpdateModalVisible(false, values)}>取消</Button>
+        <Button
+          onClick={() => {
+            handleUpdateModalVisible(false, values);
+          }}
+        >
+          取消
+        </Button>
         <Button type="primary" onClick={() => handleNext()}>
           下一步
         </Button>
@@ -186,8 +208,12 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
       title="规则配置"
       visible={updateModalVisible}
       footer={renderFooter()}
-      onCancel={() => handleUpdateModalVisible(false, values)}
-      afterClose={() => handleUpdateModalVisible()}
+      onCancel={() => {
+        handleUpdateModalVisible(false, values);
+      }}
+      afterClose={() => {
+        handleUpdateModalVisible();
+      }}
     >
       <Steps style={{ marginBottom: 28 }} size="small" current={currentStep}>
         <Step title="基本信息" />

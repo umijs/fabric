@@ -1,7 +1,7 @@
-import { AnyAction, Reducer } from 'redux';
+import type { AnyAction, Reducer } from 'redux';
 
-import { EffectsCommandMap } from 'dva';
-import { AnalysisData } from './data.d';
+import type { EffectsCommandMap } from 'dva';
+import type { AnalysisData } from './data.d';
 import { fakeChartData } from './service';
 
 export type Effect = (
@@ -9,7 +9,7 @@ export type Effect = (
   effects: EffectsCommandMap & { select: <T>(func: (state: AnalysisData) => T) => T },
 ) => void;
 
-export interface ModelType {
+export type ModelType = {
   namespace: string;
   state: AnalysisData;
   effects: {
@@ -20,7 +20,7 @@ export interface ModelType {
     save: Reducer<AnalysisData>;
     clear: Reducer<AnalysisData>;
   };
-}
+};
 
 const initState = {
   visitData: [],

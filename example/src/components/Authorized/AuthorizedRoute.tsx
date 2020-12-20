@@ -2,15 +2,15 @@ import { Redirect, Route } from 'umi';
 
 import React from 'react';
 import Authorized from './Authorized';
-import { IAuthorityType } from './CheckPermissions';
+import type { IAuthorityType } from './CheckPermissions';
 
-interface AuthorizedRoutePops {
+type AuthorizedRoutePops = {
   currentAuthority: string;
   component: React.ComponentClass<any, any>;
   render: (props: any) => React.ReactNode;
   redirectPath: string;
   authority: IAuthorityType;
-}
+};
 
 const AuthorizedRoute: React.SFC<AuthorizedRoutePops> = ({
   component: Component,

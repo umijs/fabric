@@ -1,14 +1,14 @@
 import React from 'react';
 import { Form, Input, Modal } from 'antd';
-import { TableListItem } from '../data.d';
+import type { TableListItem } from '../data.d';
 
 const FormItem = Form.Item;
 
-interface CreateFormProps {
+type CreateFormProps = {
   modalVisible: boolean;
   onSubmit: (fieldsValue: TableListItem) => void;
   onCancel: () => void;
-}
+};
 
 const CreateForm: React.FC<CreateFormProps> = (props) => {
   const [form] = Form.useForm();
@@ -25,7 +25,9 @@ const CreateForm: React.FC<CreateFormProps> = (props) => {
       title="新建规则"
       visible={modalVisible}
       onOk={okHandle}
-      onCancel={() => onCancel()}
+      onCancel={() => {
+        onCancel();
+      }}
     >
       <Form form={form}>
         <FormItem

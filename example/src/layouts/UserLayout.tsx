@@ -1,18 +1,17 @@
-import { DefaultFooter, MenuDataItem, getMenuData, getPageTitle } from '@ant-design/pro-layout';
+import type { MenuDataItem } from '@ant-design/pro-layout';
+import { DefaultFooter, getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Helmet } from 'react-helmet';
 import { Link, formatMessage } from 'umi';
 import React from 'react';
 import { connect } from 'dva';
 import SelectLang from '@/components/SelectLang';
-import { ConnectProps, ConnectState } from '@/models/connect';
+import type { ConnectProps, ConnectState } from '@/models/connect';
 import logo from '../assets/logo.svg';
 import styles from './UserLayout.less';
 
-export interface UserLayoutProps extends ConnectProps {
-  breadcrumbNameMap: {
-    [path: string]: MenuDataItem;
-  };
-}
+export type UserLayoutProps = {
+  breadcrumbNameMap: Record<string, MenuDataItem>;
+} & ConnectProps;
 
 const UserLayout: React.FC<UserLayoutProps> = (props) => {
   const {

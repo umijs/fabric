@@ -6,7 +6,7 @@ module.exports = {
     'stylelint-config-css-modules',
     'stylelint-config-rational-order',
     'stylelint-config-prettier',
-    "stylelint-no-unsupported-browser-features",
+    'stylelint-no-unsupported-browser-features',
   ],
   plugins: ['stylelint-order', 'stylelint-declaration-block-no-ignored-properties'],
   rules: {
@@ -16,7 +16,14 @@ module.exports = {
     'function-url-quotes': 'always',
     'font-family-no-missing-generic-family-keyword': null, // iconfont
     'plugin/declaration-block-no-ignored-properties': true,
-    "plugin/no-unsupported-browser-features": true,
+    'plugin/no-unsupported-browser-features': [
+      true,
+      {
+        browsers: ['> 1%', 'Last 2 versions'],
+        ignore: ['rem'],
+        ignorePartialSupport: true,
+      },
+    ],
     'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
   },
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],

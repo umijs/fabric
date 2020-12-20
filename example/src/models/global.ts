@@ -1,22 +1,22 @@
-import { Reducer } from 'redux';
-import { Subscription, Effect } from 'dva';
+import type { Reducer } from 'redux';
+import type { Subscription, Effect } from 'dva';
 
-import { NoticeIconData } from '@/components/NoticeIcon';
+import type { NoticeIconData } from '@/components/NoticeIcon';
 import { queryNotices } from '@/services/user';
-import { ConnectState } from './connect.d';
+import type { ConnectState } from './connect.d';
 
-export interface NoticeItem extends NoticeIconData {
+export type NoticeItem = {
   id: string;
   type: string;
   status: string;
-}
+} & NoticeIconData;
 
-export interface GlobalModelState {
+export type GlobalModelState = {
   collapsed: boolean;
   notices: NoticeItem[];
-}
+};
 
-export interface GlobalModelType {
+export type GlobalModelType = {
   namespace: 'global';
   state: GlobalModelState;
   effects: {
@@ -30,7 +30,7 @@ export interface GlobalModelType {
     saveClearedNotices: Reducer<GlobalModelState>;
   };
   subscriptions: { setup: Subscription };
-}
+};
 
 const GlobalModel: GlobalModelType = {
   namespace: 'global',

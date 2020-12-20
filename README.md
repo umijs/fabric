@@ -37,7 +37,6 @@ module.exports = {
 };
 ```
 
-
 in `.prettierrc.js`
 
 ```js
@@ -46,5 +45,4 @@ const fabric = require('@umijs/fabric');
 module.exports = {
   ...fabric.prettier,
 };
-
 ```

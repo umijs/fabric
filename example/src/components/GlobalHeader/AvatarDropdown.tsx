@@ -1,18 +1,18 @@
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu, Spin } from 'antd';
-import { ClickParam } from 'antd/es/menu';
+import type { ClickParam } from 'antd/es/menu';
 import React from 'react';
 import { connect } from 'dva';
 import { router } from 'umi';
-import { ConnectProps, ConnectState } from '@/models/connect';
-import { CurrentUser } from '@/models/user';
+import type { ConnectProps, ConnectState } from '@/models/connect';
+import type { CurrentUser } from '@/models/user';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 
-export interface GlobalHeaderRightProps extends ConnectProps {
+export type GlobalHeaderRightProps = {
   currentUser?: CurrentUser;
   menu?: boolean;
-}
+} & ConnectProps;
 
 class AvatarDropdown extends React.Component<GlobalHeaderRightProps> {
   onMenuClick = (event: ClickParam) => {

@@ -1,12 +1,12 @@
 import { createContext } from 'react';
 
-export interface LoginContextProps {
+export type LoginContextProps = {
   tabUtil?: {
     addTab: (id: string) => void;
     removeTab: (id: string) => void;
   };
-  updateActive?: (activeItem: { [key: string]: string } | string) => void;
-}
+  updateActive?: (activeItem: Record<string, string> | string) => void;
+};
 
 const LoginContext: React.Context<LoginContextProps> = createContext({});
 

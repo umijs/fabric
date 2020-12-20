@@ -3,17 +3,17 @@ import { connect } from 'dva';
 import { PageLoading } from '@ant-design/pro-layout';
 import { Redirect } from 'umi';
 import { stringify } from 'querystring';
-import { ConnectState, ConnectProps } from '@/models/connect';
-import { CurrentUser } from '@/models/user';
+import type { ConnectState, ConnectProps } from '@/models/connect';
+import type { CurrentUser } from '@/models/user';
 
-interface SecurityLayoutProps extends ConnectProps {
+type SecurityLayoutProps = {
   loading?: boolean;
   currentUser?: CurrentUser;
-}
+} & ConnectProps;
 
-interface SecurityLayoutState {
+type SecurityLayoutState = {
   isReady: boolean;
-}
+};
 
 class SecurityLayout extends React.Component<SecurityLayoutProps, SecurityLayoutState> {
   state: SecurityLayoutState = {

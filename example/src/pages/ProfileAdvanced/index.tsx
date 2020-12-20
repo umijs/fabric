@@ -22,10 +22,10 @@ import {
 import { GridContent, PageHeaderWrapper, RouteContext } from '@ant-design/pro-layout';
 import React, { Component, Fragment } from 'react';
 
-import { Dispatch } from 'redux';
+import type { Dispatch } from 'redux';
 import classNames from 'classnames';
 import { connect } from 'dva';
-import { AdvancedProfileData } from './data.d';
+import type { AdvancedProfileData } from './data.d';
 import styles from './style.less';
 
 const { Step } = Steps;
@@ -207,10 +207,10 @@ const columns = [
   },
 ];
 
-interface ProfileAdvancedState {
+type ProfileAdvancedState = {
   operationKey: string;
   tabActiveKey: string;
-}
+};
 
 class ProfileAdvanced extends Component<
   { loading: boolean; profileAdvanced: AdvancedProfileData; dispatch: Dispatch<any> },
@@ -383,7 +383,7 @@ export default connect(
   }: {
     profileAdvanced: AdvancedProfileData;
     loading: {
-      effects: { [key: string]: boolean };
+      effects: Record<string, boolean>;
     };
   }) => ({
     profileAdvanced,

@@ -7,13 +7,13 @@ import styles from './index.less';
 /* eslint no-mixed-operators: 0 */
 // riddle: https://riddle.alibaba-inc.com/riddles/2d9a4b90
 
-export interface WaterWaveProps {
+export type WaterWaveProps = {
   title: React.ReactNode;
   color?: string;
   height?: number;
   percent: number;
   style?: React.CSSProperties;
-}
+};
 
 class WaterWave extends Component<WaterWaveProps> {
   state = {
@@ -32,7 +32,9 @@ class WaterWave extends Component<WaterWaveProps> {
     window.addEventListener(
       'resize',
       () => {
-        requestAnimationFrame(() => this.resize());
+        requestAnimationFrame(() => {
+          this.resize();
+        });
       },
       { passive: true },
     );
@@ -105,7 +107,7 @@ class WaterWave extends Component<WaterWaveProps> {
       arcStack.push([radius + bR * Math.cos(i), radius + bR * Math.sin(i)]);
     }
 
-    const cStartPoint = arcStack.shift() as number[];
+    const cStartPoint = arcStack.shift()!;
     ctx.strokeStyle = color;
     ctx.moveTo(cStartPoint[0], cStartPoint[1]);
 
@@ -127,7 +129,7 @@ class WaterWave extends Component<WaterWaveProps> {
         sinStack.push([dx, dy]);
       }
 
-      const startPoint = sinStack.shift() as number[];
+      const startPoint = sinStack.shift()!;
 
       ctx.lineTo(xOffset + axisLength, canvasHeight);
       ctx.lineTo(xOffset, canvasHeight);
@@ -148,7 +150,7 @@ class WaterWave extends Component<WaterWaveProps> {
       ctx.clearRect(0, 0, canvasWidth, canvasHeight);
       if (circleLock && type !== 'update') {
         if (arcStack.length) {
-          const temp = arcStack.shift() as number[];
+          const temp = arcStack.shift()!;
           ctx.lineTo(temp[0], temp[1]);
           ctx.stroke();
         } else {

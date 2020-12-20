@@ -29,7 +29,8 @@
     "deps": "yarn upgrade-interactive --latest",
     "lint": "npm run build && cd example && npm run lint",
     "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch",
-    "test": "npm run build && cd example && npm run lint"
+    "test": "npm run build && cd example && npm run lint",
+    "prettier": "prettier -c --write \"**/*\""
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.10.0",
@@ -60,6 +61,7 @@
     "typescript": "^4.0.2"
   },
   "devDependencies": {
-    "np": "^6.2.5"
+    "np": "^6.2.5",
+    "prettier": "^2.2.1"
   }
 }

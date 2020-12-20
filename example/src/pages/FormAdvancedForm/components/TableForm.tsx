@@ -5,25 +5,25 @@ import isEqual from 'lodash.isequal';
 
 import styles from '../style.less';
 
-interface TableFormDateType {
+type TableFormDateType = {
   key: string;
   workId?: string;
   name?: string;
   department?: string;
   isNew?: boolean;
   editable?: boolean;
-}
-interface TableFormProps {
+};
+type TableFormProps = {
   loading?: boolean;
   value?: TableFormDateType[];
   onChange?: (value: TableFormDateType[]) => void;
-}
+};
 
-interface TableFormState {
+type TableFormState = {
   loading?: boolean;
   value?: TableFormDateType[];
   data?: TableFormDateType[];
-}
+};
 class TableForm extends Component<TableFormProps, TableFormState> {
   static getDerivedStateFromProps(nextProps: TableFormProps, preState: TableFormState) {
     if (isEqual(nextProps.value, preState.value)) {
@@ -53,8 +53,12 @@ class TableForm extends Component<TableFormProps, TableFormState> {
             <Input
               value={text}
               autoFocus
-              onChange={(e) => this.handleFieldChange(e, 'name', record.key)}
-              onKeyPress={(e) => this.handleKeyPress(e, record.key)}
+              onChange={(e) => {
+                this.handleFieldChange(e, 'name', record.key);
+              }}
+              onKeyPress={(e) => {
+                this.handleKeyPress(e, record.key);
+              }}
               placeholder="成员姓名"
             />
           );
@@ -72,8 +76,12 @@ class TableForm extends Component<TableFormProps, TableFormState> {
           return (
             <Input
               value={text}
-              onChange={(e) => this.handleFieldChange(e, 'workId', record.key)}
-              onKeyPress={(e) => this.handleKeyPress(e, record.key)}
+              onChange={(e) => {
+                this.handleFieldChange(e, 'workId', record.key);
+              }}
+              onKeyPress={(e) => {
+                this.handleKeyPress(e, record.key);
+              }}
               placeholder="工号"
             />
           );
@@ -91,8 +99,12 @@ class TableForm extends Component<TableFormProps, TableFormState> {
           return (
             <Input
               value={text}
-              onChange={(e) => this.handleFieldChange(e, 'department', record.key)}
-              onKeyPress={(e) => this.handleKeyPress(e, record.key)}
+              onChange={(e) => {
+                this.handleFieldChange(e, 'department', record.key);
+              }}
+              onKeyPress={(e) => {
+                this.handleKeyPress(e, record.key);
+              }}
               placeholder="所属部门"
             />
           );
@@ -112,9 +124,20 @@ class TableForm extends Component<TableFormProps, TableFormState> {
           if (record.isNew) {
             return (
               <span>
-                <a onClick={(e) => this.saveRow(e, record.key)}>添加</a>
+                <a
+                  onClick={(e) => {
+                    this.saveRow(e, record.key);
+                  }}
+                >
+                  添加
+                </a>
                 <Divider type="vertical" />
-                <Popconfirm title="是否要删除此行？" onConfirm={() => this.remove(record.key)}>
+                <Popconfirm
+                  title="是否要删除此行？"
+                  onConfirm={() => {
+                    this.remove(record.key);
+                  }}
+                >
                   <a>删除</a>
                 </Popconfirm>
               </span>
@@ -122,17 +145,40 @@ class TableForm extends Component<TableFormProps, TableFormState> {
           }
           return (
             <span>
-              <a onClick={(e) => this.saveRow(e, record.key)}>保存</a>
+              <a
+                onClick={(e) => {
+                  this.saveRow(e, record.key);
+                }}
+              >
+                保存
+              </a>
               <Divider type="vertical" />
-              <a onClick={(e) => this.cancel(e, record.key)}>取消</a>
+              <a
+                onClick={(e) => {
+                  this.cancel(e, record.key);
+                }}
+              >
+                取消
+              </a>
             </span>
           );
         }
         return (
           <span>
-            <a onClick={(e) => this.toggleEditable(e, record.key)}>编辑</a>
+            <a
+              onClick={(e) => {
+                this.toggleEditable(e, record.key);
+              }}
+            >
+              编辑
+            </a>
             <Divider type="vertical" />
-            <Popconfirm title="是否要删除此行？" onConfirm={() => this.remove(record.key)}>
+            <Popconfirm
+              title="是否要删除此行？"
+              onConfirm={() => {
+                this.remove(record.key);
+              }}
+            >
               <a>删除</a>
             </Popconfirm>
           </span>
@@ -258,6 +304,7 @@ class TableForm extends Component<TableFormProps, TableFormState> {
             ...this.cacheOriginData[key],
             editable: false,
           };
+          // @ts-ignore
           delete this.cacheOriginData[key];
           return originItem;
         }

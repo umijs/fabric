@@ -2,17 +2,17 @@ import { QuestionCircleOutlined } from '@ant-design/icons';
 import { Tooltip } from 'antd';
 import React from 'react';
 import { connect } from 'dva';
-import { ConnectProps, ConnectState } from '@/models/connect';
+import type { ConnectProps, ConnectState } from '@/models/connect';
 import Avatar from './AvatarDropdown';
 import HeaderSearch from '../HeaderSearch';
 import SelectLang from '../SelectLang';
 import styles from './index.less';
 
 export type SiderTheme = 'light' | 'dark';
-export interface GlobalHeaderRightProps extends ConnectProps {
+export type GlobalHeaderRightProps = {
   theme?: SiderTheme;
   layout: 'sidemenu' | 'topmenu';
-}
+} & ConnectProps;
 
 const GlobalHeaderRight: React.SFC<GlobalHeaderRightProps> = (props) => {
   const { theme, layout } = props;

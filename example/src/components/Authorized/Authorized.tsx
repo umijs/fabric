@@ -1,14 +1,15 @@
 import React from 'react';
 import { Result } from 'antd';
-import check, { IAuthorityType } from './CheckPermissions';
+import type { IAuthorityType } from './CheckPermissions';
+import check from './CheckPermissions';
 
-import AuthorizedRoute from './AuthorizedRoute';
-import Secured from './Secured';
+import type AuthorizedRoute from './AuthorizedRoute';
+import type Secured from './Secured';
 
-interface AuthorizedProps {
+type AuthorizedProps = {
   authority: IAuthorityType;
   noMatch?: React.ReactNode;
-}
+};
 
 type IAuthorizedType = React.FunctionComponent<AuthorizedProps> & {
   Secured: typeof Secured;
