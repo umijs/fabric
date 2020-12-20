@@ -67,7 +67,6 @@ class WaterWave extends Component<WaterWaveProps> {
   renderChart(type?: string) {
     const { percent, color = '#1890FF' } = this.props;
     const data = percent / 100;
-    const self = this;
     cancelAnimationFrame(this.timer);
 
     if (!this.node || (data !== 0 && !data)) {
@@ -202,7 +201,7 @@ class WaterWave extends Component<WaterWaveProps> {
         sp += 0.07;
         drawSin();
       }
-      self.timer = requestAnimationFrame(render);
+      this.timer = requestAnimationFrame(render);
     }
     render();
   }
@@ -213,13 +212,13 @@ class WaterWave extends Component<WaterWaveProps> {
     return (
       <div
         className={styles.waterWave}
-        ref={(n) => (this.root = n)}
+        ref={n => (this.root = n)}
         style={{ transform: `scale(${radio})` }}
       >
         <div style={{ width: height, height, overflow: 'hidden' }}>
           <canvas
             className={styles.waterWaveCanvasWrapper}
-            ref={(n) => (this.node = n)}
+            ref={n => (this.node = n)}
             width={height * 2}
             height={height * 2}
           />
