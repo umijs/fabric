@@ -41,7 +41,7 @@ export default {
   '@typescript-eslint/no-dupe-class-members': 'error',
   'no-duplicate-imports': 'off',
   '@typescript-eslint/no-duplicate-imports': 0,
-  '@typescript-eslint/no-dynamic-delete': '0',
+  '@typescript-eslint/no-dynamic-delete': 0,
   'no-empty-function': 'off',
   '@typescript-eslint/no-empty-function': 0,
   '@typescript-eslint/no-empty-interface': 1,
