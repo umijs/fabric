@@ -27,11 +27,11 @@
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "deps": "yarn upgrade-interactive --latest",
+    "lib": "cross-env TIMING=1 eslint lib",
     "lint": "npm run build && cd example && npm run lint",
     "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch",
-    "test": "npm run build && cd example && npm run lint",
     "prettier": "prettier -c --write \"**/*\"",
-    "lib": "cross-env TIMING=1 eslint lib"
+    "test": "npm run build && cd example && npm run lint"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.10.0",
@@ -62,10 +62,7 @@
     "typescript": "^4.0.2"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "cross-env": "^7.0.3",
-=======
->>>>>>> master
     "np": "^6.2.5",
     "prettier": "^2.2.1"
   }
