@@ -27,6 +27,7 @@
     "src/**/*",
     "tests/**/*",
     "test/**/*",
+    "**/.eslintrc.js",
     "__test__/**/*",
     "typings/**/*",
     "config/**/*",
