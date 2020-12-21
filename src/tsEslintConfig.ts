@@ -63,7 +63,7 @@ export default {
   'no-loop-func': 'off',
   '@typescript-eslint/no-loop-func': 'error',
   'no-loss-of-precision': 'off',
-  '@typescript-eslint/no-loss-of-precision': 'error',
+  '@typescript-eslint/no-loss-of-precision': 0,
   'no-magic-numbers': 'off',
   '@typescript-eslint/no-magic-numbers': 0,
   '@typescript-eslint/no-misused-new': 'error',
