@@ -54,6 +54,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 0,
     'jsx-a11y/anchor-is-valid': 0,
     'sort-imports': 0,
+    'class-methods-use-this': 0,
     'no-confusing-arrow': 1,
     'linebreak-style': 0,
     // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
