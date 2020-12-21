@@ -141,6 +141,7 @@ export default {
     'error',
     { functions: false, classes: true, variables: true, typedefs: true },
   ],
+  camelcase: 0,
   '@typescript-eslint/camelcase': 0,
   '@typescript-eslint/no-var-requires': 0,
   // Common abbreviations are known and readable
