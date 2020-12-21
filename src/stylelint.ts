@@ -16,14 +16,6 @@ module.exports = {
     'function-url-quotes': 'always',
     'font-family-no-missing-generic-family-keyword': null, // iconfont
     'plugin/declaration-block-no-ignored-properties': true,
-    'plugin/no-unsupported-browser-features': [
-      true,
-      {
-        browsers: ['> 1%', 'Last 2 versions'],
-        ignore: ['rem'],
-        ignorePartialSupport: true,
-      },
-    ],
     'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
   },
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
