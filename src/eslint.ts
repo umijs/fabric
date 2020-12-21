@@ -10,7 +10,7 @@ const parserOptions: {
   project: './tsconfig.json',
 };
 
-const isTsProject = fs.existsSync(path.join(process.env.PWD || '.', './tsconfig.json'));
+const isTsProject = fs.existsSync(path.join(process.cwd() || '.', './tsconfig.json'));
 
 if (isTsProject) {
   console.log('这是一个 TypeScript 项目，如果不是请删除 tsconfig.json');
