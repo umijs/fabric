@@ -121,7 +121,7 @@ export default {
   '@typescript-eslint/restrict-plus-operands': 0,
   '@typescript-eslint/restrict-template-expressions': 0,
   'no-return-await': 'off',
-  '@typescript-eslint/return-await': 'error',
+  '@typescript-eslint/return-await': 0,
   semi: 'off',
   '@typescript-eslint/semi': 'error',
   'space-before-function-paren': 'off',
