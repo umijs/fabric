@@ -123,7 +123,7 @@ export default {
   'no-return-await': 'off',
   '@typescript-eslint/return-await': 0,
   semi: 'off',
-  '@typescript-eslint/semi': 'error',
+  '@typescript-eslint/semi': 0,
   'space-before-function-paren': 'off',
   '@typescript-eslint/space-before-function-paren': 0,
   'space-infix-ops': 'off',
