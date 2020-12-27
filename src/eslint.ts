@@ -10,11 +10,31 @@ const parserOptions: {
   project: './tsconfig.json',
 };
 
+const isJsMoreTs = async (path = 'src') => {
+  const fg = require('fast-glob');
+  const jsFiles = await fg(`${path}/src/**/*.{js,jsx}`, { deep: 3 });
+  const tsFiles = await fg(`${path}/src/**/*.{ts,tsx}`, { deep: 3 });
+  return jsFiles.length > tsFiles.length;
+};
+
+const configPath = path.join(__dirname, 'fabric.rc');
 const isTsProject = fs.existsSync(path.join(process.cwd() || '.', './tsconfig.json'));
 
 if (isTsProject) {
-  console.log('这是一个 TypeScript 项目，如果不是请删除 tsconfig.json');
+  if (!fs.existsSync(configPath)) {
+    isJsMoreTs(configPath).then((jsMoreTs) => {
+      fs.writeFileSync(configPath, new Date().getDate().toString());
+      if (!jsMoreTs) return;
+      console.log('这是一个 TypeScript 项目，如果不是请删除 tsconfig.json');
+    });
+  } else {
+    const cacheTime = fs.readFileSync(configPath).toString();
+    if (new Date().getDate() !== parseInt(cacheTime, 10)) {
+      fs.rmSync(configPath);
+    }
+  }
 }
+
 module.exports = {
   extends: ['eslint-config-airbnb-base', 'prettier', 'prettier/react'].concat(
     isTsProject ? ['prettier/@typescript-eslint', 'plugin:@typescript-eslint/recommended'] : [],
@@ -55,7 +75,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 0,
     'sort-imports': 0,
     'class-methods-use-this': 0,
-    'no-confusing-arrow': 1,
+    'no-confusing-arrow': 0,
     'linebreak-style': 0,
     // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
     'no-prototype-builtins': 'off',
