@@ -57,7 +57,7 @@ module.exports = {
     'react/destructuring-assignment': 'off',
     'react/jsx-filename-extension': 'off',
     'react/no-array-index-key': 'warn',
-    'react-hoo react/react-in-jsx-scopeks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks deps of Hooks
     'react/require-default-props': 0,
     'react/jsx-fragments': 0,
