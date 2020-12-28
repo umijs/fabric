@@ -2,11 +2,10 @@ import * as path from 'path';
 import * as fs from 'fs';
 import tsEslintConfig from './tsEslintConfig';
 
-const parserOptions: {
-  tsconfigRootDir?: string;
-  project?: string;
-  createDefaultProgram?: boolean;
-} = {
+const parserOptions = {
+  ecmaFeatures: {
+    jsx: true,
+  },
   project: './tsconfig.json',
 };
 
