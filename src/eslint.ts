@@ -30,7 +30,7 @@ if (isTsProject) {
   } else {
     const cacheTime = fs.readFileSync(configPath).toString();
     if (new Date().getDate() !== parseInt(cacheTime, 10)) {
-      fs.rmSync(configPath);
+      fs.unlink(configPath, () => {});
     }
   }
 }
