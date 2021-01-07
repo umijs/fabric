@@ -20,17 +20,21 @@ const configPath = path.join(__dirname, 'fabric.rc');
 const isTsProject = fs.existsSync(path.join(process.cwd() || '.', './tsconfig.json'));
 
 if (isTsProject) {
-  if (!fs.existsSync(configPath)) {
-    isJsMoreTs(configPath).then((jsMoreTs) => {
-      fs.writeFileSync(configPath, new Date().getDate().toString());
-      if (!jsMoreTs) return;
-      console.log('这是一个 TypeScript 项目，如果不是请删除 tsconfig.json');
-    });
-  } else {
-    const cacheTime = fs.readFileSync(configPath).toString();
-    if (new Date().getDate() !== parseInt(cacheTime, 10)) {
-      fs.unlink(configPath, () => {});
+  try {
+    if (!fs.existsSync(configPath) && fs.existsSync(path.join('configPath', '..'))) {
+      isJsMoreTs(configPath).then((jsMoreTs) => {
+        fs.writeFileSync(configPath, new Date().getDate().toString());
+        if (!jsMoreTs) return;
+        console.log('这是一个 TypeScript 项目，如果不是请删除 tsconfig.json');
+      });
+    } else {
+      const cacheTime = fs.readFileSync(configPath).toString();
+      if (new Date().getDate() !== parseInt(cacheTime, 10)) {
+        fs.unlink(configPath, () => {});
+      }
     }
+  } catch (error) {
+    console.log(error);
   }
 }
 
