@@ -20,4 +20,5 @@ module.exports = {
       },
     },
   ],
+  plugins: ['prettier-plugin-style-order', 'prettier-plugin-jsdoc'],
 };

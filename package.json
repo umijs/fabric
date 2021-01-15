@@ -52,6 +52,8 @@
     "eslint-plugin-react-hooks": "^4.1.2",
     "eslint-plugin-unicorn": "^20.0.0",
     "fast-glob": "^3.2.4",
+    "prettier-plugin-jsdoc": "^0.3.7",
+    "prettier-plugin-style-order": "^0.2.2",
     "stylelint": "^13.7.0",
     "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-prettier": "^8.0.1",
