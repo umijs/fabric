@@ -1,6 +1,6 @@
 {
   "name": "@umijs/fabric",
-  "version": "2.4.11",
+  "version": "2.5.0",
   "description": "A collection of configuration files containing prettier, eslint, stylelint",
   "keywords": [
     "eslint",
