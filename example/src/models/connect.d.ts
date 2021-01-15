@@ -32,9 +32,7 @@ export type Route = {
   routes?: Route[];
 } & MenuDataItem;
 
-/**
- * @type T: Params matched in dynamic routing
- */
+/** @type T: Params matched in dynamic routing */
 export type ConnectProps<T = any> = {
   dispatch?: Dispatch<AnyAction>;
 } & Partial<RouterTypes<Route, T>>;

@@ -12,6 +12,7 @@ import { queryRule, updateRule, addRule, removeRule } from './service';
 
 /**
  * 添加节点
+ *
  * @param fields
  */
 const handleAdd = async (fields: FormValueType) => {
@@ -32,6 +33,7 @@ const handleAdd = async (fields: FormValueType) => {
 
 /**
  * 更新节点
+ *
  * @param fields
  */
 const handleUpdate = async (fields: FormValueType) => {
@@ -54,7 +56,8 @@ const handleUpdate = async (fields: FormValueType) => {
 };
 
 /**
- *  删除节点
+ * 删除节点
+ *
  * @param selectedRows
  */
 const handleRemove = async (selectedRows: TableListItem[]) => {

@@ -26,9 +26,10 @@ export const isAntDesignProOrDev = (): boolean => {
 export const getPageQuery = () => parse(window.location.href.split('?')[1]);
 
 /**
- * props.route.routes
+ * Props.route.routes
+ *
  * @param router [{}]
- * @param pathname string
+ * @param pathname String
  */
 export const getAuthorityFromRouter = <T extends { path?: string }>(
   router: T[] = [],

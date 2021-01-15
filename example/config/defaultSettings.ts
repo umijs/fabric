@@ -3,33 +3,19 @@ import { MenuTheme } from 'antd/es/menu/MenuContext';
 export type ContentWidth = 'Fluid' | 'Fixed';
 
 export interface DefaultSettings {
-  /**
-   * theme for nav menu
-   */
+  /** Theme for nav menu */
   navTheme: MenuTheme;
-  /**
-   * primary color of ant design
-   */
+  /** Primary color of ant design */
   primaryColor: string;
-  /**
-   * nav menu position: `sidemenu` or `topmenu`
-   */
+  /** Nav menu position: `sidemenu` or `topmenu` */
   layout: 'sidemenu' | 'topmenu';
-  /**
-   * layout of content: `Fluid` or `Fixed`, only works when layout is topmenu
-   */
+  /** Layout of content: `Fluid` or `Fixed`, only works when layout is topmenu */
   contentWidth: ContentWidth;
-  /**
-   * sticky header
-   */
+  /** Sticky header */
   fixedHeader: boolean;
-  /**
-   * auto hide header
-   */
+  /** Auto hide header */
   autoHideHeader: boolean;
-  /**
-   * sticky siderbar
-   */
+  /** Sticky siderbar */
   fixSiderbar: boolean;
   menu: { locale: boolean };
   title: string;
