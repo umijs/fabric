@@ -1,4 +1,5 @@
 export default {
+  'no-undef': 0,
   '@typescript-eslint/adjacent-overload-signatures': 0,
   '@typescript-eslint/array-type': 'error',
   '@typescript-eslint/await-thenable': 0,
@@ -13,7 +14,7 @@ export default {
   '@typescript-eslint/comma-spacing': 0,
   '@typescript-eslint/consistent-indexed-object-style': 1,
   '@typescript-eslint/consistent-type-assertions': 0,
-  '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
+  '@typescript-eslint/consistent-type-definitions': 0,
   '@typescript-eslint/consistent-type-imports': 1,
   'default-param-last': 'off',
   '@typescript-eslint/default-param-last': 0,
