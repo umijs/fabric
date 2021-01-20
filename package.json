@@ -28,14 +28,19 @@
     "build": "tsc --build tsconfig.json",
     "deps": "yarn upgrade-interactive --latest",
     "lib": "cross-env TIMING=1 eslint lib",
-    "lint": "npm run build && cd example && npm run lint",
+    "lint": "npm run build && cd tsExample && npm run lint",
     "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch",
     "prettier": "prettier -c --write \"**/*\"",
-    "test": "npm run build && cd example && npm run lint"
+    "testTS": "npm run build && cd tsExample && npm run lint",
+    "testJS": "npm run build && cd jsExample && npm run lint",
+    "test": "npm run testTS && npm run testJS"
   },
   "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/eslint-parser": "^7.12.1",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "eslint": "^7.11.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.13.0",

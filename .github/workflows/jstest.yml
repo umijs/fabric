@@ -1,0 +1,19 @@
+# @format
+
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: install
+        run: npm install
+
+      - name: install
+        run: cd jsExample && npm install
+
+      - name: test
+        run: npm run testJS

@@ -6,6 +6,11 @@ const parserOptions = {
   ecmaFeatures: {
     jsx: true,
   },
+  babelOptions: {
+    presets: ['@babel/preset-env', '@babel/preset-react'],
+    plugins: ['@babel/plugin-proposal-class-properties'],
+  },
+  requireConfigFile: false,
   project: './tsconfig.json',
 };
 
@@ -40,9 +45,11 @@ if (isTsProject) {
 
 module.exports = {
   extends: ['eslint-config-airbnb-base', 'prettier', 'prettier/react'].concat(
-    isTsProject ? ['prettier/@typescript-eslint', 'plugin:@typescript-eslint/recommended'] : [],
+    isTsProject
+      ? ['prettier/@typescript-eslint', 'plugin:@typescript-eslint/recommended']
+      : ['plugin:react/recommended'],
   ),
-  parser: isTsProject ? '@typescript-eslint/parser' : undefined,
+  parser: isTsProject ? '@typescript-eslint/parser' : '@babel/eslint-parser',
   plugins: ['eslint-comments', 'react', 'jest', 'unicorn', 'react-hooks'],
   env: {
     browser: true,
@@ -53,6 +60,7 @@ module.exports = {
     jasmine: true,
   },
   rules: {
+    'react/display-name': 0,
     'react/jsx-props-no-spreading': 0,
     'react/state-in-constructor': 0,
     'react/static-property-placement': 0,
