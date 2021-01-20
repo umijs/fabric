@@ -13,7 +13,7 @@ jobs:
         run: npm install
 
       - name: install
-        run: cd example && npm install
+        run: cd tsExample && npm install
 
       - name: test
         run: npm run test
