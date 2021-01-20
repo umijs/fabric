@@ -16,4 +16,4 @@ jobs:
         run: cd jsExample && npm install
 
       - name: test
-        run: npm run test
+        run: npm run testJS
