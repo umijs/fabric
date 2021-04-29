@@ -15,7 +15,7 @@ if (!commitRE.test(msg)) {
     if (locale === 'zh-CN') {
       console.error(
         `  ${chalk.bgRed.white(' ERROR ')} ${chalk.red(`提交日志不符合规范`)}\n\n${chalk.red(
-          `  合法的提交日志格式如下：\n\n`,
+          `  合法的提交日志格式如下(emoji 和 模块可选填)：\n\n`,
         )}    
     ${chalk.green(`💥 feat(模块): 添加了个很棒的功能`)}\n
     ${chalk.green(`🐛 fix(模块): 修复了一些 bug`)}\n

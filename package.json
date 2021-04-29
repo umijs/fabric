@@ -29,7 +29,6 @@
     "deps": "yarn upgrade-interactive --latest",
     "lib": "cross-env TIMING=1 eslint lib",
     "lint": "npm run build && cd tsExample && npm run lint",
-    "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch",
     "prettier": "prettier -c --write \"**/*\"",
     "testTS": "npm run build && cd tsExample && npm run lint",
     "testJS": "npm run build && cd jsExample && npm run lint",
