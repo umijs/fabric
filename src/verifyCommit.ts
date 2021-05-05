@@ -17,12 +17,12 @@ if (!commitRE.test(msg)) {
         `  ${chalk.bgRed.white(' ERROR ')} ${chalk.red(`提交日志不符合规范`)}\n\n${chalk.red(
           `  合法的提交日志格式如下(emoji 和 模块可选填)：\n\n`,
         )}    
-    ${chalk.green(`💥 feat(模块): 添加了个很棒的功能`)}\n
-    ${chalk.green(`🐛 fix(模块): 修复了一些 bug`)}\n
-    ${chalk.green(`📝 docs(模块): 更新了一下文档`)}\n
-    ${chalk.green(`🌷 UI(模块): 修改了一下样式`)}\n
-    ${chalk.green(`🏰 chore(模块): 对脚手架做了些更改`)}\n
-    ${chalk.green(`🌐 locale(模块): 为国际化做了微小的贡献`)}\n
+    ${chalk.green(`💥 feat(模块): 添加了个很棒的功能`)}
+    ${chalk.green(`🐛 fix(模块): 修复了一些 bug`)}
+    ${chalk.green(`📝 docs(模块): 更新了一下文档`)}
+    ${chalk.green(`🌷 UI(模块): 修改了一下样式`)}
+    ${chalk.green(`🏰 chore(模块): 对脚手架做了些更改`)}
+    ${chalk.green(`🌐 locale(模块): 为国际化做了微小的贡献`)}
     ${chalk.red(`See .github/commit-convention.md for more details.\n`)}`,
       );
     } else {
@@ -32,11 +32,11 @@ if (!commitRE.test(msg)) {
         )}\n\n${chalk.red(
           `  Proper commit message format is required for automated changelog generation. Examples:\n\n`,
         )}    
-    ${chalk.green(`💥 feat(compiler): add 'comments' option`)}\n
-    ${chalk.green(`🐛 fix(compiler): fix some bug`)}\n
-    ${chalk.green(`📝 docs(compiler): add some docs`)}\n
-    ${chalk.green(`🌷 UI(compiler): better styles`)}\n
-    ${chalk.green(`🏰 chore(compiler): Made some changes to the scaffolding`)}\n
+    ${chalk.green(`💥 feat(compiler): add 'comments' option`)}
+    ${chalk.green(`🐛 fix(compiler): fix some bug`)}
+    ${chalk.green(`📝 docs(compiler): add some docs`)}
+    ${chalk.green(`🌷 UI(compiler): better styles`)}
+    ${chalk.green(`🏰 chore(compiler): Made some changes to the scaffolding`)}
     ${chalk.green(`🌐 locale(compiler): Made a small contribution to internationalization`)}\n
     ${chalk.red(`See .github/commit-convention.md for more details.\n`)}`,
       );
