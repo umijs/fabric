@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 
 const yParser = require('yargs-parser');
 const semver = require('semver');
@@ -40,9 +40,9 @@ switch (option) {
       
       Examples:
         ${chalk.gray('fabric')}
-        pro -h
+        fabric -h
         ${chalk.gray('verify-commit ')}
-        pro verify-commit 
+        fabric verify-commit 
         `.trim();
       console.log(details);
     }
