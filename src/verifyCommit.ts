@@ -45,3 +45,5 @@ if (!commitRE.test(msg)) {
     process.exit(1);
   });
 }
+
+export default () => {};

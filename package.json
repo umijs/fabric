@@ -10,6 +10,9 @@
     "design",
     "pro"
   ],
+  "bin": {
+    "fabric": "./cli.js"
+  },
   "homepage": "https://github.com/umijs/fabric#readme",
   "bugs": {
     "url": "https://github.com/umijs/fabric/issues"
@@ -22,7 +25,8 @@
   "author": "qixian.cs@outlook.com",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "cli.js"
   ],
   "scripts": {
     "build": "tsc --build tsconfig.json",
