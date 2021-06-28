@@ -8,6 +8,13 @@ A collection of configuration files containing prettier, eslint, stylelint
 
 # Use
 
+安装
+
+```bash
+npm i @umijs/fabric --save-dev
+yarn add @umijs/fabric -D
+```
+
 in `.eslintrc.js`
 
 ```js
