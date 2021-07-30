@@ -17,6 +17,8 @@ module.exports = {
     'font-family-no-missing-generic-family-keyword': null, // iconfont
     'plugin/declaration-block-no-ignored-properties': true,
     'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
+    // webcomponent
+    'selector-type-no-unknown': null,
   },
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
 };
