@@ -6,15 +6,8 @@ import classNames from 'classnames';
 import styles from './index.less';
 
 const HeaderSearch = (props) => {
-  const {
-    className,
-    defaultValue,
-    onVisibleChange,
-    placeholder,
-    open,
-    defaultOpen,
-    ...restProps
-  } = props;
+  const { className, defaultValue, onVisibleChange, placeholder, open, defaultOpen, ...restProps } =
+    props;
   const inputRef = useRef(null);
   const [value, setValue] = useMergedState(defaultValue, {
     value: props.value,
