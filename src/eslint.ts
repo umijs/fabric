@@ -105,16 +105,6 @@ module.exports = {
     'eslint-comments/no-unlimited-disable': 0,
     'no-param-reassign': 2,
     'space-before-function-paren': 0,
-    'no-restricted-imports': [
-      'error',
-      {
-        patterns: [
-          {
-            group: ['*/.umi/*'],
-          },
-        ],
-      },
-    ],
     'react/self-closing-comp': 1,
     ...(isTsProject ? tsEslintConfig : {}),
   },
