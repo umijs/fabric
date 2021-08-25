@@ -67,7 +67,7 @@
     "eslint-plugin-unicorn": "^35.0.0",
     "fast-glob": "^3.2.4",
     "os-locale": "^5.0.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.2",
     "prettier-plugin-two-style-order": "^1.0.0",
     "stylelint": "^13.7.0",
     "stylelint-config-css-modules": "^2.2.0",

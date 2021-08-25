@@ -36,6 +36,7 @@
     "numeral": "^2.0.6",
     "omit.js": "^1.0.2",
     "path-to-regexp": "2.4.0",
+    "prettier": "^2.3.2",
     "qs": "^6.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
