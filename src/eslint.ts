@@ -38,10 +38,8 @@ if (isTsProject) {
 }
 
 module.exports = {
-  extends: ['eslint-config-airbnb-base', 'prettier', 'prettier/react'].concat(
-    isTsProject
-      ? ['prettier/@typescript-eslint', 'plugin:@typescript-eslint/recommended']
-      : ['plugin:react/recommended'],
+  extends: ['eslint-config-airbnb-base', 'prettier'].concat(
+    isTsProject ? ['plugin:@typescript-eslint/recommended'] : ['plugin:react/recommended'],
   ),
   parser: isTsProject ? '@typescript-eslint/parser' : '@babel/eslint-parser',
   plugins: ['eslint-comments', 'react', 'jest', 'unicorn', 'react-hooks'],
@@ -117,6 +115,7 @@ module.exports = {
         ],
       },
     ],
+    'react/self-closing-comp': 1,
     ...(isTsProject ? tsEslintConfig : {}),
   },
   settings: {

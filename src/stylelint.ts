@@ -8,7 +8,7 @@ module.exports = {
     'stylelint-config-prettier',
     'stylelint-no-unsupported-browser-features',
   ],
-  plugins: ['stylelint-order', 'stylelint-declaration-block-no-ignored-properties'],
+  plugins: ['stylelint-declaration-block-no-ignored-properties'],
   rules: {
     'no-descending-specificity': null,
     //https://github.com/stylelint/stylelint/issues/4114
