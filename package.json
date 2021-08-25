@@ -64,7 +64,7 @@
     "eslint-plugin-promise": "^5.0.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.1.2",
-    "eslint-plugin-unicorn": "^35.0.0",
+    "eslint-plugin-unicorn": "^20.0.0",
     "fast-glob": "^3.2.4",
     "os-locale": "^5.0.0",
     "prettier": "^2.3.2",

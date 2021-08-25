@@ -96,7 +96,6 @@ module.exports = {
     // Too restrictive, writing ugly code to defend against a very unlikely scenario: https://eslint.org/docs/rules/no-prototype-builtins
     'no-prototype-builtins': 'off',
     'unicorn/prevent-abbreviations': 'off',
-    'unicorn/prefer-object-from-entries': 1,
     // Conflict with prettier
     'arrow-body-style': 0,
     'arrow-parens': 0,
