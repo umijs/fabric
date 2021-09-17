@@ -1,5 +1,4 @@
-﻿/* eslint-disable import/no-extraneous-dependencies */
-// Invoked on the commit-msg git hook by yorkie.
+﻿// Invoked on the commit-msg git hook by yorkie.
 
 const chalk = require('chalk');
 const osLocale = require('os-locale');

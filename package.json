@@ -10,9 +10,6 @@
     "design",
     "pro"
   ],
-  "bin": {
-    "fabric": "./cli.js"
-  },
   "homepage": "https://github.com/umijs/fabric#readme",
   "bugs": {
     "url": "https://github.com/umijs/fabric/issues"
@@ -24,6 +21,9 @@
   "license": "ISC",
   "author": "qixian.cs@outlook.com",
   "main": "dist/index.js",
+  "bin": {
+    "fabric": "./cli.js"
+  },
   "files": [
     "dist",
     "cli.js"
@@ -36,9 +36,9 @@
     "lint-js": "npm run build && cd jsExample && npm run lint",
     "prepublishOnly": "npm run build && npm test && np --no-cleanup --yolo --no-publish --any-branch",
     "prettier": "prettier -c --write \"**/*\"",
-    "testTS": "npm run build && cd tsExample && npm run lint",
+    "test": "npm run testTS && npm run testJS",
     "testJS": "npm run build && cd jsExample && npm run lint",
-    "test": "npm run testTS && npm run testJS"
+    "testTS": "npm run build && cd tsExample && npm run lint"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
@@ -52,16 +52,10 @@
     "@typescript-eslint/parser": "^4.10.0",
     "chalk": "^4.1.1",
     "eslint": "^7.11.0",
-    "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-formatter-pretty": "^4.0.0",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-compat": "^3.1.1",
-    "eslint-plugin-eslint-comments": "^3.1.1",
-    "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jest": "^24.0.1",
-    "eslint-plugin-jsx-a11y": "^6.2.0",
-    "eslint-plugin-markdown": "^2.2.0",
     "eslint-plugin-promise": "^5.0.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.1.2",
@@ -73,10 +67,8 @@
     "stylelint": "^13.7.0",
     "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.1.0",
-    "stylelint-no-unsupported-browser-features": "^4.1.4",
     "typescript": "^4.3.5"
   },
   "devDependencies": {
