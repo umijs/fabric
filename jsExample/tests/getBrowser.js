@@ -1,10 +1,8 @@
 /* eslint-disable global-require */
-/* eslint-disable import/no-extraneous-dependencies */
 const findChrome = require('carlo/lib/find_chrome');
 
 const getBrowser = async () => {
   try {
-    // eslint-disable-next-line import/no-unresolved
     const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch({
       args: [
@@ -21,7 +19,6 @@ const getBrowser = async () => {
   }
 
   try {
-    // eslint-disable-next-line import/no-unresolved
     const puppeteer = require('puppeteer-core');
     const findChromePath = await findChrome({});
     const { executablePath } = findChromePath;

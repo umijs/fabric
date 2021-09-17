@@ -38,11 +38,11 @@ if (isTsProject) {
 }
 
 module.exports = {
-  extends: ['eslint-config-airbnb-base', 'prettier'].concat(
+  extends: ['prettier'].concat(
     isTsProject ? ['plugin:@typescript-eslint/recommended'] : ['plugin:react/recommended'],
   ),
   parser: isTsProject ? '@typescript-eslint/parser' : '@babel/eslint-parser',
-  plugins: ['eslint-comments', 'react', 'jest', 'unicorn', 'react-hooks'],
+  plugins: ['react', 'jest', 'unicorn', 'react-hooks'],
   env: {
     browser: true,
     node: true,
@@ -52,6 +52,7 @@ module.exports = {
     jasmine: true,
   },
   rules: {
+    strict: ['error', 'never'],
     'react/display-name': 0,
     'react/jsx-props-no-spreading': 0,
     'react/state-in-constructor': 0,
@@ -72,23 +73,6 @@ module.exports = {
     'react/jsx-one-expression-per-line': 0,
     'generator-star-spacing': 0,
     'function-paren-newline': 0,
-    'import/no-unresolved': 0,
-    'import/order': 0,
-    'import/no-named-as-default': 0,
-    'import/no-cycle': 0,
-    'import/prefer-default-export': 0,
-    'import/no-default-export': 0,
-    'import/no-extraneous-dependencies': 0,
-    'import/named': 0,
-    'import/no-named-as-default-member': 0,
-    'import/no-duplicates': 0,
-    'import/no-self-import': 0,
-    'import/extensions': 0,
-    'import/no-useless-path-segments': 0,
-    'jsx-a11y/no-noninteractive-element-interactions': 0,
-    'jsx-a11y/click-events-have-key-events': 0,
-    'jsx-a11y/no-static-element-interactions': 0,
-    'jsx-a11y/anchor-is-valid': 0,
     'sort-imports': 0,
     'class-methods-use-this': 0,
     'no-confusing-arrow': 0,
@@ -102,7 +86,6 @@ module.exports = {
     'object-curly-newline': 0,
     'implicit-arrow-linebreak': 0,
     'operator-linebreak': 0,
-    'eslint-comments/no-unlimited-disable': 0,
     'no-param-reassign': 2,
     'space-before-function-paren': 0,
     'react/self-closing-comp': 1,
