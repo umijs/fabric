@@ -22,3 +22,12 @@ yarn-error.log
 CNAME
 /build
 /public
+**/*.svg
+package.json
+**/.umi/**
+**/.umi-production/**
+**/dist/**
+**/lib/**
+**/es/**
+**/__snapshots__/**
+**/.node/**

@@ -29,7 +29,8 @@
     "cli.js"
   ],
   "scripts": {
-    "build": "tsc --build tsconfig.json",
+    "build": "tsc --build tsconfig.json && npm run copy-files",
+    "copy-files": "copyfiles -u 1 src/.prettierignore ./dist/",
     "deps": "yarn upgrade-interactive --latest",
     "lib": "cross-env TIMING=1 eslint lib",
     "lint": "npm run build && cd tsExample && npm run lint",
@@ -72,7 +73,9 @@
     "typescript": "^4.3.5"
   },
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
-    "np": "^6.2.5"
+    "np": "^6.2.5",
+    "rimraf": "^3.0.2"
   }
 }
