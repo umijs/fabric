@@ -65,7 +65,7 @@
     "os-locale": "^5.0.0",
     "prettier": "^2.3.2",
     "prettier-plugin-two-style-order": "^1.0.0",
-    "stylelint": "^13.7.0",
+    "stylelint": "^14.0.0",
     "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0",
