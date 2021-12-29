@@ -103,14 +103,16 @@ module.exports = {
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
     polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
   },
-  overrides: [
-    {
-      files: ['**/*.{ts,tsx}'],
-      parser: '@typescript-eslint/parser',
-      rules: tsEslintConfig,
-      extends: ['prettier', 'plugin:@typescript-eslint/recommended'],
-    },
-  ],
+  overrides: isTsProject
+    ? [
+        {
+          files: ['**/*.{ts,tsx}'],
+          parser: '@typescript-eslint/parser',
+          rules: tsEslintConfig,
+          extends: ['prettier', 'plugin:@typescript-eslint/recommended'],
+        },
+      ]
+    : [],
 
   parserOptions,
 };
