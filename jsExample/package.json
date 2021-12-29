@@ -10,11 +10,11 @@
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
     "lint:js": "cross-env TIMING=1 eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint:prettier": "prettier --check \"**/*\" --end-of-line auto",
-    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "lint:style": "stylelint --fix \"src/**/*.less\" ",
     "prettier": "prettier -c --write \"**/*\""
   },
   "lint-staged": {
-    "**/*.less": "stylelint --syntax less",
+    "**/*.less": "stylelint",
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
     "**/*.{js,jsx,tsx,ts,less,md,json}": [
       "prettier --write"
