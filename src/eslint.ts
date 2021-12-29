@@ -38,10 +38,8 @@ if (isTsProject) {
 }
 
 module.exports = {
-  extends: ['prettier'].concat(
-    isTsProject ? ['plugin:@typescript-eslint/recommended'] : ['plugin:react/recommended'],
-  ),
-  parser: isTsProject ? '@typescript-eslint/parser' : '@babel/eslint-parser',
+  extends: ['prettier','plugin:react/recommended'],
+  parser: '@babel/eslint-parser',
   plugins: ['react', 'jest', 'unicorn', 'react-hooks'],
   env: {
     browser: true,
@@ -104,9 +102,12 @@ module.exports = {
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
     polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
   },
-  overrides: {
-    files: ['*.ts'],
+  overrides: [{
+    files: ["**/*.{ts,tsx}"],
+    parser: "@typescript-eslint/parser",
     rules: tsEslintConfig,
-  },
+    extends: ['prettier','plugin:@typescript-eslint/recommended']
+  }],
+
   parserOptions,
 };
