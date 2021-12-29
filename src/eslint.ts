@@ -89,7 +89,6 @@ module.exports = {
     'no-param-reassign': 2,
     'space-before-function-paren': 0,
     'react/self-closing-comp': 1,
-    ...(isTsProject ? tsEslintConfig : {}),
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files
@@ -104,6 +103,10 @@ module.exports = {
     'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
     polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
+  },
+  overrides: {
+    files: ['*.ts'],
+    rules: tsEslintConfig,
   },
   parserOptions,
 };
