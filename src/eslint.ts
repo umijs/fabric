@@ -38,7 +38,7 @@ if (isTsProject) {
 }
 
 module.exports = {
-  extends: ['prettier','plugin:react/recommended'],
+  extends: ['prettier', 'plugin:react/recommended'],
   parser: '@babel/eslint-parser',
   plugins: ['react', 'jest', 'unicorn', 'react-hooks'],
   env: {
@@ -87,6 +87,7 @@ module.exports = {
     'no-param-reassign': 2,
     'space-before-function-paren': 0,
     'react/self-closing-comp': 1,
+    'react/jsx-key': 1,
   },
   settings: {
     // support import modules from TypeScript files in JavaScript files
@@ -102,12 +103,14 @@ module.exports = {
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
     polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
   },
-  overrides: [{
-    files: ["**/*.{ts,tsx}"],
-    parser: "@typescript-eslint/parser",
-    rules: tsEslintConfig,
-    extends: ['prettier','plugin:@typescript-eslint/recommended']
-  }],
+  overrides: [
+    {
+      files: ['**/*.{ts,tsx}'],
+      parser: '@typescript-eslint/parser',
+      rules: tsEslintConfig,
+      extends: ['prettier', 'plugin:@typescript-eslint/recommended'],
+    },
+  ],
 
   parserOptions,
 };
