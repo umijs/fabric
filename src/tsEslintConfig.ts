@@ -59,7 +59,7 @@ export default {
   '@typescript-eslint/no-implied-eval': 0,
   '@typescript-eslint/no-inferrable-types': 0,
   'no-invalid-this': 'off',
-  '@typescript-eslint/no-invalid-this': 'error',
+  '@typescript-eslint/no-invalid-this': 1,
   '@typescript-eslint/no-invalid-void-type': 0,
   'no-loop-func': 'off',
   '@typescript-eslint/no-loop-func': 'error',
