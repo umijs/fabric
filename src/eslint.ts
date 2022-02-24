@@ -2,6 +2,8 @@ import * as path from 'path';
 import * as fs from 'fs';
 import tsEslintConfig from './tsEslintConfig';
 
+const isTypeAwareEnabled = process.env.DISABLE_TYPE_AWARE === undefined;
+
 const parserOptions = {
   ecmaFeatures: {
     jsx: true,
@@ -14,7 +16,7 @@ const parserOptions = {
     ],
   },
   requireConfigFile: false,
-  project: './tsconfig.json',
+  project: isTypeAwareEnabled ? './tsconfig.json' : undefined,
 };
 
 const isJsMoreTs = async (path = 'src') => {

@@ -1,3 +1,5 @@
+const isTypeAwareEnabled = process.env.DISABLE_TYPE_AWARE === undefined;
+
 export default {
   'no-undef': 0,
   '@typescript-eslint/adjacent-overload-signatures': 0,
@@ -19,7 +21,7 @@ export default {
   'default-param-last': 'off',
   '@typescript-eslint/default-param-last': 0,
   'dot-notation': 'off',
-  '@typescript-eslint/dot-notation': 1,
+  '@typescript-eslint/dot-notation': isTypeAwareEnabled ? 1 : 0,
   '@typescript-eslint/explicit-function-return-type': 0,
   'func-call-spacing': 'off',
   '@typescript-eslint/func-call-spacing': 0,
@@ -79,7 +81,7 @@ export default {
   '@typescript-eslint/no-shadow': 'error',
   '@typescript-eslint/no-this-alias': 'error',
   'no-throw-literal': 'off',
-  '@typescript-eslint/no-throw-literal': 'error',
+  '@typescript-eslint/no-throw-literal': isTypeAwareEnabled ? 2 : 0,
   '@typescript-eslint/no-type-alias': 0,
   '@typescript-eslint/no-unnecessary-boolean-literal-compare': 0,
   '@typescript-eslint/no-unnecessary-condition': 0,
@@ -130,7 +132,7 @@ export default {
   'space-infix-ops': 'off',
   '@typescript-eslint/space-infix-ops': 0,
   '@typescript-eslint/strict-boolean-expressions': 0,
-  '@typescript-eslint/switch-exhaustiveness-check': 'error',
+  '@typescript-eslint/switch-exhaustiveness-check': isTypeAwareEnabled ? 2 : 0,
   '@typescript-eslint/triple-slash-reference': 'error',
   '@typescript-eslint/type-annotation-spacing': 'error',
   '@typescript-eslint/typedef': 'error',
