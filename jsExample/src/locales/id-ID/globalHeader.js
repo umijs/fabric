@@ -14,4 +14,4 @@ export default {
   'component.noticeIcon.cleared': 'Berhasil dikosongkan',
   'component.noticeIcon.empty': 'Tidak ada pemberitahuan',
   'component.noticeIcon.view-more': 'Melihat lebih',
-};
+}

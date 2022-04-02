@@ -1,8 +1,8 @@
-import React from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography } from 'antd';
-import { useIntl, FormattedMessage } from 'umi';
-import styles from './Welcome.less';
+import React from 'react'
+import { PageContainer } from '@ant-design/pro-layout'
+import { Card, Alert, Typography } from 'antd'
+import { useIntl, FormattedMessage } from 'umi'
+import styles from './Welcome.less'
 
 const CodePreview = ({ children }) => (
   <pre className={styles.pre}>
@@ -10,10 +10,10 @@ const CodePreview = ({ children }) => (
       <Typography.Text copyable>{children}</Typography.Text>
     </code>
   </pre>
-);
+)
 
 export default () => {
-  const intl = useIntl();
+  const intl = useIntl()
   return (
     <PageContainer>
       <Card>
@@ -59,5 +59,5 @@ export default () => {
         <CodePreview>yarn add @ant-design/pro-layout</CodePreview>
       </Card>
     </PageContainer>
-  );
-};
+  )
+}

@@ -1,48 +1,48 @@
-import { BellOutlined } from '@ant-design/icons';
-import { Badge, Spin, Tabs } from 'antd';
-import useMergeValue from 'use-merge-value';
-import React from 'react';
-import classNames from 'classnames';
-import type { NoticeIconTabProps } from './NoticeList';
-import NoticeList from './NoticeList';
+import { BellOutlined } from '@ant-design/icons'
+import { Badge, Spin, Tabs } from 'antd'
+import useMergeValue from 'use-merge-value'
+import React from 'react'
+import classNames from 'classnames'
+import type { NoticeIconTabProps } from './NoticeList'
+import NoticeList from './NoticeList'
 
-import HeaderDropdown from '../HeaderDropdown';
-import styles from './index.less';
+import HeaderDropdown from '../HeaderDropdown'
+import styles from './index.less'
 
-const { TabPane } = Tabs;
+const { TabPane } = Tabs
 
 export type NoticeIconData = {
-  avatar?: string | React.ReactNode;
-  title?: React.ReactNode;
-  description?: React.ReactNode;
-  datetime?: React.ReactNode;
-  extra?: React.ReactNode;
-  style?: React.CSSProperties;
-  key?: string | number;
-  read?: boolean;
-};
+  avatar?: string | React.ReactNode
+  title?: React.ReactNode
+  description?: React.ReactNode
+  datetime?: React.ReactNode
+  extra?: React.ReactNode
+  style?: React.CSSProperties
+  key?: string | number
+  read?: boolean
+}
 
 export type NoticeIconProps = {
-  count?: number;
-  bell?: React.ReactNode;
-  className?: string;
-  loading?: boolean;
-  onClear?: (tabName: string, tabKey: string) => void;
-  onItemClick?: (item: NoticeIconData, tabProps: NoticeIconTabProps) => void;
-  onViewMore?: (tabProps: NoticeIconTabProps, e: MouseEvent) => void;
-  onTabChange?: (tabTile: string) => void;
-  style?: React.CSSProperties;
-  onPopupVisibleChange?: (visible: boolean) => void;
-  popupVisible?: boolean;
-  clearText?: string;
-  viewMoreText?: string;
-  clearClose?: boolean;
-  emptyImage?: string;
-  children: React.ReactElement<NoticeIconTabProps>[];
-};
+  count?: number
+  bell?: React.ReactNode
+  className?: string
+  loading?: boolean
+  onClear?: (tabName: string, tabKey: string) => void
+  onItemClick?: (item: NoticeIconData, tabProps: NoticeIconTabProps) => void
+  onViewMore?: (tabProps: NoticeIconTabProps, e: MouseEvent) => void
+  onTabChange?: (tabTile: string) => void
+  style?: React.CSSProperties
+  onPopupVisibleChange?: (visible: boolean) => void
+  popupVisible?: boolean
+  clearText?: string
+  viewMoreText?: string
+  clearClose?: boolean
+  emptyImage?: string
+  children: React.ReactElement<NoticeIconTabProps>[]
+}
 
 const NoticeIcon: React.FC<NoticeIconProps> & {
-  Tab: typeof NoticeList;
+  Tab: typeof NoticeList
 } = (props) => {
   const getNotificationBox = (): React.ReactNode => {
     const {
@@ -54,19 +54,19 @@ const NoticeIcon: React.FC<NoticeIconProps> & {
       onViewMore,
       clearText,
       viewMoreText,
-    } = props;
+    } = props
     if (!children) {
-      return null;
+      return null
     }
-    const panes: React.ReactNode[] = [];
+    const panes: React.ReactNode[] = []
     React.Children.forEach(children, (child: React.ReactElement<NoticeIconTabProps>): void => {
       if (!child) {
-        return;
+        return
       }
-      const { list, title, count, tabKey, showClear, showViewMore } = child.props;
-      const len = list && list.length ? list.length : 0;
-      const msgCount = count || count === 0 ? count : len;
-      const tabTitle: string = msgCount > 0 ? `${title} (${msgCount})` : title;
+      const { list, title, count, tabKey, showClear, showViewMore } = child.props
+      const len = list && list.length ? list.length : 0
+      const msgCount = count || count === 0 ? count : len
+      const tabTitle: string = msgCount > 0 ? `${title} (${msgCount})` : title
       panes.push(
         <TabPane tab={tabTitle} key={tabKey}>
           <NoticeList
@@ -74,13 +74,13 @@ const NoticeIcon: React.FC<NoticeIconProps> & {
             viewMoreText={viewMoreText}
             data={list}
             onClear={(): void => {
-              onClear?.(title, tabKey);
+              onClear?.(title, tabKey)
             }}
             onClick={(item): void => {
-              onItemClick?.(item, child.props);
+              onItemClick?.(item, child.props)
             }}
             onViewMore={(event): void => {
-              onViewMore?.(child.props, event);
+              onViewMore?.(child.props, event)
             }}
             showClear={showClear}
             showViewMore={showViewMore}
@@ -88,35 +88,35 @@ const NoticeIcon: React.FC<NoticeIconProps> & {
             title={title}
           />
         </TabPane>,
-      );
-    });
+      )
+    })
     return (
       <Spin spinning={loading} delay={300}>
         <Tabs className={styles.tabs} onChange={onTabChange}>
           {panes}
         </Tabs>
       </Spin>
-    );
-  };
+    )
+  }
 
-  const { className, count, bell } = props;
+  const { className, count, bell } = props
 
   const [visible, setVisible] = useMergeValue<boolean>(false, {
     value: props.popupVisible,
     onChange: props.onPopupVisibleChange,
-  });
-  const noticeButtonClass = classNames(className, styles.noticeButton);
-  const notificationBox = getNotificationBox();
-  const NoticeBellIcon = bell || <BellOutlined className={styles.icon} />;
+  })
+  const noticeButtonClass = classNames(className, styles.noticeButton)
+  const notificationBox = getNotificationBox()
+  const NoticeBellIcon = bell || <BellOutlined className={styles.icon} />
   const trigger = (
     <span className={classNames(noticeButtonClass, { opened: visible })}>
       <Badge count={count} style={{ boxShadow: 'none' }} className={styles.badge}>
         {NoticeBellIcon}
       </Badge>
     </span>
-  );
+  )
   if (!notificationBox) {
-    return trigger;
+    return trigger
   }
 
   return (
@@ -130,13 +130,13 @@ const NoticeIcon: React.FC<NoticeIconProps> & {
     >
       {trigger}
     </HeaderDropdown>
-  );
-};
+  )
+}
 
 NoticeIcon.defaultProps = {
   emptyImage: 'https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg',
-};
+}
 
-NoticeIcon.Tab = NoticeList;
+NoticeIcon.Tab = NoticeList
 
-export default NoticeIcon;
+export default NoticeIcon

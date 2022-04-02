@@ -1,33 +1,33 @@
-import type { AxisProps } from 'bizcharts';
-import { Axis, Chart, Geom, Tooltip } from 'bizcharts';
+import type { AxisProps } from 'bizcharts'
+import { Axis, Chart, Geom, Tooltip } from 'bizcharts'
 
-import React from 'react';
-import autoHeight from '../autoHeight';
-import styles from '../index.less';
+import React from 'react'
+import autoHeight from '../autoHeight'
+import styles from '../index.less'
 
 export type MiniAreaProps = {
-  color?: string;
-  height?: number;
-  borderColor?: string;
-  line?: boolean;
-  animate?: boolean;
-  xAxis?: AxisProps;
-  forceFit?: boolean;
+  color?: string
+  height?: number
+  borderColor?: string
+  line?: boolean
+  animate?: boolean
+  xAxis?: AxisProps
+  forceFit?: boolean
   scale?: {
     x?: {
-      tickCount: number;
-    };
+      tickCount: number
+    }
     y?: {
-      tickCount: number;
-    };
-  };
-  yAxis?: Partial<AxisProps>;
-  borderWidth?: number;
+      tickCount: number
+    }
+  }
+  yAxis?: Partial<AxisProps>
+  borderWidth?: number
   data: {
-    x: number | string;
-    y: number;
-  }[];
-};
+    x: number | string
+    y: number
+  }[]
+}
 
 const MiniArea: React.FC<MiniAreaProps> = (props) => {
   const {
@@ -42,9 +42,9 @@ const MiniArea: React.FC<MiniAreaProps> = (props) => {
     xAxis,
     yAxis,
     animate = true,
-  } = props;
+  } = props
 
-  const padding: [number, number, number, number] = [36, 5, 30, 5];
+  const padding: [number, number, number, number] = [36, 5, 30, 5]
 
   const scaleProps = {
     x: {
@@ -56,7 +56,7 @@ const MiniArea: React.FC<MiniAreaProps> = (props) => {
       min: 0,
       ...scale.y,
     },
-  };
+  }
 
   const tooltip: [string, (...args: any[]) => { name?: string; value: string }] = [
     'x*y',
@@ -64,9 +64,9 @@ const MiniArea: React.FC<MiniAreaProps> = (props) => {
       name: x,
       value: y,
     }),
-  ];
+  ]
 
-  const chartHeight = height + 54;
+  const chartHeight = height + 54
 
   return (
     <div className={styles.miniChart} style={{ height }}>
@@ -125,7 +125,7 @@ const MiniArea: React.FC<MiniAreaProps> = (props) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default autoHeight()(MiniArea);
+export default autoHeight()(MiniArea)

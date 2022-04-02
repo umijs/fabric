@@ -15,4 +15,4 @@ export default {
   'component.noticeIcon.empty': 'Sem notificações',
   'component.noticeIcon.loaded': 'Carregado',
   'component.noticeIcon.view-more': 'Veja mais',
-};
+}

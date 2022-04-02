@@ -1,15 +1,15 @@
-import React from 'react';
-import { Tooltip } from 'antd';
-import styles from './index.less';
+import React from 'react'
+import { Tooltip } from 'antd'
+import styles from './index.less'
 
 export type MiniProgressProps = {
-  target: number;
-  targetLabel?: string;
-  color?: string;
-  strokeWidth?: number;
-  percent?: number;
-  style?: React.CSSProperties;
-};
+  target: number
+  targetLabel?: string
+  color?: string
+  strokeWidth?: number
+  percent?: number
+  style?: React.CSSProperties
+}
 
 const MiniProgress: React.FC<MiniProgressProps> = ({
   targetLabel,
@@ -36,6 +36,6 @@ const MiniProgress: React.FC<MiniProgressProps> = ({
       />
     </div>
   </div>
-);
+)
 
-export default MiniProgress;
+export default MiniProgress

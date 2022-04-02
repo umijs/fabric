@@ -4,4 +4,4 @@ export default {
   'app.pwa.serviceworker.updated.hint':
     'Por favor, pressione o botão "Atualizar" para recarregar a página atual',
   'app.pwa.serviceworker.updated.ok': 'Atualizar',
-};
+}

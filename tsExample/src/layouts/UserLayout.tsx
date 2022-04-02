@@ -1,38 +1,38 @@
-import type { MenuDataItem } from '@ant-design/pro-layout';
-import { DefaultFooter, getMenuData, getPageTitle } from '@ant-design/pro-layout';
-import { Helmet } from 'react-helmet';
-import { Link, formatMessage } from 'umi';
-import React from 'react';
-import { connect } from 'dva';
-import SelectLang from '@/components/SelectLang';
-import type { ConnectProps, ConnectState } from '@/models/connect';
-import logo from '../assets/logo.svg';
-import styles from './UserLayout.less';
+import type { MenuDataItem } from '@ant-design/pro-layout'
+import { DefaultFooter, getMenuData, getPageTitle } from '@ant-design/pro-layout'
+import { Helmet } from 'react-helmet'
+import { Link, formatMessage } from 'umi'
+import React from 'react'
+import { connect } from 'dva'
+import SelectLang from '@/components/SelectLang'
+import type { ConnectProps, ConnectState } from '@/models/connect'
+import logo from '../assets/logo.svg'
+import styles from './UserLayout.less'
 
 export type UserLayoutProps = {
-  breadcrumbNameMap: Record<string, MenuDataItem>;
-} & ConnectProps;
+  breadcrumbNameMap: Record<string, MenuDataItem>
+} & ConnectProps
 
 const UserLayout: React.FC<UserLayoutProps> = (props) => {
   const {
     route = {
       routes: [],
     },
-  } = props;
-  const { routes = [] } = route;
+  } = props
+  const { routes = [] } = route
   const {
     children,
     location = {
       pathname: '',
     },
-  } = props;
-  const { breadcrumb } = getMenuData(routes);
+  } = props
+  const { breadcrumb } = getMenuData(routes)
   const title = getPageTitle({
     pathname: location.pathname,
     formatMessage,
     breadcrumb,
     ...props,
-  });
+  })
   return (
     <>
       <Helmet>
@@ -59,7 +59,7 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
         <DefaultFooter />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default connect(({ settings }: ConnectState) => ({ ...settings }))(UserLayout);
+export default connect(({ settings }: ConnectState) => ({ ...settings }))(UserLayout)

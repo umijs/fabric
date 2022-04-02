@@ -1,14 +1,14 @@
-import { InfoCircleOutlined } from '@ant-design/icons';
-import { Col, Row, Tooltip } from 'antd';
+import { InfoCircleOutlined } from '@ant-design/icons'
+import { Col, Row, Tooltip } from 'antd'
 
-import { FormattedMessage } from 'umi';
-import React from 'react';
-import numeral from 'numeral';
-import { ChartCard, MiniArea, MiniBar, MiniProgress, Field } from './Charts';
-import type { VisitDataType } from '../data.d';
-import Trend from './Trend';
-import Yuan from '../utils/Yuan';
-import styles from '../style.less';
+import { FormattedMessage } from 'umi'
+import React from 'react'
+import numeral from 'numeral'
+import { ChartCard, MiniArea, MiniBar, MiniProgress, Field } from './Charts'
+import type { VisitDataType } from '../data.d'
+import Trend from './Trend'
+import Yuan from '../utils/Yuan'
+import styles from '../style.less'
 
 const topColResponsiveProps = {
   xs: 24,
@@ -17,7 +17,7 @@ const topColResponsiveProps = {
   lg: 12,
   xl: 6,
   style: { marginBottom: 24 },
-};
+}
 
 const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: VisitDataType[] }) => (
   <Row gutter={24}>
@@ -185,6 +185,6 @@ const IntroduceRow = ({ loading, visitData }: { loading: boolean; visitData: Vis
       </ChartCard>
     </Col>
   </Row>
-);
+)
 
-export default IntroduceRow;
+export default IntroduceRow

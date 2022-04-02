@@ -57,4 +57,4 @@ export default {
     'A lista de to-do será notificada na forma de uma estação de letra',
   'app.settings.open': 'Aberto',
   'app.settings.close': 'Fechado',
-};
+}

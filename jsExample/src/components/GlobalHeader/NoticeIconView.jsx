@@ -1,62 +1,62 @@
-import React, { Component } from 'react';
-import { connect } from 'umi';
-import { Tag, message } from 'antd';
-import groupBy from 'lodash/groupBy';
-import moment from 'moment';
-import NoticeIcon from '../NoticeIcon';
-import styles from './index.less';
+import React, { Component } from 'react'
+import { connect } from 'umi'
+import { Tag, message } from 'antd'
+import groupBy from 'lodash/groupBy'
+import moment from 'moment'
+import NoticeIcon from '../NoticeIcon'
+import styles from './index.less'
 
 class GlobalHeaderRight extends Component {
   componentDidMount() {
-    const { dispatch } = this.props;
+    const { dispatch } = this.props
 
     if (dispatch) {
       dispatch({
         type: 'global/fetchNotices',
-      });
+      })
     }
   }
 
   changeReadState = (clickedItem) => {
-    const { id } = clickedItem;
-    const { dispatch } = this.props;
+    const { id } = clickedItem
+    const { dispatch } = this.props
 
     if (dispatch) {
       dispatch({
         type: 'global/changeNoticeReadState',
         payload: id,
-      });
+      })
     }
-  };
+  }
 
   handleNoticeClear = (title, key) => {
-    const { dispatch } = this.props;
-    message.success(`${'清空了'} ${title}`);
+    const { dispatch } = this.props
+    message.success(`${'清空了'} ${title}`)
 
     if (dispatch) {
       dispatch({
         type: 'global/clearNotices',
         payload: key,
-      });
+      })
     }
-  };
+  }
 
   getNoticeData = () => {
-    const { notices = [] } = this.props;
+    const { notices = [] } = this.props
 
     if (!notices || notices.length === 0 || !Array.isArray(notices)) {
-      return {};
+      return {}
     }
 
     const newNotices = notices.map((notice) => {
-      const newNotice = { ...notice };
+      const newNotice = { ...notice }
 
       if (newNotice.datetime) {
-        newNotice.datetime = moment(notice.datetime).fromNow();
+        newNotice.datetime = moment(notice.datetime).fromNow()
       }
 
       if (newNotice.id) {
-        newNotice.key = newNotice.id;
+        newNotice.key = newNotice.id
       }
 
       if (newNotice.extra && newNotice.status) {
@@ -65,7 +65,7 @@ class GlobalHeaderRight extends Component {
           processing: 'blue',
           urgent: 'red',
           doing: 'gold',
-        }[newNotice.status];
+        }[newNotice.status]
         newNotice.extra = (
           <Tag
             color={color}
@@ -75,40 +75,40 @@ class GlobalHeaderRight extends Component {
           >
             {newNotice.extra}
           </Tag>
-        );
+        )
       }
 
-      return newNotice;
-    });
-    return groupBy(newNotices, 'type');
-  };
+      return newNotice
+    })
+    return groupBy(newNotices, 'type')
+  }
 
   getUnreadData = (noticeData) => {
-    const unreadMsg = {};
+    const unreadMsg = {}
     Object.keys(noticeData).forEach((key) => {
-      const value = noticeData[key];
+      const value = noticeData[key]
 
       if (!unreadMsg[key]) {
-        unreadMsg[key] = 0;
+        unreadMsg[key] = 0
       }
 
       if (Array.isArray(value)) {
-        unreadMsg[key] = value.filter((item) => !item.read).length;
+        unreadMsg[key] = value.filter((item) => !item.read).length
       }
-    });
-    return unreadMsg;
-  };
+    })
+    return unreadMsg
+  }
 
   render() {
-    const { currentUser, fetchingNotices, onNoticeVisibleChange } = this.props;
-    const noticeData = this.getNoticeData();
-    const unreadMsg = this.getUnreadData(noticeData);
+    const { currentUser, fetchingNotices, onNoticeVisibleChange } = this.props
+    const noticeData = this.getNoticeData()
+    const unreadMsg = this.getUnreadData(noticeData)
     return (
       <NoticeIcon
         className={styles.action}
         count={currentUser && currentUser.unreadCount}
         onItemClick={(item) => {
-          this.changeReadState(item);
+          this.changeReadState(item)
         }}
         loading={fetchingNotices}
         clearText="清空"
@@ -143,7 +143,7 @@ class GlobalHeaderRight extends Component {
           showViewMore
         />
       </NoticeIcon>
-    );
+    )
   }
 }
 
@@ -153,4 +153,4 @@ export default connect(({ user, global, loading }) => ({
   fetchingMoreNotices: loading.effects['global/fetchMoreNotices'],
   fetchingNotices: loading.effects['global/fetchNotices'],
   notices: global.notices,
-}))(GlobalHeaderRight);
+}))(GlobalHeaderRight)

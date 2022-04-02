@@ -1,28 +1,28 @@
-import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
-import { Avatar, Menu, Spin } from 'antd';
-import React from 'react';
-import { history, connect } from 'umi';
-import HeaderDropdown from '../HeaderDropdown';
-import styles from './index.less';
+import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons'
+import { Avatar, Menu, Spin } from 'antd'
+import React from 'react'
+import { history, connect } from 'umi'
+import HeaderDropdown from '../HeaderDropdown'
+import styles from './index.less'
 
 class AvatarDropdown extends React.Component {
   onMenuClick = (event) => {
-    const { key } = event;
+    const { key } = event
 
     if (key === 'logout') {
-      const { dispatch } = this.props;
+      const { dispatch } = this.props
 
       if (dispatch) {
         dispatch({
           type: 'login/logout',
-        });
+        })
       }
 
-      return;
+      return
     }
 
-    history.push(`/account/${key}`);
-  };
+    history.push(`/account/${key}`)
+  }
 
   render() {
     const {
@@ -31,7 +31,7 @@ class AvatarDropdown extends React.Component {
         name: '',
       },
       menu,
-    } = this.props;
+    } = this.props
     const menuHeaderDropdown = (
       <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
         {menu && (
@@ -53,7 +53,7 @@ class AvatarDropdown extends React.Component {
           退出登录
         </Menu.Item>
       </Menu>
-    );
+    )
     return currentUser && currentUser.name ? (
       <HeaderDropdown overlay={menuHeaderDropdown}>
         <span className={`${styles.action} ${styles.account}`}>
@@ -71,10 +71,10 @@ class AvatarDropdown extends React.Component {
           }}
         />
       </span>
-    );
+    )
   }
 }
 
 export default connect(({ user }) => ({
   currentUser: user.currentUser,
-}))(AvatarDropdown);
+}))(AvatarDropdown)

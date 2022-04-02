@@ -1,39 +1,39 @@
-import { SearchOutlined } from '@ant-design/icons';
-import { AutoComplete, Input } from 'antd';
-import useMergedState from 'rc-util/es/hooks/useMergedState';
-import React, { useRef } from 'react';
-import classNames from 'classnames';
-import styles from './index.less';
+import { SearchOutlined } from '@ant-design/icons'
+import { AutoComplete, Input } from 'antd'
+import useMergedState from 'rc-util/es/hooks/useMergedState'
+import React, { useRef } from 'react'
+import classNames from 'classnames'
+import styles from './index.less'
 
 const HeaderSearch = (props) => {
   const { className, defaultValue, onVisibleChange, placeholder, open, defaultOpen, ...restProps } =
-    props;
-  const inputRef = useRef(null);
+    props
+  const inputRef = useRef(null)
   const [value, setValue] = useMergedState(defaultValue, {
     value: props.value,
     onChange: props.onChange,
-  });
+  })
   const [searchMode, setSearchMode] = useMergedState(defaultOpen ?? false, {
     value: props.open,
     onChange: onVisibleChange,
-  });
+  })
   const inputClass = classNames(styles.input, {
     [styles.show]: searchMode,
-  });
+  })
   return (
     <div
       className={classNames(className, styles.headerSearch)}
       onClick={() => {
-        setSearchMode(true);
+        setSearchMode(true)
 
         if (searchMode && inputRef.current) {
-          inputRef.current.focus();
+          inputRef.current.focus()
         }
       }}
       onTransitionEnd={({ propertyName }) => {
         if (propertyName === 'width' && !searchMode) {
           if (onVisibleChange) {
-            onVisibleChange(searchMode);
+            onVisibleChange(searchMode)
           }
         }
       }}
@@ -63,17 +63,17 @@ const HeaderSearch = (props) => {
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               if (restProps.onSearch) {
-                restProps.onSearch(value);
+                restProps.onSearch(value)
               }
             }
           }}
           onBlur={() => {
-            setSearchMode(false);
+            setSearchMode(false)
           }}
         />
       </AutoComplete>
     </div>
-  );
-};
+  )
+}
 
-export default HeaderSearch;
+export default HeaderSearch

@@ -1,6 +1,6 @@
-import { Button, Result } from 'antd';
-import React from 'react';
-import { router } from 'umi';
+import { Button, Result } from 'antd'
+import React from 'react'
+import { router } from 'umi'
 
 const NoFoundPage: React.FC = () => (
   <Result
@@ -13,6 +13,6 @@ const NoFoundPage: React.FC = () => (
       </Button>
     }
   />
-);
+)
 
-export default NoFoundPage;
+export default NoFoundPage

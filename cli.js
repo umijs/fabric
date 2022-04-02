@@ -4,14 +4,14 @@ const yParser = require('yargs-parser');
 const semver = require('semver');
 const { existsSync } = require('fs');
 const { join } = require('path');
-const chalk = require('chalk');
+import chalk from 'chalk';
 
 // print version and @local
 const args = yParser(process.argv.slice(2));
 
 if (args.v || args.version) {
   // eslint-disable-next-line global-require
-  console.log(require('./package').version);
+  console.log(require('./package.json').version);
   if (existsSync(join(__dirname, '.local'))) {
     console.log(chalk.cyan('@local'));
   }
@@ -37,12 +37,11 @@ switch (option) {
       const details = `
       Commands:
         ${chalk.cyan('verify-commit')}    检查 commit 提交的信息
-      
       Examples:
         ${chalk.gray('fabric')}
         fabric -h
         ${chalk.gray('verify-commit ')}
-        fabric verify-commit 
+        fabric verify-commit
         `.trim();
       console.log(details);
     }

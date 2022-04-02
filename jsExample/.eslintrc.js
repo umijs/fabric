@@ -1,6 +1,6 @@
-const path = require('path');
+const path = require('path')
 
-console.log(require.resolve(path.join(__dirname, '../', 'dist/eslint')));
+console.log(require.resolve(path.join(__dirname, '../', 'dist/eslint')))
 module.exports = {
   extends: [require.resolve(path.join(__dirname, '../', 'dist/eslint'))],
   globals: {
@@ -8,4 +8,4 @@ module.exports = {
     REACT_APP_ENV: true,
     page: true,
   },
-};
+}

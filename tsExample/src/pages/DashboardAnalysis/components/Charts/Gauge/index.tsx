@@ -1,45 +1,45 @@
-import { Axis, Chart, Coord, Geom, Guide, Shape } from 'bizcharts';
+import { Axis, Chart, Coord, Geom, Guide, Shape } from 'bizcharts'
 
-import React from 'react';
-import autoHeight from '../autoHeight';
+import React from 'react'
+import autoHeight from '../autoHeight'
 
-const { Arc, Html, Line } = Guide;
+const { Arc, Html, Line } = Guide
 
 export type GaugeProps = {
-  title: React.ReactNode;
-  color?: string;
-  height?: number;
-  bgColor?: number;
-  percent: number;
-  forceFit?: boolean;
-  style?: React.CSSProperties;
-  formatter: (value: string) => string;
-};
+  title: React.ReactNode
+  color?: string
+  height?: number
+  bgColor?: number
+  percent: number
+  forceFit?: boolean
+  style?: React.CSSProperties
+  formatter: (value: string) => string
+}
 
 const defaultFormatter = (val: string): string => {
   switch (val) {
     case '2':
-      return '差';
+      return '差'
     case '4':
-      return '中';
+      return '中'
     case '6':
-      return '良';
+      return '良'
     case '8':
-      return '优';
+      return '优'
     default:
-      return '';
+      return ''
   }
-};
+}
 
 if (Shape.registerShape) {
   Shape.registerShape('point', 'pointer', {
     drawShape(cfg: any, group: any) {
-      let point = cfg.points[0];
-      point = (this as any).parsePoint(point);
+      let point = cfg.points[0]
+      point = (this as any).parsePoint(point)
       const center = (this as any).parsePoint({
         x: 0,
         y: 0,
-      });
+      })
       group.addShape('line', {
         attrs: {
           x1: center.x,
@@ -50,7 +50,7 @@ if (Shape.registerShape) {
           lineWidth: 2,
           lineCap: 'round',
         },
-      });
+      })
       return group.addShape('circle', {
         attrs: {
           x: center.x,
@@ -60,9 +60,9 @@ if (Shape.registerShape) {
           lineWidth: 3,
           fill: '#fff',
         },
-      });
+      })
     },
-  });
+  })
 }
 
 const Gauge: React.FC<GaugeProps> = (props) => {
@@ -74,7 +74,7 @@ const Gauge: React.FC<GaugeProps> = (props) => {
     formatter = defaultFormatter,
     color = '#2F9CFF',
     bgColor = '#F0F2F5',
-  } = props;
+  } = props
   const cols = {
     value: {
       type: 'linear',
@@ -83,24 +83,24 @@ const Gauge: React.FC<GaugeProps> = (props) => {
       tickCount: 6,
       nice: true,
     },
-  };
-  const data = [{ value: percent / 10 }];
+  }
+  const data = [{ value: percent / 10 }]
   const renderHtml = () => `
     <div style="width: 300px;text-align: center;font-size: 12px!important;">
       <div style="font-size: 14px; color: rgba(0,0,0,0.43);margin: 0;">${title}</div>
       <div style="font-size: 24px;color: rgba(0,0,0,0.85);margin: 0;">
         ${(data[0].value * 10).toFixed(2)}%
       </div>
-    </div>`;
+    </div>`
   const textStyle: {
-    fontSize: number;
-    fill: string;
-    textAlign: 'center';
+    fontSize: number
+    fill: string
+    textAlign: 'center'
   } = {
     fontSize: 12,
     fill: 'rgba(0, 0, 0, 0.65)',
     textAlign: 'center',
-  };
+  }
 
   return (
     <Chart height={height} data={data} scale={cols} padding={[-16, 0, 16, 0]} forceFit={forceFit}>
@@ -173,7 +173,7 @@ const Gauge: React.FC<GaugeProps> = (props) => {
         active={false}
       />
     </Chart>
-  );
-};
+  )
+}
 
-export default autoHeight()(Gauge);
+export default autoHeight()(Gauge)

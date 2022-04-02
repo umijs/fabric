@@ -1,37 +1,37 @@
-import React, { useState } from 'react';
-import { Form, Button, DatePicker, Input, Modal, Radio, Select, Steps } from 'antd';
+import React, { useState } from 'react'
+import { Form, Button, DatePicker, Input, Modal, Radio, Select, Steps } from 'antd'
 
-import type { TableListItem } from '../data.d';
+import type { TableListItem } from '../data.d'
 
 export type FormValueType = {
-  target?: string;
-  template?: string;
-  type?: string;
-  time?: string;
-  frequency?: string;
-} & Partial<TableListItem>;
+  target?: string
+  template?: string
+  type?: string
+  time?: string
+  frequency?: string
+} & Partial<TableListItem>
 
 export type UpdateFormProps = {
-  onCancel: (flag?: boolean, formVals?: FormValueType) => void;
-  onSubmit: (values: FormValueType) => void;
-  updateModalVisible: boolean;
-  values: Partial<TableListItem>;
-};
-const FormItem = Form.Item;
-const { Step } = Steps;
-const { TextArea } = Input;
-const { Option } = Select;
-const RadioGroup = Radio.Group;
+  onCancel: (flag?: boolean, formVals?: FormValueType) => void
+  onSubmit: (values: FormValueType) => void
+  updateModalVisible: boolean
+  values: Partial<TableListItem>
+}
+const FormItem = Form.Item
+const { Step } = Steps
+const { TextArea } = Input
+const { Option } = Select
+const RadioGroup = Radio.Group
 
 export type UpdateFormState = {
-  formVals: FormValueType;
-  currentStep: number;
-};
+  formVals: FormValueType
+  currentStep: number
+}
 
 const formLayout = {
   labelCol: { span: 7 },
   wrapperCol: { span: 13 },
-};
+}
 
 const UpdateForm: React.FC<UpdateFormProps> = (props) => {
   const [formVals, setFormVals] = useState<FormValueType>({
@@ -43,38 +43,38 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
     type: '1',
     time: '',
     frequency: 'month',
-  });
+  })
 
-  const [currentStep, setCurrentStep] = useState<number>(0);
+  const [currentStep, setCurrentStep] = useState<number>(0)
 
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
 
   const {
     onSubmit: handleUpdate,
     onCancel: handleUpdateModalVisible,
     updateModalVisible,
     values,
-  } = props;
+  } = props
 
   const forward = () => {
-    setCurrentStep(currentStep + 1);
-  };
+    setCurrentStep(currentStep + 1)
+  }
 
   const backward = () => {
-    setCurrentStep(currentStep - 1);
-  };
+    setCurrentStep(currentStep - 1)
+  }
 
   const handleNext = async () => {
-    const fieldsValue = await form.validateFields();
+    const fieldsValue = await form.validateFields()
 
-    setFormVals({ ...formVals, ...fieldsValue });
+    setFormVals({ ...formVals, ...fieldsValue })
 
     if (currentStep < 2) {
-      forward();
+      forward()
     } else {
-      handleUpdate(formVals);
+      handleUpdate(formVals)
     }
-  };
+  }
 
   const renderContent = () => {
     if (currentStep === 1) {
@@ -99,7 +99,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
             </RadioGroup>
           </FormItem>
         </>
-      );
+      )
     }
     if (currentStep === 2) {
       return (
@@ -123,7 +123,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
             </Select>
           </FormItem>
         </>
-      );
+      )
     }
     return (
       <>
@@ -142,8 +142,8 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
           <TextArea rows={4} placeholder="请输入至少五个字符" />
         </FormItem>
       </>
-    );
-  };
+    )
+  }
 
   const renderFooter = () => {
     if (currentStep === 1) {
@@ -154,7 +154,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
           </Button>
           <Button
             onClick={() => {
-              handleUpdateModalVisible(false, values);
+              handleUpdateModalVisible(false, values)
             }}
           >
             取消
@@ -163,7 +163,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
             下一步
           </Button>
         </>
-      );
+      )
     }
     if (currentStep === 2) {
       return (
@@ -173,7 +173,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
           </Button>
           <Button
             onClick={() => {
-              handleUpdateModalVisible(false, values);
+              handleUpdateModalVisible(false, values)
             }}
           >
             取消
@@ -182,13 +182,13 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
             完成
           </Button>
         </>
-      );
+      )
     }
     return (
       <>
         <Button
           onClick={() => {
-            handleUpdateModalVisible(false, values);
+            handleUpdateModalVisible(false, values)
           }}
         >
           取消
@@ -197,8 +197,8 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
           下一步
         </Button>
       </>
-    );
-  };
+    )
+  }
 
   return (
     <Modal
@@ -209,10 +209,10 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
       visible={updateModalVisible}
       footer={renderFooter()}
       onCancel={() => {
-        handleUpdateModalVisible(false, values);
+        handleUpdateModalVisible(false, values)
       }}
       afterClose={() => {
-        handleUpdateModalVisible();
+        handleUpdateModalVisible()
       }}
     >
       <Steps style={{ marginBottom: 28 }} size="small" current={currentStep}>
@@ -235,7 +235,7 @@ const UpdateForm: React.FC<UpdateFormProps> = (props) => {
         {renderContent()}
       </Form>
     </Modal>
-  );
-};
+  )
+}
 
-export default UpdateForm;
+export default UpdateForm

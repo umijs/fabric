@@ -1,5 +1,5 @@
-const fabric = require('../dist/index');
+const fabric = require('../dist/index.js')
 
 module.exports = {
   ...fabric.prettier,
-};
+}

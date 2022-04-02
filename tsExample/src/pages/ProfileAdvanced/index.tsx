@@ -3,7 +3,7 @@ import {
   DownOutlined,
   EllipsisOutlined,
   InfoCircleOutlined,
-} from '@ant-design/icons';
+} from '@ant-design/icons'
 import {
   Badge,
   Button,
@@ -18,18 +18,18 @@ import {
   Table,
   Tooltip,
   Empty,
-} from 'antd';
-import { GridContent, PageHeaderWrapper, RouteContext } from '@ant-design/pro-layout';
-import React, { Component, Fragment } from 'react';
+} from 'antd'
+import { GridContent, PageHeaderWrapper, RouteContext } from '@ant-design/pro-layout'
+import React, { Component, Fragment } from 'react'
 
-import type { Dispatch } from 'redux';
-import classNames from 'classnames';
-import { connect } from 'dva';
-import type { AdvancedProfileData } from './data.d';
-import styles from './style.less';
+import type { Dispatch } from 'redux'
+import classNames from 'classnames'
+import { connect } from 'dva'
+import type { AdvancedProfileData } from './data.d'
+import styles from './style.less'
 
-const { Step } = Steps;
-const ButtonGroup = Button.Group;
+const { Step } = Steps
+const ButtonGroup = Button.Group
 
 const menu = (
   <Menu>
@@ -37,7 +37,7 @@ const menu = (
     <Menu.Item key="2">选项二</Menu.Item>
     <Menu.Item key="3">选项三</Menu.Item>
   </Menu>
-);
+)
 
 const mobileMenu = (
   <Menu>
@@ -47,7 +47,7 @@ const mobileMenu = (
     <Menu.Item key="4">选项二</Menu.Item>
     <Menu.Item key="">选项三</Menu.Item>
   </Menu>
-);
+)
 
 const action = (
   <RouteContext.Consumer>
@@ -62,7 +62,7 @@ const action = (
           >
             主操作
           </Dropdown.Button>
-        );
+        )
       }
       return (
         <Fragment>
@@ -77,17 +77,17 @@ const action = (
           </ButtonGroup>
           <Button type="primary">主操作</Button>
         </Fragment>
-      );
+      )
     }}
   </RouteContext.Consumer>
-);
+)
 
 const extra = (
   <div className={styles.moreInfo}>
     <Statistic title="状态" value="待审批" />
     <Statistic title="订单金额" value={568.08} prefix="¥" />
   </div>
-);
+)
 
 const description = (
   <RouteContext.Consumer>
@@ -104,7 +104,7 @@ const description = (
       </Descriptions>
     )}
   </RouteContext.Consumer>
-);
+)
 
 const desc1 = (
   <div className={classNames(styles.textSecondary, styles.stepDescription)}>
@@ -114,7 +114,7 @@ const desc1 = (
     </Fragment>
     <div>2016-12-12 12:32</div>
   </div>
-);
+)
 
 const desc2 = (
   <div className={styles.stepDescription}>
@@ -126,7 +126,7 @@ const desc2 = (
       <a href="">催一下</a>
     </div>
   </div>
-);
+)
 
 const popoverContent = (
   <div style={{ width: 160 }}>
@@ -138,14 +138,14 @@ const popoverContent = (
       耗时：2小时25分钟
     </div>
   </div>
-);
+)
 
 const customDot = (
   dot: React.ReactNode,
   {
     status,
   }: {
-    status: string;
+    status: string
   },
 ) => {
   if (status === 'process') {
@@ -153,10 +153,10 @@ const customDot = (
       <Popover placement="topLeft" arrowPointAtCenter content={popoverContent}>
         {dot}
       </Popover>
-    );
+    )
   }
-  return dot;
-};
+  return dot
+}
 
 const operationTabList = [
   {
@@ -171,7 +171,7 @@ const operationTabList = [
     key: 'tab3',
     tab: '操作日志三',
   },
-];
+]
 
 const columns = [
   {
@@ -190,9 +190,9 @@ const columns = [
     key: 'status',
     render: (text: string) => {
       if (text === 'agree') {
-        return <Badge status="success" text="成功" />;
+        return <Badge status="success" text="成功" />
       }
-      return <Badge status="error" text="驳回" />;
+      return <Badge status="error" text="驳回" />
     },
   },
   {
@@ -205,12 +205,12 @@ const columns = [
     dataIndex: 'memo',
     key: 'memo',
   },
-];
+]
 
 type ProfileAdvancedState = {
-  operationKey: string;
-  tabActiveKey: string;
-};
+  operationKey: string
+  tabActiveKey: string
+}
 
 class ProfileAdvanced extends Component<
   { loading: boolean; profileAdvanced: AdvancedProfileData; dispatch: Dispatch<any> },
@@ -219,27 +219,27 @@ class ProfileAdvanced extends Component<
   public state: ProfileAdvancedState = {
     operationKey: 'tab1',
     tabActiveKey: 'detail',
-  };
+  }
 
   componentDidMount() {
-    const { dispatch } = this.props;
+    const { dispatch } = this.props
     dispatch({
       type: 'profileAdvanced/fetchAdvanced',
-    });
+    })
   }
 
   onOperationTabChange = (key: string) => {
-    this.setState({ operationKey: key });
-  };
+    this.setState({ operationKey: key })
+  }
 
   onTabChange = (tabActiveKey: string) => {
-    this.setState({ tabActiveKey });
-  };
+    this.setState({ tabActiveKey })
+  }
 
   render() {
-    const { operationKey, tabActiveKey } = this.state;
-    const { profileAdvanced, loading } = this.props;
-    const { advancedOperation1, advancedOperation2, advancedOperation3 } = profileAdvanced;
+    const { operationKey, tabActiveKey } = this.state
+    const { profileAdvanced, loading } = this.props
+    const { advancedOperation1, advancedOperation2, advancedOperation3 } = profileAdvanced
     const contentList = {
       tab1: (
         <Table
@@ -265,7 +265,7 @@ class ProfileAdvanced extends Component<
           columns={columns}
         />
       ),
-    };
+    }
     return (
       <PageHeaderWrapper
         title="单号：234231029431"
@@ -372,7 +372,7 @@ class ProfileAdvanced extends Component<
           </GridContent>
         </div>
       </PageHeaderWrapper>
-    );
+    )
   }
 }
 
@@ -381,12 +381,12 @@ export default connect(
     profileAdvanced,
     loading,
   }: {
-    profileAdvanced: AdvancedProfileData;
+    profileAdvanced: AdvancedProfileData
     loading: {
-      effects: Record<string, boolean>;
-    };
+      effects: Record<string, boolean>
+    }
   }) => ({
     profileAdvanced,
     loading: loading.effects['profileAdvanced/fetchAdvanced'],
   }),
-)(ProfileAdvanced);
+)(ProfileAdvanced)

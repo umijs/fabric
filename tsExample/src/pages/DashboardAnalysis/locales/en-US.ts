@@ -31,4 +31,4 @@ export default {
   'dashboardanalysis.table.search-keyword': 'Keyword',
   'dashboardanalysis.table.users': 'Users',
   'dashboardanalysis.table.weekly-range': 'Weekly Range',
-};
+}

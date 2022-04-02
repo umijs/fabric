@@ -1,24 +1,24 @@
-import path from 'path';
+import path from 'path'
 
-import * as IWebpackChainConfig from 'webpack-chain';
+import * as IWebpackChainConfig from 'webpack-chain'
 
 function getModulePackageName(module: { context: string }) {
-  if (!module.context) return null;
+  if (!module.context) return null
 
-  const nodeModulesPath = path.join(__dirname, '../node_modules/');
+  const nodeModulesPath = path.join(__dirname, '../node_modules/')
   if (module.context.substring(0, nodeModulesPath.length) !== nodeModulesPath) {
-    return null;
+    return null
   }
 
-  const moduleRelativePath = module.context.substring(nodeModulesPath.length);
-  const [moduleDirName] = moduleRelativePath.split(path.sep);
-  let packageName: string | null = moduleDirName;
+  const moduleRelativePath = module.context.substring(nodeModulesPath.length)
+  const [moduleDirName] = moduleRelativePath.split(path.sep)
+  let packageName: string | null = moduleDirName
   // handle tree shaking
   if (packageName && packageName.match('^_')) {
     // eslint-disable-next-line prefer-destructuring
-    packageName = packageName.match(/^_(@?[^@]+)/)![1];
+    packageName = packageName.match(/^_(@?[^@]+)/)![1]
   }
-  return packageName;
+  return packageName
 }
 
 export const webpackPlugin = (config: IWebpackChainConfig) => {
@@ -34,7 +34,7 @@ export const webpackPlugin = (config: IWebpackChainConfig) => {
       cacheGroups: {
         vendors: {
           test: (module: { context: string }) => {
-            const packageName = getModulePackageName(module) || '';
+            const packageName = getModulePackageName(module) || ''
             if (packageName) {
               return [
                 'bizcharts',
@@ -43,20 +43,20 @@ export const webpackPlugin = (config: IWebpackChainConfig) => {
                 '@antv',
                 'gg-editor-core',
                 'bizcharts-plugin-slider',
-              ].includes(packageName);
+              ].includes(packageName)
             }
-            return false;
+            return false
           },
           name(module: { context: string }) {
-            const packageName = getModulePackageName(module);
+            const packageName = getModulePackageName(module)
             if (packageName) {
               if (['bizcharts', '@antv_data-set'].indexOf(packageName) >= 0) {
-                return 'viz'; // visualization package
+                return 'viz' // visualization package
               }
             }
-            return 'misc';
+            return 'misc'
           },
         },
       },
-    });
-};
+    })
+}

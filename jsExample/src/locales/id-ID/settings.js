@@ -57,4 +57,4 @@ export default {
     'Daftar to-do akan diberitahukan dalam bentuk surat dari stasiun',
   'app.settings.open': 'Buka',
   'app.settings.close': 'Tutup',
-};
+}

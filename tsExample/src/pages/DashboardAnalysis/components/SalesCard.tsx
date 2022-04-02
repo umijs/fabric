@@ -1,21 +1,21 @@
-import { Card, Col, DatePicker, Row, Tabs } from 'antd';
-import { FormattedMessage, formatMessage } from 'umi';
+import { Card, Col, DatePicker, Row, Tabs } from 'antd'
+import { FormattedMessage, formatMessage } from 'umi'
 
-import React from 'react';
-import numeral from 'numeral';
-import type { VisitDataType } from '../data.d';
-import { Bar } from './Charts';
-import styles from '../style.less';
+import React from 'react'
+import numeral from 'numeral'
+import type { VisitDataType } from '../data.d'
+import { Bar } from './Charts'
+import styles from '../style.less'
 
-const { RangePicker } = DatePicker;
-const { TabPane } = Tabs;
+const { RangePicker } = DatePicker
+const { TabPane } = Tabs
 
-const rankingListData: { title: string; total: number }[] = [];
+const rankingListData: { title: string; total: number }[] = []
 for (let i = 0; i < 7; i += 1) {
   rankingListData.push({
     title: formatMessage({ id: 'dashboardanalysis.analysis.test' }, { no: i }),
     total: 323234,
-  });
+  })
 }
 
 const SalesCard = ({
@@ -26,12 +26,12 @@ const SalesCard = ({
   loading,
   selectDate,
 }: {
-  rangePickerValue: any;
-  isActive: (key: 'today' | 'week' | 'month' | 'year') => string;
-  salesData: VisitDataType[];
-  loading: boolean;
-  handleRangePickerChange: (dates: any, dateStrings: [string, string]) => void;
-  selectDate: (key: 'today' | 'week' | 'month' | 'year') => void;
+  rangePickerValue: any
+  isActive: (key: 'today' | 'week' | 'month' | 'year') => string
+  salesData: VisitDataType[]
+  loading: boolean
+  handleRangePickerChange: (dates: any, dateStrings: [string, string]) => void
+  selectDate: (key: 'today' | 'week' | 'month' | 'year') => void
 }) => (
   <Card loading={loading} bordered={false} bodyStyle={{ padding: 0 }}>
     <div className={styles.salesCard}>
@@ -42,7 +42,7 @@ const SalesCard = ({
               <a
                 className={isActive('today')}
                 onClick={() => {
-                  selectDate('today');
+                  selectDate('today')
                 }}
               >
                 <FormattedMessage
@@ -53,7 +53,7 @@ const SalesCard = ({
               <a
                 className={isActive('week')}
                 onClick={() => {
-                  selectDate('week');
+                  selectDate('week')
                 }}
               >
                 <FormattedMessage
@@ -64,7 +64,7 @@ const SalesCard = ({
               <a
                 className={isActive('month')}
                 onClick={() => {
-                  selectDate('month');
+                  selectDate('month')
                 }}
               >
                 <FormattedMessage
@@ -75,7 +75,7 @@ const SalesCard = ({
               <a
                 className={isActive('year')}
                 onClick={() => {
-                  selectDate('year');
+                  selectDate('year')
                 }}
               >
                 <FormattedMessage
@@ -187,6 +187,6 @@ const SalesCard = ({
       </Tabs>
     </div>
   </Card>
-);
+)
 
-export default SalesCard;
+export default SalesCard

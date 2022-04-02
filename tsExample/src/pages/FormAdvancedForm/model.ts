@@ -1,20 +1,20 @@
-import type { AnyAction } from 'redux';
-import type { EffectsCommandMap } from 'dva';
-import { message } from 'antd';
-import { fakeSubmitForm } from './service';
+import type { AnyAction } from 'redux'
+import type { EffectsCommandMap } from 'dva'
+import { message } from 'antd'
+import { fakeSubmitForm } from './service'
 
 export type Effect = (
   action: AnyAction,
   effects: EffectsCommandMap & { select: <T>(func: (state: any) => T) => T },
-) => void;
+) => void
 
 export type ModelType = {
-  namespace: string;
-  state: Record<string, never>;
+  namespace: string
+  state: Record<string, never>
   effects: {
-    submitAdvancedForm: Effect;
-  };
-};
+    submitAdvancedForm: Effect
+  }
+}
 
 const Model: ModelType = {
   namespace: 'formAdvancedForm',
@@ -23,10 +23,10 @@ const Model: ModelType = {
 
   effects: {
     *submitAdvancedForm({ payload }, { call }) {
-      yield call(fakeSubmitForm, payload);
-      message.success('提交成功');
+      yield call(fakeSubmitForm, payload)
+      message.success('提交成功')
     },
   },
-};
+}
 
-export default Model;
+export default Model

@@ -28,4 +28,4 @@ export default {
   'app.setting.copyinfo': '拷贝成功，请到 src/defaultSettings.js 中替换默认配置',
   'app.setting.production.hint':
     '配置栏只在开发环境用于预览，生产环境不会展现，请拷贝后手动修改配置文件',
-};
+}

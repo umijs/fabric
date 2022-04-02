@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { RouteContext } from '@ant-design/pro-layout';
-import classNames from 'classnames';
-import styles from './index.less';
+import React, { Component } from 'react'
+import { RouteContext } from '@ant-design/pro-layout'
+import classNames from 'classnames'
+import styles from './index.less'
 
 export type FooterToolbarProps = {
-  extra?: React.ReactNode;
-  style?: React.CSSProperties;
-  className?: string;
-  isMobile?: boolean;
-};
+  extra?: React.ReactNode
+  style?: React.CSSProperties
+  className?: string
+  isMobile?: boolean
+}
 
 export default class FooterToolbar extends Component<FooterToolbarProps> {
   getWidth = ({
@@ -16,19 +16,19 @@ export default class FooterToolbar extends Component<FooterToolbarProps> {
     isMobile,
     siderWidth,
   }: {
-    collapsed?: boolean;
-    isMobile?: boolean;
-    siderWidth?: number;
+    collapsed?: boolean
+    isMobile?: boolean
+    siderWidth?: number
   }) => {
-    const sider = document.querySelector('.ant-layout-sider')!;
+    const sider = document.querySelector('.ant-layout-sider')!
     if (!sider) {
-      return undefined;
+      return undefined
     }
-    return isMobile ? undefined : `calc(100% - ${collapsed ? 80 : siderWidth || 256}px)`;
-  };
+    return isMobile ? undefined : `calc(100% - ${collapsed ? 80 : siderWidth || 256}px)`
+  }
 
   render() {
-    const { children, className, extra, ...restProps } = this.props;
+    const { children, className, extra, ...restProps } = this.props
     return (
       <RouteContext.Consumer>
         {(value) => (
@@ -42,6 +42,6 @@ export default class FooterToolbar extends Component<FooterToolbarProps> {
           </div>
         )}
       </RouteContext.Consumer>
-    );
+    )
   }
 }

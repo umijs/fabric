@@ -1,5 +1,5 @@
 // https://umijs.org/config/
-import { defineConfig } from 'umi';
+import { defineConfig } from 'umi'
 
 export default defineConfig({
   plugins: [
@@ -12,4 +12,4 @@ export default defineConfig({
     babelPlugins: [],
     babelOptions: {},
   },
-});
+})

@@ -31,4 +31,4 @@ export default {
   'dashboardanalysis.table.search-keyword': '搜索關鍵詞',
   'dashboardanalysis.table.users': '用戶數',
   'dashboardanalysis.table.weekly-range': '周漲幅',
-};
+}

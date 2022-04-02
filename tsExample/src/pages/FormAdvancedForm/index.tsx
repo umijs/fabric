@@ -1,19 +1,19 @@
-import { Form } from '@ant-design/compatible';
-import '@ant-design/compatible/assets/index.css';
-import { CloseCircleOutlined } from '@ant-design/icons';
-import { Button, Card, Col, DatePicker, Input, Popover, Row, Select, TimePicker } from 'antd';
-import React, { Component } from 'react';
+import { Form } from '@ant-design/compatible'
+import '@ant-design/compatible/assets/index.css'
+import { CloseCircleOutlined } from '@ant-design/icons'
+import { Button, Card, Col, DatePicker, Input, Popover, Row, Select, TimePicker } from 'antd'
+import React, { Component } from 'react'
 
-import type { Dispatch } from 'redux';
-import type { FormComponentProps } from '@ant-design/compatible/es/form';
-import { PageHeaderWrapper } from '@ant-design/pro-layout';
-import { connect } from 'dva';
-import TableForm from './components/TableForm';
-import FooterToolbar from './components/FooterToolbar';
-import styles from './style.less';
+import type { Dispatch } from 'redux'
+import type { FormComponentProps } from '@ant-design/compatible/es/form'
+import { PageHeaderWrapper } from '@ant-design/pro-layout'
+import { connect } from 'dva'
+import TableForm from './components/TableForm'
+import FooterToolbar from './components/FooterToolbar'
+import styles from './style.less'
 
-const { Option } = Select;
-const { RangePicker } = DatePicker;
+const { Option } = Select
+const { RangePicker } = DatePicker
 
 const fieldLabels = {
   name: '仓库名',
@@ -28,7 +28,7 @@ const fieldLabels = {
   approver2: '责任人',
   dateRange2: '生效日期',
   type2: '任务类型',
-};
+}
 
 const tableData = [
   {
@@ -49,48 +49,48 @@ const tableData = [
     name: 'Joe Black',
     department: 'Sidney No. 1 Lake Park',
   },
-];
+]
 
 type FormAdvancedFormProps = {
-  dispatch: Dispatch<any>;
-  submitting: boolean;
-} & FormComponentProps;
+  dispatch: Dispatch<any>
+  submitting: boolean
+} & FormComponentProps
 
 class FormAdvancedForm extends Component<FormAdvancedFormProps> {
   getErrorInfo = () => {
     const {
       form: { getFieldsError },
-    } = this.props;
-    const errors = getFieldsError();
-    const errorCount = Object.keys(errors).filter((key) => errors[key]).length;
+    } = this.props
+    const errors = getFieldsError()
+    const errorCount = Object.keys(errors).filter((key) => errors[key]).length
     if (!errors || errorCount === 0) {
-      return null;
+      return null
     }
     const scrollToField = (fieldKey: string) => {
-      const labelNode = document.querySelector(`label[for="${fieldKey}"]`);
+      const labelNode = document.querySelector(`label[for="${fieldKey}"]`)
       if (labelNode) {
-        labelNode.scrollIntoView(true);
+        labelNode.scrollIntoView(true)
       }
-    };
+    }
     const errorList = Object.keys(errors).map((key) => {
       if (!errors[key]) {
-        return null;
+        return null
       }
-      const errorMessage = errors[key] || [];
+      const errorMessage = errors[key] || []
       return (
         <li
           key={key}
           className={styles.errorListItem}
           onClick={() => {
-            scrollToField(key);
+            scrollToField(key)
           }}
         >
           <CloseCircleOutlined className={styles.errorIcon} />
           <div className={styles.errorMessage}>{errorMessage[0]}</div>
           <div className={styles.errorField}>{fieldLabels[key]}</div>
         </li>
-      );
-    });
+      )
+    })
     return (
       <span className={styles.errorIcon}>
         <Popover
@@ -100,39 +100,39 @@ class FormAdvancedForm extends Component<FormAdvancedFormProps> {
           trigger="click"
           getPopupContainer={(trigger: HTMLElement) => {
             if (trigger && trigger.parentNode) {
-              return trigger.parentNode as HTMLElement;
+              return trigger.parentNode as HTMLElement
             }
-            return trigger;
+            return trigger
           }}
         >
           <CloseCircleOutlined />
         </Popover>
         {errorCount}
       </span>
-    );
-  };
+    )
+  }
 
   validate = () => {
     const {
       form: { validateFieldsAndScroll },
       dispatch,
-    } = this.props;
+    } = this.props
     validateFieldsAndScroll((error, values) => {
       if (!error) {
         // submit the values
         dispatch({
           type: 'formAdvancedForm/submitAdvancedForm',
           payload: values,
-        });
+        })
       }
-    });
-  };
+    })
+  }
 
   render() {
     const {
       form: { getFieldDecorator },
       submitting,
-    } = this.props;
+    } = this.props
     return (
       <>
         <PageHeaderWrapper content="高级表单常见于一次性输入和提交大批量数据的场景。">
@@ -266,9 +266,9 @@ class FormAdvancedForm extends Component<FormAdvancedFormProps> {
                         style={{ width: '100%' }}
                         getPopupContainer={(trigger) => {
                           if (trigger && trigger.parentNode) {
-                            return trigger.parentNode as HTMLElement;
+                            return trigger.parentNode as HTMLElement
                           }
-                          return trigger;
+                          return trigger
                         }}
                       />,
                     )}
@@ -302,10 +302,10 @@ class FormAdvancedForm extends Component<FormAdvancedFormProps> {
           </Button>
         </FooterToolbar>
       </>
-    );
+    )
   }
 }
 
 export default connect(({ loading }: { loading: { effects: Record<string, boolean> } }) => ({
   submitting: loading.effects['formAdvancedForm/submitAdvancedForm'],
-}))(Form.create<FormAdvancedFormProps>()(FormAdvancedForm));
+}))(Form.create<FormAdvancedFormProps>()(FormAdvancedForm))

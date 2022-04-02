@@ -1,10 +1,10 @@
-import React from 'react';
-import { Inspector } from 'react-dev-inspector';
+import React from 'react'
+import { Inspector } from 'react-dev-inspector'
 
-const InspectorWrapper = process.env.NODE_ENV === 'development' ? Inspector : React.Fragment;
+const InspectorWrapper = process.env.NODE_ENV === 'development' ? Inspector : React.Fragment
 
 const Layout = ({ children }) => {
-  return <InspectorWrapper>{children}</InspectorWrapper>;
-};
+  return <InspectorWrapper>{children}</InspectorWrapper>
+}
 
-export default Layout;
+export default Layout

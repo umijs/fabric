@@ -1,9 +1,9 @@
 /* eslint-disable global-require */
-const findChrome = require('carlo/lib/find_chrome');
+const findChrome = require('carlo/lib/find_chrome')
 
 const getBrowser = async () => {
   try {
-    const puppeteer = require('puppeteer');
+    const puppeteer = require('puppeteer')
     const browser = await puppeteer.launch({
       args: [
         '--disable-gpu',
@@ -12,16 +12,16 @@ const getBrowser = async () => {
         '--no-zygote',
         '--no-sandbox',
       ],
-    });
-    return browser;
+    })
+    return browser
   } catch (error) {
     // console.log(error)
   }
 
   try {
-    const puppeteer = require('puppeteer-core');
-    const findChromePath = await findChrome({});
-    const { executablePath } = findChromePath;
+    const puppeteer = require('puppeteer-core')
+    const findChromePath = await findChrome({})
+    const { executablePath } = findChromePath
     const browser = await puppeteer.launch({
       executablePath,
       args: [
@@ -31,12 +31,12 @@ const getBrowser = async () => {
         '--no-zygote',
         '--no-sandbox',
       ],
-    });
-    return browser;
+    })
+    return browser
   } catch (error) {
-    console.log('🧲 no find chrome');
+    console.log('🧲 no find chrome')
   }
-  throw new Error('no find puppeteer');
-};
+  throw new Error('no find puppeteer')
+}
 
-module.exports = getBrowser;
+module.exports = getBrowser

@@ -4,4 +4,4 @@ export default {
   'app.pwa.serviceworker.updated.hint':
     'Silahkan klik tombol "Refresh" untuk memuat ulang halaman ini',
   'app.pwa.serviceworker.updated.ok': 'Memuat ulang',
-};
+}

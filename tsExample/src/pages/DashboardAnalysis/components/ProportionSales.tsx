@@ -1,12 +1,12 @@
-import { Card, Radio } from 'antd';
+import { Card, Radio } from 'antd'
 
-import { FormattedMessage } from 'umi';
-import type { RadioChangeEvent } from 'antd/es/radio';
-import React from 'react';
-import type { VisitDataType } from '../data.d';
-import { Pie } from './Charts';
-import Yuan from '../utils/Yuan';
-import styles from '../style.less';
+import { FormattedMessage } from 'umi'
+import type { RadioChangeEvent } from 'antd/es/radio'
+import React from 'react'
+import type { VisitDataType } from '../data.d'
+import { Pie } from './Charts'
+import Yuan from '../utils/Yuan'
+import styles from '../style.less'
 
 const ProportionSales = ({
   dropdownGroup,
@@ -15,11 +15,11 @@ const ProportionSales = ({
   salesPieData,
   handleChangeSalesType,
 }: {
-  loading: boolean;
-  dropdownGroup: React.ReactNode;
-  salesType: 'all' | 'online' | 'stores';
-  salesPieData: VisitDataType[];
-  handleChangeSalesType?: (e: RadioChangeEvent) => void;
+  loading: boolean
+  dropdownGroup: React.ReactNode
+  salesType: 'all' | 'online' | 'stores'
+  salesPieData: VisitDataType[]
+  handleChangeSalesType?: (e: RadioChangeEvent) => void
 }) => (
   <Card
     loading={loading}
@@ -68,6 +68,6 @@ const ProportionSales = ({
       />
     </div>
   </Card>
-);
+)
 
-export default ProportionSales;
+export default ProportionSales

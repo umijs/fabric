@@ -56,4 +56,4 @@ export default {
   'app.settings.notification.todo-description': 'To Doタスクは、内部レターの形式で通知されます',
   'app.settings.open': '開く',
   'app.settings.close': '閉じる',
-};
+}

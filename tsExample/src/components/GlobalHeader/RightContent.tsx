@@ -1,25 +1,25 @@
-import { QuestionCircleOutlined } from '@ant-design/icons';
-import { Tooltip } from 'antd';
-import React from 'react';
-import { connect } from 'dva';
-import type { ConnectProps, ConnectState } from '@/models/connect';
-import Avatar from './AvatarDropdown';
-import HeaderSearch from '../HeaderSearch';
-import SelectLang from '../SelectLang';
-import styles from './index.less';
+import { QuestionCircleOutlined } from '@ant-design/icons'
+import { Tooltip } from 'antd'
+import React from 'react'
+import { connect } from 'dva'
+import type { ConnectProps, ConnectState } from '@/models/connect'
+import Avatar from './AvatarDropdown'
+import HeaderSearch from '../HeaderSearch'
+import SelectLang from '../SelectLang'
+import styles from './index.less'
 
-export type SiderTheme = 'light' | 'dark';
+export type SiderTheme = 'light' | 'dark'
 export type GlobalHeaderRightProps = {
-  theme?: SiderTheme;
-  layout: 'sidemenu' | 'topmenu';
-} & ConnectProps;
+  theme?: SiderTheme
+  layout: 'sidemenu' | 'topmenu'
+} & ConnectProps
 
 const GlobalHeaderRight: React.SFC<GlobalHeaderRightProps> = (props) => {
-  const { theme, layout } = props;
-  let className = styles.right;
+  const { theme, layout } = props
+  let className = styles.right
 
   if (theme === 'dark' && layout === 'topmenu') {
-    className = `${styles.right}  ${styles.dark}`;
+    className = `${styles.right}  ${styles.dark}`
   }
 
   return (
@@ -60,10 +60,10 @@ const GlobalHeaderRight: React.SFC<GlobalHeaderRightProps> = (props) => {
       <Avatar />
       <SelectLang className={styles.action} />
     </div>
-  );
-};
+  )
+}
 
 export default connect(({ settings }: ConnectState) => ({
   theme: settings.navTheme,
   layout: settings.layout,
-}))(GlobalHeaderRight);
+}))(GlobalHeaderRight)

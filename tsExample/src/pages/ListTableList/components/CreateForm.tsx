@@ -1,24 +1,24 @@
-import React from 'react';
-import { Form, Input, Modal } from 'antd';
-import type { TableListItem } from '../data.d';
+import React from 'react'
+import { Form, Input, Modal } from 'antd'
+import type { TableListItem } from '../data.d'
 
-const FormItem = Form.Item;
+const FormItem = Form.Item
 
 type CreateFormProps = {
-  modalVisible: boolean;
-  onSubmit: (fieldsValue: TableListItem) => void;
-  onCancel: () => void;
-};
+  modalVisible: boolean
+  onSubmit: (fieldsValue: TableListItem) => void
+  onCancel: () => void
+}
 
 const CreateForm: React.FC<CreateFormProps> = (props) => {
-  const [form] = Form.useForm();
+  const [form] = Form.useForm()
 
-  const { modalVisible, onSubmit: handleAdd, onCancel } = props;
+  const { modalVisible, onSubmit: handleAdd, onCancel } = props
   const okHandle = async () => {
-    const fieldsValue = (await form.validateFields()) as TableListItem;
-    form.resetFields();
-    handleAdd(fieldsValue);
-  };
+    const fieldsValue = (await form.validateFields()) as TableListItem
+    form.resetFields()
+    handleAdd(fieldsValue)
+  }
   return (
     <Modal
       destroyOnClose
@@ -26,7 +26,7 @@ const CreateForm: React.FC<CreateFormProps> = (props) => {
       visible={modalVisible}
       onOk={okHandle}
       onCancel={() => {
-        onCancel();
+        onCancel()
       }}
     >
       <Form form={form}>
@@ -41,7 +41,7 @@ const CreateForm: React.FC<CreateFormProps> = (props) => {
         </FormItem>
       </Form>
     </Modal>
-  );
-};
+  )
+}
 
-export default CreateForm;
+export default CreateForm

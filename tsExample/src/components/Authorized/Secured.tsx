@@ -1,15 +1,15 @@
-import React from 'react';
-import CheckPermissions from './CheckPermissions';
+import React from 'react'
+import CheckPermissions from './CheckPermissions'
 
 /** 默认不能访问任何页面 default is "NULL" */
-const Exception403 = () => 403;
+const Exception403 = () => 403
 
 export const isComponentClass = (component: React.ComponentClass | React.ReactNode): boolean => {
-  if (!component) return false;
-  const proto = Object.getPrototypeOf(component);
-  if (proto === React.Component || proto === Function.prototype) return true;
-  return isComponentClass(proto);
-};
+  if (!component) return false
+  const proto = Object.getPrototypeOf(component)
+  if (proto === React.Component || proto === Function.prototype) return true
+  return isComponentClass(proto)
+}
 
 // Determine whether the incoming component has been instantiated
 // AuthorizedRoute is already instantiated
@@ -17,14 +17,14 @@ export const isComponentClass = (component: React.ComponentClass | React.ReactNo
 // Secured is not instantiated
 const checkIsInstantiation = (target: React.ComponentClass | React.ReactNode) => {
   if (isComponentClass(target)) {
-    const Target = target as React.ComponentClass;
-    return (props: any) => <Target {...props} />;
+    const Target = target as React.ComponentClass
+    return (props: any) => <Target {...props} />
   }
   if (React.isValidElement(target)) {
-    return (props: any) => React.cloneElement(target, props);
+    return (props: any) => React.cloneElement(target, props)
   }
-  return () => target;
-};
+  return () => target
+}
 
 /**
  * 用于判断是否拥有权限访问此 view 权限 authority 支持传入 string, () => boolean | Promise e.g. 'user' 只有 user 用户能访问
@@ -41,17 +41,17 @@ const authorize = (authority: string, error?: React.ReactNode) => {
    * Conversion into a class 防止传入字符串时找不到staticContext造成报错 String parameters can cause staticContext
    * not found error
    */
-  let classError: boolean | React.FunctionComponent = false;
+  let classError: boolean | React.FunctionComponent = false
   if (error) {
-    classError = (() => error) as React.FunctionComponent;
+    classError = (() => error) as React.FunctionComponent
   }
   if (!authority) {
-    throw new Error('authority is required');
+    throw new Error('authority is required')
   }
   return function decideAuthority(target: React.ComponentClass | React.ReactNode) {
-    const component = CheckPermissions(authority, target, classError || Exception403);
-    return checkIsInstantiation(component);
-  };
-};
+    const component = CheckPermissions(authority, target, classError || Exception403)
+    return checkIsInstantiation(component)
+  }
+}
 
-export default authorize;
+export default authorize

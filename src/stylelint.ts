@@ -14,6 +14,9 @@ module.exports = {
     'font-family-no-missing-generic-family-keyword': null, // iconfont
     'plugin/declaration-block-no-ignored-properties': true,
     'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
+    'no-invalid-double-slash-comments': null,
+    'at-rule-no-unknown': null,
+    'selector-class-pattern': null,
     // webcomponent
     'selector-type-no-unknown': null,
     'value-keyword-case': ['lower', { ignoreProperties: ['composes'] }],

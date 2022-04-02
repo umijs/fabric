@@ -5,7 +5,7 @@ jobs:
   test:
     strategy:
       matrix:
-        node_version: [16.x, 12.x, 14.x]
+        node_version: [12.x, 14.x, 16.x]
       fail-fast: false
     runs-on: ubuntu-latest
 
@@ -20,10 +20,10 @@ jobs:
           registry-url: 'https://registry.yarnpkg.com'
 
       - name: install
-        run: npm install
+        run: yarn install
 
       - name: install
-        run: cd jsExample && npm install
+        run: cd jsExample && yarn install
 
       - name: test
-        run: npm run testJS
+        run: yarn testJS

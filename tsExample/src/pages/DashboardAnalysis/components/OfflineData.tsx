@@ -1,18 +1,18 @@
-import { Card, Col, Row, Tabs } from 'antd';
-import { FormattedMessage, formatMessage } from 'umi';
-import React from 'react';
-import type { OfflineChartData, OfflineDataType } from '../data.d';
+import { Card, Col, Row, Tabs } from 'antd'
+import { FormattedMessage, formatMessage } from 'umi'
+import React from 'react'
+import type { OfflineChartData, OfflineDataType } from '../data.d'
 
-import { TimelineChart, Pie } from './Charts';
-import NumberInfo from './NumberInfo';
-import styles from '../style.less';
+import { TimelineChart, Pie } from './Charts'
+import NumberInfo from './NumberInfo'
+import styles from '../style.less'
 
 const CustomTab = ({
   data,
   currentTabKey: currentKey,
 }: {
-  data: OfflineDataType;
-  currentTabKey: string;
+  data: OfflineDataType
+  currentTabKey: string
 }) => (
   <Row gutter={8} style={{ width: 138, margin: '8px 0' }}>
     <Col span={12}>
@@ -40,9 +40,9 @@ const CustomTab = ({
       />
     </Col>
   </Row>
-);
+)
 
-const { TabPane } = Tabs;
+const { TabPane } = Tabs
 
 const OfflineData = ({
   activeKey,
@@ -51,11 +51,11 @@ const OfflineData = ({
   offlineChartData,
   handleTabChange,
 }: {
-  activeKey: string;
-  loading: boolean;
-  offlineData: OfflineDataType[];
-  offlineChartData: OfflineChartData[];
-  handleTabChange: (activeKey: string) => void;
+  activeKey: string
+  loading: boolean
+  offlineData: OfflineDataType[]
+  offlineChartData: OfflineChartData[]
+  handleTabChange: (activeKey: string) => void
 }) => (
   <Card loading={loading} className={styles.offlineCard} bordered={false} style={{ marginTop: 32 }}>
     <Tabs activeKey={activeKey} onChange={handleTabChange}>
@@ -75,6 +75,6 @@ const OfflineData = ({
       ))}
     </Tabs>
   </Card>
-);
+)
 
-export default OfflineData;
+export default OfflineData

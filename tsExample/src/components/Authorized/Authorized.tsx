@@ -1,21 +1,21 @@
-import React from 'react';
-import { Result } from 'antd';
-import type { IAuthorityType } from './CheckPermissions';
-import check from './CheckPermissions';
+import React from 'react'
+import { Result } from 'antd'
+import type { IAuthorityType } from './CheckPermissions'
+import check from './CheckPermissions'
 
-import type AuthorizedRoute from './AuthorizedRoute';
-import type Secured from './Secured';
+import type AuthorizedRoute from './AuthorizedRoute'
+import type Secured from './Secured'
 
 type AuthorizedProps = {
-  authority: IAuthorityType;
-  noMatch?: React.ReactNode;
-};
+  authority: IAuthorityType
+  noMatch?: React.ReactNode
+}
 
 type IAuthorizedType = React.FunctionComponent<AuthorizedProps> & {
-  Secured: typeof Secured;
-  check: typeof check;
-  AuthorizedRoute: typeof AuthorizedRoute;
-};
+  Secured: typeof Secured
+  check: typeof check
+  AuthorizedRoute: typeof AuthorizedRoute
+}
 
 const Authorized: React.FunctionComponent<AuthorizedProps> = ({
   children,
@@ -28,9 +28,9 @@ const Authorized: React.FunctionComponent<AuthorizedProps> = ({
     />
   ),
 }) => {
-  const childrenRender: React.ReactNode = typeof children === 'undefined' ? null : children;
-  const dom = check(authority, childrenRender, noMatch);
-  return <>{dom}</>;
-};
+  const childrenRender: React.ReactNode = typeof children === 'undefined' ? null : children
+  const dom = check(authority, childrenRender, noMatch)
+  return <>{dom}</>
+}
 
-export default Authorized as IAuthorizedType;
+export default Authorized as IAuthorizedType

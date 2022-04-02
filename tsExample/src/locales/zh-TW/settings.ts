@@ -52,4 +52,4 @@ export default {
   'app.settings.notification.todo-description': '待辦任務將以站內信的形式通知',
   'app.settings.open': '開',
   'app.settings.close': '關',
-};
+}

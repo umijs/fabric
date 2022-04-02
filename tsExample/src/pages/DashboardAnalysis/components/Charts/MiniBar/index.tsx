@@ -1,22 +1,22 @@
-import { Chart, Geom, Tooltip } from 'bizcharts';
+import { Chart, Geom, Tooltip } from 'bizcharts'
 
-import React from 'react';
-import autoHeight from '../autoHeight';
-import styles from '../index.less';
+import React from 'react'
+import autoHeight from '../autoHeight'
+import styles from '../index.less'
 
 export type MiniBarProps = {
-  color?: string;
-  height?: number;
+  color?: string
+  height?: number
   data: {
-    x: number | string;
-    y: number;
-  }[];
-  forceFit?: boolean;
-  style?: React.CSSProperties;
-};
+    x: number | string
+    y: number
+  }[]
+  forceFit?: boolean
+  style?: React.CSSProperties
+}
 
 const MiniBar: React.FC<MiniBarProps> = (props) => {
-  const { height = 0, forceFit = true, color = '#1890FF', data = [] } = props;
+  const { height = 0, forceFit = true, color = '#1890FF', data = [] } = props
 
   const scale = {
     x: {
@@ -25,9 +25,9 @@ const MiniBar: React.FC<MiniBarProps> = (props) => {
     y: {
       min: 0,
     },
-  };
+  }
 
-  const padding: [number, number, number, number] = [36, 5, 30, 5];
+  const padding: [number, number, number, number] = [36, 5, 30, 5]
 
   const tooltip: [string, (...args: any[]) => { name?: string; value: string }] = [
     'x*y',
@@ -35,10 +35,10 @@ const MiniBar: React.FC<MiniBarProps> = (props) => {
       name: x,
       value: y,
     }),
-  ];
+  ]
 
   // for tooltip not to be hide
-  const chartHeight = height + 54;
+  const chartHeight = height + 54
 
   return (
     <div className={styles.miniChart} style={{ height }}>
@@ -49,6 +49,6 @@ const MiniBar: React.FC<MiniBarProps> = (props) => {
         </Chart>
       </div>
     </div>
-  );
-};
-export default autoHeight()(MiniBar);
+  )
+}
+export default autoHeight()(MiniBar)

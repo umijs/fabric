@@ -1,24 +1,24 @@
-import type { AnyAction, Reducer } from 'redux';
+import type { AnyAction, Reducer } from 'redux'
 
-import type { EffectsCommandMap } from 'dva';
-import type { AdvancedProfileData } from './data.d';
-import { queryAdvancedProfile } from './service';
+import type { EffectsCommandMap } from 'dva'
+import type { AdvancedProfileData } from './data.d'
+import { queryAdvancedProfile } from './service'
 
 export type Effect = (
   action: AnyAction,
   effects: EffectsCommandMap & { select: <T>(func: (state: AdvancedProfileData) => T) => T },
-) => void;
+) => void
 
 export type ModelType = {
-  namespace: string;
-  state: AdvancedProfileData;
+  namespace: string
+  state: AdvancedProfileData
   effects: {
-    fetchAdvanced: Effect;
-  };
+    fetchAdvanced: Effect
+  }
   reducers: {
-    show: Reducer<AdvancedProfileData>;
-  };
-};
+    show: Reducer<AdvancedProfileData>
+  }
+}
 
 const Model: ModelType = {
   namespace: 'profileAdvanced',
@@ -31,11 +31,11 @@ const Model: ModelType = {
 
   effects: {
     *fetchAdvanced(_, { call, put }) {
-      const response = yield call(queryAdvancedProfile);
+      const response = yield call(queryAdvancedProfile)
       yield put({
         type: 'show',
         payload: response,
-      });
+      })
     },
   },
 
@@ -44,9 +44,9 @@ const Model: ModelType = {
       return {
         ...state,
         ...payload,
-      };
+      }
     },
   },
-};
+}
 
-export default Model;
+export default Model

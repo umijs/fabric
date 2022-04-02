@@ -1,6 +1,6 @@
-import React from 'react';
-import { Result } from 'antd';
-import check from './CheckPermissions';
+import React from 'react'
+import { Result } from 'antd'
+import check from './CheckPermissions'
 
 const Authorized = ({
   children,
@@ -13,9 +13,9 @@ const Authorized = ({
     />
   ),
 }) => {
-  const childrenRender = typeof children === 'undefined' ? null : children;
-  const dom = check(authority, childrenRender, noMatch);
-  return <>{dom}</>;
-};
+  const childrenRender = typeof children === 'undefined' ? null : children
+  const dom = check(authority, childrenRender, noMatch)
+  return <>{dom}</>
+}
 
-export default Authorized;
+export default Authorized

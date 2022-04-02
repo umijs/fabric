@@ -1,24 +1,24 @@
-import { AlipayCircleOutlined, TaobaoCircleOutlined, WeiboCircleOutlined } from '@ant-design/icons';
-import { Alert, Checkbox } from 'antd';
-import React, { useState } from 'react';
-import type { Dispatch, AnyAction } from 'redux';
-import { Link } from 'umi';
-import { connect } from 'dva';
-import type { StateType } from '@/models/login';
-import type { LoginParamsType } from '@/services/login';
-import type { ConnectState } from '@/models/connect';
-import LoginFrom from './components/Login';
-import styles from './style.less';
+import { AlipayCircleOutlined, TaobaoCircleOutlined, WeiboCircleOutlined } from '@ant-design/icons'
+import { Alert, Checkbox } from 'antd'
+import React, { useState } from 'react'
+import type { Dispatch, AnyAction } from 'redux'
+import { Link } from 'umi'
+import { connect } from 'dva'
+import type { StateType } from '@/models/login'
+import type { LoginParamsType } from '@/services/login'
+import type { ConnectState } from '@/models/connect'
+import LoginFrom from './components/Login'
+import styles from './style.less'
 
-const { Tab, UserName, Password, Mobile, Captcha, Submit } = LoginFrom;
+const { Tab, UserName, Password, Mobile, Captcha, Submit } = LoginFrom
 type LoginProps = {
-  dispatch: Dispatch<AnyAction>;
-  userLogin: StateType;
-  submitting?: boolean;
-};
+  dispatch: Dispatch<AnyAction>
+  userLogin: StateType
+  submitting?: boolean
+}
 
 const LoginMessage: React.FC<{
-  content: string;
+  content: string
 }> = ({ content }) => (
   <Alert
     style={{
@@ -28,21 +28,21 @@ const LoginMessage: React.FC<{
     type="error"
     showIcon
   />
-);
+)
 
 const Login: React.FC<LoginProps> = (props) => {
-  const { userLogin = {}, submitting } = props;
-  const { status, type: loginType } = userLogin;
-  const [autoLogin, setAutoLogin] = useState(true);
-  const [type, setType] = useState<string>('account');
+  const { userLogin = {}, submitting } = props
+  const { status, type: loginType } = userLogin
+  const [autoLogin, setAutoLogin] = useState(true)
+  const [type, setType] = useState<string>('account')
 
   const handleSubmit = (values: LoginParamsType) => {
-    const { dispatch } = props;
+    const { dispatch } = props
     dispatch({
       type: 'login/login',
       payload: { ...values, type },
-    });
-  };
+    })
+  }
   return (
     <div className={styles.main}>
       <LoginFrom activeKey={type} onTabChange={setType} onSubmit={handleSubmit}>
@@ -108,7 +108,7 @@ const Login: React.FC<LoginProps> = (props) => {
           <Checkbox
             checked={autoLogin}
             onChange={(e) => {
-              setAutoLogin(e.target.checked);
+              setAutoLogin(e.target.checked)
             }}
           >
             自动登录
@@ -133,10 +133,10 @@ const Login: React.FC<LoginProps> = (props) => {
         </div>
       </LoginFrom>
     </div>
-  );
-};
+  )
+}
 
 export default connect(({ login, loading }: ConnectState) => ({
   userLogin: login,
   submitting: loading.effects['login/login'],
-}))(Login);
+}))(Login)
