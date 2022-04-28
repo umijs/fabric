@@ -7,7 +7,7 @@ const msgPath = process.env.GIT_PARAMS || process.env.HUSKY_GIT_PARAMS;
 const msg = require('fs').readFileSync(msgPath, 'utf-8').trim();
 
 const commitRE =
-  /^(((\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f\ude80-\udeff])|[\u2600-\u2B55]) )?(revert: )?(feat|fix|docs|UI|refactor|⚡perf|workflow|build|CI|typos|chore|tests|types|wip|release|dep|locale)(\(.+\))?: .{1,50}/;
+  /^(((\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f\ude80-\udeff])|[\u2600-\u2B55]) )?(revert: )?(feat|fix|docs|UI|refactor|perf|workflow|build|CI|typos|chore|tests|types|wip|release|dep|locale)(\(.+\))?: .{1,50}/;
 
 if (!commitRE.test(msg)) {
   console.log();
@@ -24,7 +24,7 @@ if (!commitRE.test(msg)) {
         ${chalk.green(`🌷 UI(模块): 修改了一下样式`)}
         ${chalk.green(`🏰 chore(模块): 对脚手架做了些更改`)}
         ${chalk.green(`🌐 locale(模块): 为国际化做了微小的贡献\n`)}
-        ${chalk.green(`其他提交类型: refactor, ⚡perf, workflow, build, CI, typos, tests, types, wip, release, dep\n`)}
+        ${chalk.green(`其他提交类型: refactor, perf, workflow, build, CI, typos, tests, types, wip, release, dep\n`)}
         ${chalk.red(`See .github/commit-convention.md for more details.\n`)}`,
       );
     } else {
@@ -41,7 +41,7 @@ if (!commitRE.test(msg)) {
         ${chalk.green(`🌷 UI(compiler): better styles`)}
         ${chalk.green(`🏰 chore(compiler): Made some changes to the scaffolding`)}
         ${chalk.green(`🌐 locale(compiler): Made a small contribution to internationalization\n`)}
-        ${chalk.green(`Other commit types: refactor, ⚡perf, workflow, build, CI, typos, tests, types, wip, release, dep\n`)}
+        ${chalk.green(`Other commit types: refactor, perf, workflow, build, CI, typos, tests, types, wip, release, dep\n`)}
         ${chalk.red(`See .github/commit-convention.md for more details.\n`)}`,
       );
     }
