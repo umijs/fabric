@@ -1,6 +1,5 @@
-import { Redirect, Route } from 'umi';
-
 import React from 'react';
+import { Redirect, Route } from 'umi';
 import Authorized from './Authorized';
 import type { IAuthorityType } from './CheckPermissions';
 

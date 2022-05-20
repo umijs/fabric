@@ -1,17 +1,15 @@
-import { Tabs, Form } from 'antd';
+import type { LoginParamsType } from '@/services/login';
+import { Form, Tabs } from 'antd';
+import type { FormInstance } from 'antd/es/form';
+import classNames from 'classnames';
 import React, { useState } from 'react';
 import useMergeValue from 'use-merge-value';
-import classNames from 'classnames';
-import type { FormInstance } from 'antd/es/form';
-import type { LoginParamsType } from '@/services/login';
-
+import styles from './index.less';
 import LoginContext from './LoginContext';
 import type { LoginItemProps } from './LoginItem';
 import LoginItem from './LoginItem';
-
 import LoginSubmit from './LoginSubmit';
 import LoginTab from './LoginTab';
-import styles from './index.less';
 
 export type LoginProps = {
   activeKey?: string;

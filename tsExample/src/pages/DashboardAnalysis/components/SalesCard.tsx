@@ -1,11 +1,10 @@
 import { Card, Col, DatePicker, Row, Tabs } from 'antd';
-import { FormattedMessage, formatMessage } from 'umi';
-
-import React from 'react';
 import numeral from 'numeral';
+import React from 'react';
+import { formatMessage, FormattedMessage } from 'umi';
 import type { VisitDataType } from '../data.d';
-import { Bar } from './Charts';
 import styles from '../style.less';
+import { Bar } from './Charts';
 
 const { RangePicker } = DatePicker;
 const { TabPane } = Tabs;

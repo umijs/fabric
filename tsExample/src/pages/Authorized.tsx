@@ -1,9 +1,9 @@
-import React from 'react';
-import { Redirect } from 'umi';
-import { connect } from 'dva';
+import type { ConnectProps, ConnectState, UserModelState } from '@/models/connect';
 import Authorized from '@/utils/Authorized';
 import { getRouteAuthority } from '@/utils/utils';
-import type { ConnectProps, ConnectState, UserModelState } from '@/models/connect';
+import { connect } from 'dva';
+import React from 'react';
+import { Redirect } from 'umi';
 
 type AuthComponentProps = {
   user: UserModelState;

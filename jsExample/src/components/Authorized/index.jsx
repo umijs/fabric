@@ -1,7 +1,7 @@
 import Authorized from './Authorized';
-import Secured from './Secured';
 import check from './CheckPermissions';
 import renderAuthorize from './renderAuthorize';
+import Secured from './Secured';
 
 Authorized.Secured = Secured;
 Authorized.check = check;

@@ -1,7 +1,6 @@
+import { query as queryUsers, queryCurrent } from '@/services/user';
 import type { Effect } from 'dva';
 import type { Reducer } from 'redux';
-
-import { queryCurrent, query as queryUsers } from '@/services/user';
 
 export type CurrentUser = {
   avatar?: string;

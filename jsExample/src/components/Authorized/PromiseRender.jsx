@@ -1,6 +1,6 @@
-import React from 'react';
 import { Spin } from 'antd';
 import isEqual from 'lodash/isEqual';
+import React from 'react';
 import { isComponentClass } from './Secured'; // eslint-disable-next-line
 
 export default class PromiseRender extends React.Component {

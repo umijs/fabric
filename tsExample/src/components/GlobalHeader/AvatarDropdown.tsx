@@ -1,11 +1,11 @@
+import type { ConnectProps, ConnectState } from '@/models/connect';
+import type { CurrentUser } from '@/models/user';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu, Spin } from 'antd';
 import type { ClickParam } from 'antd/es/menu';
-import React from 'react';
 import { connect } from 'dva';
+import React from 'react';
 import { router } from 'umi';
-import type { ConnectProps, ConnectState } from '@/models/connect';
-import type { CurrentUser } from '@/models/user';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 

@@ -1,14 +1,13 @@
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { Card, Col, Row, Table, Tooltip } from 'antd';
-import { FormattedMessage } from 'umi';
-import React from 'react';
 import numeral from 'numeral';
+import React from 'react';
+import { FormattedMessage } from 'umi';
 import type { SearchDataType, VisitDataType } from '../data.d';
-
+import styles from '../style.less';
 import { MiniArea } from './Charts';
 import NumberInfo from './NumberInfo';
 import Trend from './Trend';
-import styles from '../style.less';
 
 const columns = [
   {

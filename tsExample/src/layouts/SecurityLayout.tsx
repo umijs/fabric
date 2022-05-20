@@ -1,10 +1,10 @@
-import React from 'react';
-import { connect } from 'dva';
-import { PageLoading } from '@ant-design/pro-layout';
-import { Redirect } from 'umi';
-import { stringify } from 'querystring';
-import type { ConnectState, ConnectProps } from '@/models/connect';
+import type { ConnectProps, ConnectState } from '@/models/connect';
 import type { CurrentUser } from '@/models/user';
+import { PageLoading } from '@ant-design/pro-layout';
+import { connect } from 'dva';
+import { stringify } from 'querystring';
+import React from 'react';
+import { Redirect } from 'umi';
 
 type SecurityLayoutProps = {
   loading?: boolean;

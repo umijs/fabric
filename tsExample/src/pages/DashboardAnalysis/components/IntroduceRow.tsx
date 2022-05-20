@@ -1,14 +1,13 @@
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { Col, Row, Tooltip } from 'antd';
-
-import { FormattedMessage } from 'umi';
-import React from 'react';
 import numeral from 'numeral';
-import { ChartCard, MiniArea, MiniBar, MiniProgress, Field } from './Charts';
+import React from 'react';
+import { FormattedMessage } from 'umi';
 import type { VisitDataType } from '../data.d';
-import Trend from './Trend';
-import Yuan from '../utils/Yuan';
 import styles from '../style.less';
+import Yuan from '../utils/Yuan';
+import { ChartCard, Field, MiniArea, MiniBar, MiniProgress } from './Charts';
+import Trend from './Trend';
 
 const topColResponsiveProps = {
   xs: 24,

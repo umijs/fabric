@@ -1,6 +1,5 @@
-import type { AnyAction, Reducer } from 'redux';
-
 import type { EffectsCommandMap } from 'dva';
+import type { AnyAction, Reducer } from 'redux';
 import type { AnalysisData } from './data.d';
 import { fakeChartData } from './service';
 

@@ -1,6 +1,6 @@
-import type { AnyAction } from 'redux';
-import type { EffectsCommandMap } from 'dva';
 import { message } from 'antd';
+import type { EffectsCommandMap } from 'dva';
+import type { AnyAction } from 'redux';
 import { fakeSubmitForm } from './service';
 
 export type Effect = (

@@ -1,5 +1,5 @@
-import React from 'react';
 import { Form, Input, Modal } from 'antd';
+import React from 'react';
 import type { TableListItem } from '../data.d';
 
 const FormItem = Form.Item;

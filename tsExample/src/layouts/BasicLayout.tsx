@@ -2,22 +2,22 @@
  * Ant Design Pro v4 use `@ant-design/pro-layout` to handle Layout. You can view component api by:
  * https://github.com/ant-design/ant-design-pro-layout
  */
+import RightContent from '@/components/GlobalHeader/RightContent';
+import type { ConnectState } from '@/models/connect';
+import Authorized from '@/utils/Authorized';
+import { getAuthorityFromRouter, isAntDesignPro } from '@/utils/utils';
+import { GithubOutlined } from '@ant-design/icons';
 import type {
-  MenuDataItem,
   BasicLayoutProps as ProLayoutProps,
+  MenuDataItem,
   Settings,
 } from '@ant-design/pro-layout';
 import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
-import { formatMessage, Link } from 'umi';
+import { Button, Result } from 'antd';
+import { connect } from 'dva';
 import React, { useEffect } from 'react';
 import type { Dispatch } from 'redux';
-import { connect } from 'dva';
-import { GithubOutlined } from '@ant-design/icons';
-import { Result, Button } from 'antd';
-import Authorized from '@/utils/Authorized';
-import RightContent from '@/components/GlobalHeader/RightContent';
-import type { ConnectState } from '@/models/connect';
-import { isAntDesignPro, getAuthorityFromRouter } from '@/utils/utils';
+import { formatMessage, Link } from 'umi';
 import logo from '../assets/logo.svg';
 
 const noMatch = (

@@ -1,3 +1,4 @@
+import { getFakeCaptcha } from '@/services/login';
 import {
   AlipayCircleOutlined,
   LockTwoTone,
@@ -7,11 +8,10 @@ import {
   UserOutlined,
   WeiboCircleOutlined,
 } from '@ant-design/icons';
-import { Alert, Space, message, Tabs } from 'antd';
-import React, { useState } from 'react';
 import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { useIntl, connect, FormattedMessage } from 'umi';
-import { getFakeCaptcha } from '@/services/login';
+import { Alert, message, Space, Tabs } from 'antd';
+import React, { useState } from 'react';
+import { connect, FormattedMessage, useIntl } from 'umi';
 import styles from './index.less';
 
 const LoginMessage = ({ content }) => (

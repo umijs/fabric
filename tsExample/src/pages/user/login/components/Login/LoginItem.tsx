@@ -1,13 +1,12 @@
-import { Button, Col, Input, Row, Form, message } from 'antd';
-import React, { useState, useCallback, useEffect } from 'react';
-import omit from 'omit.js';
-import type { FormItemProps } from 'antd/es/form/FormItem';
 import { getFakeCaptcha } from '@/services/login';
-
-import ItemMap from './map';
+import { Button, Col, Form, Input, message, Row } from 'antd';
+import type { FormItemProps } from 'antd/es/form/FormItem';
+import omit from 'omit.js';
+import React, { useCallback, useEffect, useState } from 'react';
+import styles from './index.less';
 import type { LoginContextProps } from './LoginContext';
 import LoginContext from './LoginContext';
-import styles from './index.less';
+import ItemMap from './map';
 
 export type WrappedLoginItemProps = LoginItemProps;
 export type LoginItemKeyType = keyof typeof ItemMap;

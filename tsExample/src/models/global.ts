@@ -1,8 +1,7 @@
-import type { Reducer } from 'redux';
-import type { Subscription, Effect } from 'dva';
-
 import type { NoticeIconData } from '@/components/NoticeIcon';
 import { queryNotices } from '@/services/user';
+import type { Effect, Subscription } from 'dva';
+import type { Reducer } from 'redux';
 import type { ConnectState } from './connect.d';
 
 export type NoticeItem = {

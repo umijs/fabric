@@ -1,7 +1,7 @@
 import { Card } from 'antd';
 import type { CardProps } from 'antd/es/card';
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import styles from './index.less';
 
 type TotalType = () => React.ReactNode;

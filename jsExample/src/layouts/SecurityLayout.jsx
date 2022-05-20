@@ -1,7 +1,7 @@
-import React from 'react';
 import { PageLoading } from '@ant-design/pro-layout';
-import { Redirect, connect } from 'umi';
 import { stringify } from 'querystring';
+import React from 'react';
+import { connect, Redirect } from 'umi';
 
 class SecurityLayout extends React.Component {
   state = {

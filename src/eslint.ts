@@ -1,5 +1,5 @@
-import * as path from 'path';
 import * as fs from 'fs';
+import * as path from 'path';
 import tsEslintConfig from './tsEslintConfig';
 
 const isTypeAwareEnabled = process.env.DISABLE_TYPE_AWARE === undefined;

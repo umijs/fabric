@@ -1,4 +1,4 @@
-import { isUrl, getRouteAuthority } from './utils';
+import { getRouteAuthority, isUrl } from './utils';
 
 describe('isUrl tests', (): void => {
   it('should return false for invalid and corner case inputs', (): void => {

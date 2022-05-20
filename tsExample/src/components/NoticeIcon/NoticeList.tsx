@@ -1,7 +1,6 @@
 import { Avatar, List } from 'antd';
-
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import type { NoticeIconData } from './index';
 import styles from './NoticeList.less';
 

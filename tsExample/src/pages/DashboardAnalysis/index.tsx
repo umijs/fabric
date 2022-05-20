@@ -1,15 +1,14 @@
 import { EllipsisOutlined } from '@ant-design/icons';
-import { Col, Dropdown, Menu, Row } from 'antd';
-import React, { Component, Suspense } from 'react';
-
-import type { Dispatch } from 'redux';
 import { GridContent } from '@ant-design/pro-layout';
+import { Col, Dropdown, Menu, Row } from 'antd';
 import type { RadioChangeEvent } from 'antd/es/radio';
 import { connect } from 'dva';
+import React, { Component, Suspense } from 'react';
+import type { Dispatch } from 'redux';
 import PageLoading from './components/PageLoading';
-import { getTimeDistance } from './utils/utils';
 import type { AnalysisData } from './data.d';
 import styles from './style.less';
+import { getTimeDistance } from './utils/utils';
 
 const IntroduceRow = React.lazy(() => import('./components/IntroduceRow'));
 const SalesCard = React.lazy(() => import('./components/SalesCard'));

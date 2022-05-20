@@ -4,27 +4,26 @@ import {
   EllipsisOutlined,
   InfoCircleOutlined,
 } from '@ant-design/icons';
+import { GridContent, PageHeaderWrapper, RouteContext } from '@ant-design/pro-layout';
 import {
   Badge,
   Button,
   Card,
-  Statistic,
   Descriptions,
   Divider,
   Dropdown,
+  Empty,
   Menu,
   Popover,
+  Statistic,
   Steps,
   Table,
   Tooltip,
-  Empty,
 } from 'antd';
-import { GridContent, PageHeaderWrapper, RouteContext } from '@ant-design/pro-layout';
-import React, { Component, Fragment } from 'react';
-
-import type { Dispatch } from 'redux';
 import classNames from 'classnames';
 import { connect } from 'dva';
+import React, { Component, Fragment } from 'react';
+import type { Dispatch } from 'redux';
 import type { AdvancedProfileData } from './data.d';
 import styles from './style.less';
 

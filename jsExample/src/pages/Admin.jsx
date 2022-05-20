@@ -1,7 +1,7 @@
-import React from 'react';
 import { HeartTwoTone, SmileTwoTone } from '@ant-design/icons';
-import { Card, Typography, Alert } from 'antd';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
+import { Alert, Card, Typography } from 'antd';
+import React from 'react';
 import { useIntl } from 'umi';
 
 export default () => {

@@ -1,11 +1,11 @@
-import type { MenuDataItem } from '@ant-design/pro-layout';
-import { DefaultFooter, getMenuData, getPageTitle } from '@ant-design/pro-layout';
-import { Helmet } from 'react-helmet';
-import { Link, formatMessage } from 'umi';
-import React from 'react';
-import { connect } from 'dva';
 import SelectLang from '@/components/SelectLang';
 import type { ConnectProps, ConnectState } from '@/models/connect';
+import type { MenuDataItem } from '@ant-design/pro-layout';
+import { DefaultFooter, getMenuData, getPageTitle } from '@ant-design/pro-layout';
+import { connect } from 'dva';
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { formatMessage, Link } from 'umi';
 import logo from '../assets/logo.svg';
 import styles from './UserLayout.less';
 

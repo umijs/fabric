@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import type { TabPaneProps } from 'antd/es/tabs';
 import { Tabs } from 'antd';
+import type { TabPaneProps } from 'antd/es/tabs';
+import React, { useEffect } from 'react';
 import type { LoginContextProps } from './LoginContext';
 import LoginContext from './LoginContext';
 

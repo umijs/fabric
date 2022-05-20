@@ -1,9 +1,9 @@
-import { Tooltip, Tag } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
+import { Tag, Tooltip } from 'antd';
 import React from 'react';
 import { connect, SelectLang } from 'umi';
-import Avatar from './AvatarDropdown';
 import HeaderSearch from '../HeaderSearch';
+import Avatar from './AvatarDropdown';
 import styles from './index.less';
 
 const ENVTagColor = {

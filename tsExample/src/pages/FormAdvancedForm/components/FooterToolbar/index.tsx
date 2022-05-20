@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
 import { RouteContext } from '@ant-design/pro-layout';
 import classNames from 'classnames';
+import React, { Component } from 'react';
 import styles from './index.less';
 
 export type FooterToolbarProps = {

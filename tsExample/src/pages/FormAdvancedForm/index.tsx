@@ -1,15 +1,14 @@
 import { Form } from '@ant-design/compatible';
 import '@ant-design/compatible/assets/index.css';
-import { CloseCircleOutlined } from '@ant-design/icons';
-import { Button, Card, Col, DatePicker, Input, Popover, Row, Select, TimePicker } from 'antd';
-import React, { Component } from 'react';
-
-import type { Dispatch } from 'redux';
 import type { FormComponentProps } from '@ant-design/compatible/es/form';
+import { CloseCircleOutlined } from '@ant-design/icons';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
+import { Button, Card, Col, DatePicker, Input, Popover, Row, Select, TimePicker } from 'antd';
 import { connect } from 'dva';
-import TableForm from './components/TableForm';
+import React, { Component } from 'react';
+import type { Dispatch } from 'redux';
 import FooterToolbar from './components/FooterToolbar';
+import TableForm from './components/TableForm';
 import styles from './style.less';
 
 const { Option } = Select;

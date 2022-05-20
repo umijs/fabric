@@ -1,11 +1,10 @@
-import { Chart, Coord, Geom, Tooltip } from 'bizcharts';
-import React, { Component } from 'react';
-
 import { DataView } from '@antv/data-set';
-import Debounce from 'lodash.debounce';
 import { Divider } from 'antd';
-import ReactFitText from 'react-fittext';
+import { Chart, Coord, Geom, Tooltip } from 'bizcharts';
 import classNames from 'classnames';
+import Debounce from 'lodash.debounce';
+import React, { Component } from 'react';
+import ReactFitText from 'react-fittext';
 import autoHeight from '../autoHeight';
 import styles from './index.less';
 
