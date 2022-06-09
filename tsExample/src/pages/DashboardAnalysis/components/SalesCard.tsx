@@ -1,6 +1,5 @@
 import { Card, Col, DatePicker, Row, Tabs } from 'antd';
 import numeral from 'numeral';
-import React from 'react';
 import { formatMessage, FormattedMessage } from 'umi';
 import type { VisitDataType } from '../data.d';
 import styles from '../style.less';

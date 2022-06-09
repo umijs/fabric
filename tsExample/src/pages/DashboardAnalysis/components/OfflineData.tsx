@@ -1,5 +1,4 @@
 import { Card, Col, Row, Tabs } from 'antd';
-import React from 'react';
 import { formatMessage, FormattedMessage } from 'umi';
 import type { OfflineChartData, OfflineDataType } from '../data.d';
 import styles from '../style.less';

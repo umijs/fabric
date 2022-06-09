@@ -1,7 +1,6 @@
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { Col, Row, Tooltip } from 'antd';
 import numeral from 'numeral';
-import React from 'react';
 import { FormattedMessage } from 'umi';
 import type { VisitDataType } from '../data.d';
 import styles from '../style.less';

@@ -5,7 +5,7 @@ import { message, Tag } from 'antd';
 import { connect } from 'dva';
 import groupBy from 'lodash/groupBy';
 import moment from 'moment';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import NoticeIcon from '../NoticeIcon';
 import styles from './index.less';
 

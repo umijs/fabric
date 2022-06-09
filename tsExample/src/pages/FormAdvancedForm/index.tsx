@@ -5,7 +5,7 @@ import { CloseCircleOutlined } from '@ant-design/icons';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import { Button, Card, Col, DatePicker, Input, Popover, Row, Select, TimePicker } from 'antd';
 import { connect } from 'dva';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import type { Dispatch } from 'redux';
 import FooterToolbar from './components/FooterToolbar';
 import TableForm from './components/TableForm';
