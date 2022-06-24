@@ -104,6 +104,9 @@ module.exports = {
     'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
     polyfills: ['fetch', 'Promise', 'URL', 'object-assign'],
+    react: {
+      version: 'detect',
+    },
   },
   overrides: isTsProject
     ? [
