@@ -1,7 +1,7 @@
 import { message, Tag } from 'antd';
 import groupBy from 'lodash/groupBy';
 import moment from 'moment';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { connect } from 'umi';
 import NoticeIcon from '../NoticeIcon';
 import styles from './index.less';

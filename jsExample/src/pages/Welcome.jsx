@@ -1,6 +1,5 @@
 import { PageContainer } from '@ant-design/pro-layout';
 import { Alert, Card, Typography } from 'antd';
-import React from 'react';
 import { FormattedMessage, useIntl } from 'umi';
 import styles from './Welcome.less';
 

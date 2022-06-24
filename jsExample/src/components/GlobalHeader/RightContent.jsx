@@ -1,6 +1,5 @@
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { Tag, Tooltip } from 'antd';
-import React from 'react';
 import { connect, SelectLang } from 'umi';
 import HeaderSearch from '../HeaderSearch';
 import Avatar from './AvatarDropdown';

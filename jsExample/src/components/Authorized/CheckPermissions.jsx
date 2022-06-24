@@ -1,4 +1,3 @@
-import React from 'react';
 import PromiseRender from './PromiseRender';
 import { CURRENT } from './renderAuthorize'; // eslint-disable-next-line
 

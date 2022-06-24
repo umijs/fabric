@@ -7,7 +7,6 @@ import {
   StepsForm,
 } from '@ant-design/pro-form';
 import { Modal } from 'antd';
-import React from 'react';
 import { FormattedMessage, useIntl } from 'umi';
 
 const UpdateForm = (props) => {

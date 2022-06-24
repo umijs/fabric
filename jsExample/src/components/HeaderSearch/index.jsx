@@ -2,7 +2,7 @@ import { SearchOutlined } from '@ant-design/icons';
 import { AutoComplete, Input } from 'antd';
 import classNames from 'classnames';
 import useMergedState from 'rc-util/es/hooks/useMergedState';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import styles from './index.less';
 
 const HeaderSearch = (props) => {

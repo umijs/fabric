@@ -1,5 +1,4 @@
 import { Result } from 'antd';
-import React from 'react';
 import check from './CheckPermissions';
 
 const Authorized = ({

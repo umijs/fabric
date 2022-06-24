@@ -9,7 +9,7 @@ import { GithubOutlined } from '@ant-design/icons';
 import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
 import { getMatchMenu } from '@umijs/route-utils';
 import { Button, Result } from 'antd';
-import React, { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { connect, history, Link, useIntl } from 'umi';
 import logo from '../assets/logo.svg';
 

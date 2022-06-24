@@ -10,7 +10,7 @@ import {
 } from '@ant-design/icons';
 import ProForm, { ProFormCaptcha, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import { Alert, message, Space, Tabs } from 'antd';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { connect, FormattedMessage, useIntl } from 'umi';
 import styles from './index.less';
 
