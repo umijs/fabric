@@ -27,7 +27,7 @@ if (!commitRE.test(msg)) {
         ${chalk.green(
           `其他提交类型: refactor, perf, workflow, build, CI, typos, tests, types, wip, release, dep\n`,
         )}
-        ${chalk.red(`See .github/commit-convention.md for more details.\n`)}`,
+        ${chalk.red(`See https://github.com/vuejs/core/blob/main/.github/commit-convention.md\n`)}`,
       );
     } else {
       console.error(
@@ -46,7 +46,7 @@ if (!commitRE.test(msg)) {
         ${chalk.green(
           `Other commit types: refactor, perf, workflow, build, CI, typos, tests, types, wip, release, dep\n`,
         )}
-        ${chalk.red(`See .github/commit-convention.md for more details.\n`)}`,
+        ${chalk.red(`See https://github.com/vuejs/core/blob/main/.github/commit-convention.md\n`)}`,
       );
     }
 
