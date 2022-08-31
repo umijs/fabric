@@ -1,6 +1,6 @@
 {
   "name": "@umijs/fabric",
-  "version": "3.0.0",
+  "version": "2.0.11",
   "description": "A collection of configuration files containing prettier, eslint, stylelint",
   "keywords": [
     "eslint",
@@ -64,7 +64,6 @@
     "fast-glob": "^3.2.4",
     "os-locale": "^5.0.0",
     "prettier": "^2.3.2",
-    "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-packagejson": "^2.2.18",
     "prettier-plugin-two-style-order": "^1.0.0",
     "stylelint": "^13.0.0",
