@@ -42,7 +42,7 @@ if (isTsProject) {
 module.exports = {
   extends: ['prettier', 'plugin:react/recommended'],
   parser: '@babel/eslint-parser',
-  plugins: ['react', 'jest', 'unicorn', 'react-hooks'],
+  plugins: ['react', 'jest', '@babel', 'unicorn', 'react-hooks'],
   env: {
     browser: true,
     node: true,
@@ -53,6 +53,11 @@ module.exports = {
   },
   rules: {
     strict: ['error', 'never'],
+    '@babel/new-cap': 0,
+    '@babel/no-invalid-this': 0,
+    '@babel/no-unused-expressions': 2,
+    '@babel/object-curly-spacing': 0,
+    '@babel/semi': 2,
     'react/display-name': 0,
     'react/jsx-props-no-spreading': 0,
     'react/state-in-constructor': 0,
