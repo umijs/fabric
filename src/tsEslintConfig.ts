@@ -95,7 +95,6 @@ export default {
   '@typescript-eslint/no-unsafe-return': 0,
   'no-unused-expressions': 'off',
   '@typescript-eslint/no-unused-expressions': 'error',
-  'no-unused-vars': 'off',
   'no-use-before-define': 'off',
   'no-useless-constructor': 'off',
   '@typescript-eslint/no-useless-constructor': 'error',
@@ -155,8 +154,6 @@ export default {
   '@typescript-eslint/ban-types': 1,
   '@typescript-eslint/explicit-module-boundary-types': 0,
   '@typescript-eslint/naming-convention': 0,
-  '@typescript-eslint/no-unused-vars': [
-    'error',
-    { vars: 'all', args: 'after-used', ignoreRestSiblings: true },
-  ],
+  'no-unused-vars': 'off',
+  '@typescript-eslint/no-unused-vars': 'warn',
 };
