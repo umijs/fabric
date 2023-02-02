@@ -78,6 +78,7 @@
     "mockjs": "^1.0.1-beta3",
     "prettier": "^2.3.2",
     "prettier-plugin-style-order": "^0.2.2",
+    "prettier-plugin-packagejson": "2.3.0",
     "pro-download": "1.0.1",
     "puppeteer-core": "^5.0.0",
     "stylelint": "^13.0.0",
