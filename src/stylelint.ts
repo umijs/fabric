@@ -16,6 +16,8 @@ module.exports = {
     'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
     // webcomponent
     'selector-type-no-unknown': null,
+    'selector-class-pattern': '^[a-z][a-zA-Z0-9_-]+$',  // skip errors from selector-class-pattern
+    'selector-id-pattern': '^[a-z][a-zA-Z0-9_-]+$',
     'value-keyword-case': ['lower', { ignoreProperties: ['composes'] }],
   },
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
