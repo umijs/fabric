@@ -1,13 +1,16 @@
-@import '~antd/es/style/themes/default.less';
+@import url('~antd/es/style/themes/default.less');
 
 .pie {
   position: relative;
+
   .chart {
     position: relative;
   }
+
   &.hasLegend .chart {
     width: ~'calc(100% - 240px)';
   }
+
   .legend {
     position: absolute;
     top: 50%;
@@ -17,16 +20,19 @@
     padding: 0;
     list-style: none;
     transform: translateY(-50%);
+
     li {
       height: 22px;
       margin-bottom: 16px;
       line-height: 22px;
       cursor: pointer;
+
       &:last-child {
         margin-bottom: 0;
       }
     }
   }
+
   .dot {
     position: relative;
     top: -1px;
@@ -36,6 +42,7 @@
     margin-right: 8px;
     border-radius: 8px;
   }
+
   .line {
     display: inline-block;
     width: 1px;
@@ -43,19 +50,24 @@
     margin-right: 8px;
     background-color: @border-color-split;
   }
+
   .legendTitle {
     color: @text-color;
   }
+
   .percent {
     color: @text-color-secondary;
   }
+
   .value {
     position: absolute;
     right: 0;
   }
+
   .title {
     margin-bottom: 8px;
   }
+
   .total {
     position: absolute;
     top: 50%;
@@ -63,6 +75,7 @@
     max-height: 62px;
     text-align: center;
     transform: translate(-50%, -50%);
+
     & > h4 {
       height: 22px;
       margin-bottom: 8px;
@@ -71,6 +84,7 @@
       font-size: 14px;
       line-height: 22px;
     }
+
     & > p {
       display: block;
       height: 32px;
@@ -85,8 +99,9 @@
 .legendBlock {
   &.hasLegend .chart {
     width: 100%;
-    margin: 0 0 32px 0;
+    margin: 0 0 32px;
   }
+
   .legend {
     position: relative;
     transform: none;

@@ -1,4 +1,4 @@
-@import '~antd/es/style/themes/default.less';
+@import url('~antd/es/style/themes/default.less');
 
 .card {
   margin-bottom: 24px;
@@ -11,7 +11,7 @@
 }
 
 .heading {
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
   font-size: 14px;
   line-height: 22px;
 }
@@ -48,12 +48,15 @@
   border-bottom: 1px solid @border-color-split;
   cursor: pointer;
   transition: all 0.3s;
+
   &:hover {
     background: @primary-1;
   }
+
   &:last-child {
     border: 0;
   }
+
   .errorIcon {
     float: left;
     margin-top: 4px;
@@ -61,6 +64,7 @@
     padding-bottom: 22px;
     color: @error-color;
   }
+
   .errorField {
     margin-top: 2px;
     color: @text-color-secondary;
@@ -85,6 +89,7 @@
     .ant-form .ant-row:last-child .ant-form-item {
       margin-bottom: 24px;
     }
+
     .ant-table td {
       transition: none !important;
     }

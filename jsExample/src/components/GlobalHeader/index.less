@@ -1,4 +1,4 @@
-@import '~antd/es/style/themes/default.less';
+@import url('~antd/es/style/themes/default.less');
 
 @pro-header-hover-bg: rgba(0, 0, 0, 0.025);
 
@@ -6,6 +6,7 @@
   :global(.anticon) {
     margin-right: 8px;
   }
+
   :global(.ant-dropdown-menu-item) {
     min-width: 160px;
   }
@@ -17,6 +18,7 @@
   height: 48px;
   margin-left: auto;
   overflow: hidden;
+
   .action {
     display: flex;
     align-items: center;
@@ -24,39 +26,47 @@
     padding: 0 12px;
     cursor: pointer;
     transition: all 0.3s;
+
     > span {
       vertical-align: middle;
     }
+
     &:hover {
       background: @pro-header-hover-bg;
     }
+
     &:global(.opened) {
       background: @pro-header-hover-bg;
     }
   }
+
   .search {
     padding: 0 12px;
+
     &:hover {
       background: transparent;
     }
   }
+
   .account {
     .avatar {
       margin: ~'calc((@{layout-header-height} - 24px) / 2)' 0;
       margin-right: 8px;
       color: @primary-color;
       vertical-align: top;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgb(255 255 255 / 85%);
     }
   }
 }
 
 .dark {
   .action {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgb(255 255 255 / 85%);
+
     > span {
-      color: rgba(255, 255, 255, 0.85);
+      color: rgb(255 255 255 / 85%);
     }
+
     &:hover,
     &:global(.opened) {
       background: @primary-color;
@@ -68,13 +78,16 @@
   .dark {
     .action {
       color: @text-color;
+
       > span {
         color: @text-color;
       }
+
       &:hover {
-        color: rgba(255, 255, 255, 0.85);
+        color: rgb(255 255 255 / 85%);
+
         > span {
-          color: rgba(255, 255, 255, 0.85);
+          color: rgb(255 255 255 / 85%);
         }
       }
     }
