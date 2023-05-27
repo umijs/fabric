@@ -75,6 +75,7 @@
     "typescript": "^4.5.4"
   },
   "devDependencies": {
+    "@types/node": "^20.2.5",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "np": "^6.2.5",
